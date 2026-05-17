@@ -29,7 +29,7 @@
         .hero-bg {
             background-image:
                 linear-gradient(rgba(17, 24, 39, 0.28), rgba(30, 58, 138, 0.72)),
-                url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop');
+                url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
@@ -142,24 +142,24 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-dark">
                 <h2 data-i18n="section_fleet" class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Transfer Filomuz</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left uppercase font-black">
-                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all">
-                        <img src="https://image-tc.metropol.io/resize/?width=1000&height=1000&q=60&url=https%3A%2F%2Fmetropol.azureedge.net%2Fmetropol-asset%2Fvehicles%2Fv-class-side-v2.png" alt="VIP Minivan Mercedes V-Class" class="h-60 w-full object-contain p-4">
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
+                        <img src="https://images.unsplash.com/photo-1619551480748-399746644865?auto=format&fit=crop&w=600&q=80" alt="VIP Minivan Mercedes" class="h-52 w-full object-cover">
                         <div class="p-8">
                             <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minivan</h3>
-                            <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes V-Class (1-6 PAX)</p>
+                            <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes V-Class / Vito (1-6 PAX)</p>
                             <button type="button" onclick="window.openBookingModal('', '', 'VIP Minivan')" data-i18n="btn_reserve" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button>
                         </div>
                     </article>
-                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all">
-                        <img src="https://metropol.azureedge.net/metropol-asset/vehicles/vw-crafter-side.png" alt="VIP Minibüs VW Crafter / Mercedes Sprinter" class="h-60 w-full object-contain p-4">
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="VIP Minibüs Mercedes Sprinter" class="h-52 w-full object-cover">
                         <div class="p-8">
                             <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minibüs</h3>
-                            <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Sprinter / Crafter (7-13 PAX)</p>
+                            <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes Sprinter VIP (7-13 PAX)</p>
                             <button type="button" onclick="window.openBookingModal('', '', 'VIP Minibüs')" data-i18n="btn_reserve" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button>
                         </div>
                     </article>
-                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all">
-                        <img src="https://metropol.azureedge.net/metropol-asset/vehicles/e-class-side.png" alt="VIP Sedan Mercedes E-Class" class="h-60 w-full object-contain p-4">
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80" alt="VIP Sedan Mercedes" class="h-52 w-full object-cover">
                         <div class="p-8">
                             <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Sedan</h3>
                             <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes E-Class / S-Class (1-4 PAX)</p>
@@ -351,47 +351,53 @@
         <div class="bg-white w-full max-w-xl rounded-[36px] shadow-2xl relative flex flex-col p-6 md:p-10 my-10 border-8 border-accent/20 text-dark">
             <button type="button" onclick="window.closeConfirmModal()" class="absolute top-7 right-9 text-gray-300 text-4xl hover:text-primary transition" aria-label="Kapat">&times;</button>
             
-            <div id="pdf-container" style="background-color: #fff; padding: 20px; font-family: sans-serif; color: #111; text-transform: uppercase;">
-                <div style="border-bottom: 1px solid #ddd; padding-bottom: 20px; text-align: center; color: #1E3A8A; margin-bottom: 20px;">
-                    <h2 style="font-weight: 900; font-size: 24px; margin: 0; color: #111; letter-spacing: -1px;">MOONCHILL<span style="color: #F59E0B; margin-left: 5px;">TRAVEL</span></h2>
-                    <p id="pdf-label-title" style="font-size: 10px; margin: 15px 0; color: #777; letter-spacing: 4px; font-weight: 900;">Ön Rezervasyon Belgesi</p>
-                    <div id="pdf-label-status" style="margin-top: 15px; display: inline-block; padding: 8px 30px; bg-color: #eff6ff; color: #1E3A8A; font-weight: bold; border-radius: 50px; font-size: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border: 1px solid #dbeafe;">Talebiniz Alındı</div>
+            <div id="pdf-container" style="background-color: #ffffff; padding: 25px; font-family: Arial, sans-serif; color: #111111; border: 1px solid #eeeeee; border-radius: 12px;">
+                <div style="border-bottom: 2px dashed #1E3A8A; padding-bottom: 25px; text-align: center; margin-bottom: 25px;">
+                    <h2 style="font-weight: 900; font-size: 26px; margin: 0; color: #1E3A8A; letter-spacing: -1px;">MOONCHILL<span style="color: #F59E0B; margin-left: 4px;">TRAVEL</span></h2>
+                    <p id="pdf-label-title" style="font-size: 11px; margin: 12px 0; color: #666666; letter-spacing: 5px; font-weight: bold; text-transform: uppercase;">Ön Rezervasyon Belgesi</p>
+                    <div id="pdf-label-status" style="margin-top: 10px; display: inline-block; padding: 6px 24px; background-color: #eff6ff; color: #1E3A8A; font-weight: bold; border-radius: 20px; font-size: 11px; border: 1px solid #dbeafe; text-transform: uppercase;">Talebiniz Alındı</div>
                 </div>
 
-                <div style="display: flex; flex-wrap: wrap; text-transform: uppercase;">
-                    <div style="width: 50%; padding-bottom: 20px;">
-                        <span id="pdf-label-name" style="font-size: 8px; color: #777; font-weight: 900; display: block; margin-bottom: 5px;">Müşteri / Customer</span>
-                        <p id="res-name" style="font-weight: 900; font-size: 16px; margin: 0; color: #111; letter-spacing: -0.5px;">--</p>
+                <div style="text-transform: uppercase; font-size: 12px;">
+                    <div style="margin-bottom: 15px;">
+                        <span id="pdf-label-name" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px; text-transform: uppercase;">Müşteri / Customer</span>
+                        <p id="res-name" style="font-weight: bold; font-size: 16px; margin: 0; color: #111111;">--</p>
                     </div>
-                    <div style="width: 50%; padding-bottom: 20px; text-align: right;">
-                        <span id="pdf-label-contact" style="font-size: 8px; color: #777; font-weight: 900; display: block; margin-bottom: 5px;">İletişim / Contact</span>
-                        <p id="res-tel" style="font-weight: 900; font-size: 16px; margin: 0; color: #111; letter-spacing: -0.5px;">--</p>
+                    <div style="margin-bottom: 20px;">
+                        <span id="pdf-label-contact" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px; text-transform: uppercase;">İletişim / Contact</span>
+                        <p id="res-tel" style="font-weight: bold; font-size: 16px; margin: 0; color: #111111;">--</p>
                     </div>
-                    <div style="width: 100%; padding: 20px; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 15px; margin-bottom: 20px;">
-                        <span id="pdf-label-route" style="font-size: 8px; color: #777; font-weight: 900; display: block; margin-bottom: 5px;">Rezervasyon Detayı</span>
-                        <p id="res-route" style="font-weight: bold; color: #111; font-size: 12px; margin: 0; line-height: 1.4;">--</p>
+                    <div style="padding: 15px; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 10px; margin-bottom: 20px;">
+                        <span id="pdf-label-route" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 5px; text-transform: uppercase;">Rezervasyon Detayı</span>
+                        <p id="res-route" style="font-weight: bold; color: #111111; font-size: 13px; margin: 0; line-height: 1.4;">--</p>
                     </div>
-                    <div style="width: 50%; padding-bottom: 20px;">
-                        <span id="pdf-label-veh" style="font-size: 8px; color: #777; font-weight: 900; display: block; margin-bottom: 5px;">Hizmet / Service</span>
-                        <p id="res-veh" style="font-weight: 900; color: #1E3A8A; font-size: 10px; margin: 0;">--</p>
+                    <div style="margin-bottom: 15px;">
+                        <span id="pdf-label-veh" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px; text-transform: uppercase;">Hizmet / Service</span>
+                        <p id="res-veh" style="font-weight: bold; color: #1E3A8A; font-size: 13px; margin: 0;">--</p>
                     </div>
-                    <div style="width: 50%; padding-bottom: 20px; text-align: right;">
-                        <span id="pdf-label-date" style="font-size: 8px; color: #777; font-weight: 900; display: block; margin-bottom: 5px;">Zaman / Date</span>
-                        <p id="res-date" style="font-weight: bold; color: #111; font-size: 10px; margin: 0;">--</p>
+                    <div style="margin-bottom: 25px;">
+                        <span id="pdf-label-date" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px; text-transform: uppercase;">Zaman / Date</span>
+                        <p id="res-date" style="font-weight: bold; color: #111111; font-size: 13px; margin: 0;">--</p>
                     </div>
-                    <div style="width: 100%; padding: 20px; background-color: #1E3A8A; color: #fff; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
-                        <span id="pdf-label-total-side" style="font-weight: 900; font-size: 10px; color: #bfdbfe; letter-spacing: 2px;">Toplam:</span>
-                        <span id="res-price" style="font-size: 36px; font-weight: 900; color: #F59E0B; letter-spacing: -1px; font-style: italic;">--</span>
+                    
+                    <div style="padding: 15px; background-color: #1E3A8A; color: #ffffff; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                        <span id="pdf-label-total-side" style="font-weight: bold; font-size: 11px; color: #bfdbfe; letter-spacing: 2px; text-transform: uppercase;">Toplam:</span>
+                        <span id="res-price" style="font-size: 30px; font-weight: 900; color: #F59E0B; font-style: italic; margin: 0;">--</span>
                     </div>
                 </div>
 
-                <p id="pdf-label-payment" style="font-size: 8px; color: #1E3A8A; text-align: center; margin-top: 40px; font-style: italic; border-top: 1px dashed #bbb; padding-top: 30px;">* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.</p>
-                <div id="pdf-label-footer" style="margin-top: 20px; font-size: 8px; text-align: center; color: #aaa; font-weight: bold; letter-spacing: 1px; line-height: 1.5;">Antalya | +90 532 496 66 24</div>
+                <p id="pdf-label-payment" style="font-size: 9px; color: #1E3A8A; text-align: center; margin-top: 35px; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 20px; text-transform: uppercase; font-weight: bold;">* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.</p>
+                <div id="pdf-label-footer" style="margin-top: 15px; font-size: 9px; text-align: center; color: #888888; font-weight: bold; letter-spacing: 0.5px; line-height: 1.4; text-transform: uppercase;">MOONCHILL TRAVEL - KIZILARIK MAH. 2769. SOK. NO:28 MURATPAŞA/ANTALYA | +90 532 496 66 24</div>
             </div>
 
-            <div style="margin-top: 20px; text-transform: uppercase;">
-                <button type="button" onclick="window.downloadPDF()" style="width: 100%; padding: 15px; background-color: #1E3A8A; color: #fff; border: none; border-radius: 15px; font-weight: 900; font-size: 11px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; text-transform: uppercase; letter-spacing: 2px;"><i class="fa-solid fa-file-pdf" style="font-size: 18px; color: #F59E0B;"></i> <span id="btn-pdf-label">İndir</span></button>
-                <button id="res-wa-btn" type="button" data-i18n="modal_btn_whatsapp_confirm" style="width: 100%; padding: 15px; background-color: #25D366; color: #fff; border: none; border-radius: 15px; font-weight: 900; font-size: 11px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; text-transform: uppercase; letter-spacing: 2px;">WhatsApp'tan Onayla <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i></button>
+            <div class="mt-6 space-y-3 font-black text-xs uppercase tracking-wider">
+                <button id="res-wa-btn" type="button" class="w-full py-5 bg-green-500 hover:bg-green-600 text-white rounded-2xl flex items-center justify-center gap-4 transition active:scale-95 shadow-xl shadow-green-500/20">
+                    <span data-i18n="modal_btn_whatsapp_confirm">WhatsApp'tan Talebi Acenteye Gönder</span> <i class="fa-brands fa-whatsapp text-2xl"></i>
+                </button>
+                
+                <button type="button" onclick="window.downloadPDF()" class="w-full py-5 bg-primary hover:bg-primaryHover text-white rounded-2xl flex items-center justify-center gap-4 transition active:scale-95 shadow-xl shadow-primary/20">
+                    <i class="fa-solid fa-file-pdf text-2xl text-accent"></i> <span id="btn-pdf-label" data-i18n="btn_pdf_label">Rezervasyon Belgesini İndir (PDF)</span>
+                </button>
             </div>
         </div>
     </div>
@@ -466,7 +472,7 @@
 
         const recommendedItems = [
             { title_tr: "AYT > Belek VIP", title_en: "AYT > Belek VIP", title_de: "AYT > Belek VIP", title_ru: "AYT > Белек VIP", sub_tr: "Minivan Konforu", sub_en: "Minivan Comfort", sub_de: "Minivan-Komfort", sub_ru: "Комфорт минивэна", price: "45 EUR", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Antalya Havalimanı (AYT)', 'Belek', 'VIP Minivan'), button_tr: "Seç", button_en: "Select", button_de: "Auswählen", button_ru: "Выбрать" },
-            { title_tr: "Toyota Corolla", title_en: "Toyota Corolla", title_de: "Toyota Corolla", title_ru: "Toyota Corolla", sub_tr: "Günün Fırsatı", sub_en: "Deal of the Day", sub_de: "Angebot des Tages", sub_ru: "Предложение дня", price: "85 EUR", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=600", action: () => window.openCarBookingFlow('Toyota Corolla', 85), button_tr: "Kirala", button_en: "Rent", button_de: "Mieten", button_ru: "Арендовать" },
+            { title_tr: "Toyota Corolla", title_en: "Toyota Corolla", title_de: "Toyota Corolla", title_ru: "Toyota Corolla", sub_tr: "Günün Fırsatı", sub_en: "Deal of the Day", sub_de: "Angebot des Tages", sub_ru: "Предложение дня", price: "85 EUR", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=600", action: () => window.openCarBookingFlow('Toyota Corolla', 85), button_tr: "Kirala", button_en: "Rent", button_de: "Mieten", button_ru: "Аrenдовать" },
             { title_tr: "DLM > Fethiye", title_en: "DLM > Fethiye", title_de: "DLM > Fethiye", title_ru: "DLM > Фетхие", sub_tr: "Ege'ye VIP Geçiş", sub_en: "VIP Aegean Pass", sub_de: "VIP Ägäis-Pass", sub_ru: "VIP Эгейский пасс", price: "115 EUR", image: "https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Dalaman Havalimanı (DLM)', 'Fethiye', 'VIP Sedan'), button_tr: "Ayırt", button_en: "Book", button_de: "Buchen", button_ru: "Забронировать" },
             { title_tr: "Lara Otelleri", title_en: "Lara Hotels", title_de: "Lara Hotels", title_ru: "Отели Лары", sub_tr: "Özel İndirim", sub_en: "Special Discount", sub_de: "Sonderrabatt", sub_ru: "Специальная скидка", price: "Teklif Al", price_en: "Get Quote", price_de: "Angebot", price_ru: "Цена по запросу", image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600", action: () => window.openGenericModal('hotel'), button_tr: "Bak", button_en: "View", button_de: "Ansehen", button_ru: "Смотреть" }
         ];
@@ -482,7 +488,7 @@
                 footer_desc: "Profesyonel transfer ve seyahat acenteniz.", footer_menu_title: "Hızlı Menü", footer_admin_login: "Acente Girişi", footer_contact_title: "İletişim", footer_copyright: "&copy; 2026 Moonchill Global VIP",
                 footer_address_text: "Kızılarık Mah. 2769. Sok. No:28 Muratpaşa/ANTALYA",
                 modal_transfer_title: "VIP Rezervasyon", modal_step1_title: "Planlama", modal_step2_title: "İletişim", modal_label_extras: "Ek Hizmetler (+5 EUR)", modal_extra_baby: "Bebek Koltuğu", modal_extra_child: "Çocuk Koltuğu", modal_extra_bike: "Bisiklet", modal_extra_baggage: "Ek Bagaj", modal_label_total: "Toplam Tutar", modal_btn_next: "İlerle", modal_placeholder_name: "ADINIZ SOYADINIZ", modal_placeholder_whatsapp: "WHATSAPP", modal_btn_back: "Geri", modal_btn_submit_transfer: "Ön Rezervasyon Al",
-                modal_placeholder_from: "NEREDEN?", modal_placeholder_to: "NEREYE?", modal_label_pickup_date: "Alış", modal_label_return_date: "İade", modal_placeholder_delivery: "TESLİMAT ADRESİ", modal_btn_create_doc: "Belgeyi Oluştur", modal_btn_whatsapp_confirm: "WhatsApp'tan Onayla",
+                modal_placeholder_from: "NEREDEN?", modal_placeholder_to: "NEREYE?", modal_label_pickup_date: "Alış", modal_label_return_date: "İade", modal_placeholder_delivery: "TESLİMAT ADRESİ", modal_btn_create_doc: "Belgeyi Oluştur", modal_btn_whatsapp_confirm: "WhatsApp'tan Talebi Acenteye Gönder", btn_pdf_label: "Rezervasyon Belgesini İndir (PDF)",
                 admin_panel_title: "Acente Paneli", admin_placeholder_user: "KULLANICI ADI", admin_placeholder_pass: "ŞİFRE", admin_btn_login: "Giriş Yap", admin_sec_title: "Rezervasyonlar", admin_btn_clear: "Listeyi Temizle", admin_no_res: "Henüz rezervasyon yok."
             },
             EN: {
@@ -495,25 +501,25 @@
                 footer_desc: "Your professional transfer and travel agency.", footer_menu_title: "Quick Menu", footer_admin_login: "Agency Login", footer_contact_title: "Contact", footer_copyright: "&copy; 2026 Moonchill Global VIP",
                 footer_address_text: "Kizilarik Mah. 2769. St. No:28 Muratpasa, Antalya / Turkey",
                 modal_transfer_title: "VIP Booking", modal_step1_title: "Planning", modal_step2_title: "Contact", modal_label_extras: "Extra Services (+5 EUR)", modal_extra_baby: "Baby Seat", modal_extra_child: "Child Seat", modal_extra_bike: "Bicycle", modal_extra_baggage: "Extra Luggage", modal_label_total: "Total Amount", modal_btn_next: "Next", modal_placeholder_name: "YOUR NAME & SURNAME", modal_placeholder_whatsapp: "WHATSAPP NUMBER", modal_btn_back: "Back", modal_btn_submit_transfer: "Get Pre-Reservation",
-                modal_placeholder_from: "FROM WHERE?", modal_placeholder_to: "TO WHERE?", modal_label_pickup_date: "Pickup", modal_label_return_date: "Return", modal_placeholder_delivery: "DELIVERY ADDRESS", modal_btn_create_doc: "Create Document", modal_btn_whatsapp_confirm: "Confirm on WhatsApp",
+                modal_placeholder_from: "FROM WHERE?", modal_placeholder_to: "TO WHERE?", modal_label_pickup_date: "Pickup", modal_label_return_date: "Return", modal_placeholder_delivery: "DELIVERY ADDRESS", modal_btn_create_doc: "Create Document", modal_btn_whatsapp_confirm: "Send Booking Request to Agency via WhatsApp", btn_pdf_label: "Download Reservation Document (PDF)",
                 admin_panel_title: "Agency Panel", admin_placeholder_user: "USERNAME", admin_placeholder_pass: "PASSWORD", admin_btn_login: "Login", admin_sec_title: "Reservations", admin_btn_clear: "Clear List", admin_no_res: "No reservations yet."
             },
             DE: {
                 nav_home: "Startseite", nav_services: "Unsere Dienste", nav_recommended: "Empfohlen", nav_fares: "Preise", btn_booking: "Buchen",
                 hero_title: 'DIE <span class="text-accent italic">VIP-ART</span> IHRES URLAUBS', hero_subtitle: "Ihre gesamte Reiseplanung vom Transfer bis zur Autovermietung unter einem Dach.",
                 label_pickup: "Abholort", label_dropoff: "Zielregion", label_date: "Datum", btn_view_price: "Preis Anzeigen", opt_ayt: "Flughafen Antalya (AYT)", opt_dlm: "Flughafen Dalaman (DLM)",
-                section_services: "Unsere Dienste", service_flight: "Flugticket", service_hotel: "Hotel", service_car: "Autovermietung", btn_pre_booking: "Vorreservierung", btn_book_now: "Zimmer Buchen", btn_models: "Modelle Anzeigen",
+                section_services: "Unsere Dienste", service_flight: "Flugticket", service_hotel: "Hotel", service_car: "Autovermietung", btn_pre_booking: "Vorreservierung", btn_book_now: "Zimmer Buchen", btn_view_models: "Modelle Anzeigen",
                 section_recommended: "Für Sie Empfohlen", subtitle_recommended: "Beliebteste VIP-Angebote", section_fleet: "Unsere Transferflotte", btn_reserve: "Buchen", section_fares: "Detaillierte Preisliste",
                 th_dropoff: "Zielregion", th_sedan: "Limousine", th_minivan: "Minivan", th_minibus: "Minibus", th_reserve: "Buchen",
                 footer_desc: "Ihr professioneller Transfer- und Reisedienstleister.", footer_menu_title: "Schnellmenü", footer_admin_login: "Agentur-Login", footer_contact_title: "Kontakt", footer_copyright: "&copy; 2026 Moonchill Global VIP",
                 footer_address_text: "Kizilarik Mah. 2769. Str. No:28 Muratpasa, Antalya / Türkei",
                 modal_transfer_title: "VIP-Buchung", modal_step1_title: "Planung", modal_step2_title: "Kontakt", modal_label_extras: "Zusatzleistungen (+5 EUR)", modal_extra_baby: "Babysitz", modal_extra_child: "Kindersitz", modal_extra_bike: "Fahrrad", modal_extra_baggage: "Zusatzgepäck", modal_label_total: "Gesamtbetrag", modal_btn_next: "Weiter", modal_placeholder_name: "IHR VOR- & NACHNAME", modal_placeholder_whatsapp: "WHATSAPP-NUMMER", modal_btn_back: "Zurück", modal_btn_submit_transfer: "Vorreservierung Erhalten",
-                modal_placeholder_from: "VON WO?", modal_placeholder_to: "WOHIN?", modal_label_pickup_date: "Abholung", modal_label_return_date: "Rückgabe", modal_placeholder_delivery: "LIEFERADRESSE", modal_btn_create_doc: "Dokument Erstellen", modal_btn_whatsapp_confirm: "Über WhatsApp Bestätigen",
+                modal_placeholder_from: "VON WO?", modal_placeholder_to: "WOHIN?", modal_label_pickup_date: "Abholung", modal_label_return_date: "Rückgabe", modal_placeholder_delivery: "LIEFERADRESSE", modal_btn_create_doc: "Dokument Erstellen", modal_btn_whatsapp_confirm: "Buchungsanfrage per WhatsApp an Agentur senden", btn_pdf_label: "Reservierungsdokument herunterladen (PDF)",
                 admin_panel_title: "Agentur-Panel", admin_placeholder_user: "BENUTZERNAME", admin_placeholder_pass: "PASSWORT", admin_btn_login: "Login", admin_sec_title: "Reservierungen", admin_btn_clear: "Liste Leeren", admin_no_res: "Noch keine Reservierungen."
             },
             RU: {
                 nav_home: "Главная", nav_services: "Услуги", nav_recommended: "Рекомендуем", nav_fares: "Цены", btn_booking: "Забронировать",
-                hero_title: '<span class="text-accent italic">VIP-ВАРИАНТ</span> ВАШЕГО ОТДЫХА', hero_subtitle: "Весь ваш план путешествия от трансфера до аренды автомобиля под одной крышей.",
+                hero_title: '<span class="text-accent italic">VIP-ВАРИАНТ</span> ВАШЕГО ОТДЫХА', hero_subtitle: "Весь ваш plan путешествия от трансфера до аренды автомобиля под одной крышей.",
                 label_pickup: "Место посадки", label_dropoff: "Регион прибытия", label_date: "Дата", btn_view_price: "Показать цену", opt_ayt: "Аэропорт Анталии (AYT)", opt_dlm: "Аэропорт Даламан (DLM)",
                 section_services: "Наши услуги", service_flight: "Авиабилет", service_hotel: "Отель", service_car: "Прокат авто", btn_pre_booking: "Предварительная бронь", btn_book_now: "Забронировать номер", btn_view_models: "Посмотреть модели",
                 section_recommended: "Мы рекомендуем", subtitle_recommended: "Самые популярные VIP предложения", section_fleet: "Наш автопарк", btn_reserve: "Заказать", section_fares: "Подробный прайс-лист",
@@ -521,7 +527,7 @@
                 footer_desc: "Ваше профессиональное трансферное и туристическое агентство.", footer_menu_title: "Быстрое меню", footer_admin_login: "Вход для агентов", footer_contact_title: "Контакты", footer_copyright: "&copy; 2026 Moonchill Global VIP",
                 footer_address_text: "Кызыларык Мах. 2769. Ул. Номер:28 Муратпаша, Анталья / Турция",
                 modal_transfer_title: "VIP Бронирование", modal_step1_title: "Планирование", modal_step2_title: "Контакты", modal_label_extras: "Доп. услуги (+5 EUR)", modal_extra_baby: "Детское кресло", modal_extra_child: "Детское сиденье", modal_extra_bike: "Велосипед", modal_extra_baggage: "Доп. багаж", modal_label_total: "Общая сумма", modal_btn_next: "Далее", modal_placeholder_name: "ВАШЕ ИМЯ И ФАМИЛИЯ", modal_placeholder_whatsapp: "НОМЕР WHATSAPP", modal_btn_back: "Назад", modal_btn_submit_transfer: "Получить предбронь",
-                modal_placeholder_from: "ОТКУДА?", modal_placeholder_to: "КУДА?", modal_label_pickup_date: "Забрать", modal_label_return_date: "Вернуть", modal_placeholder_delivery: "АДРЕС ДОСТАВКИ", modal_btn_create_doc: "Создать документ", modal_btn_whatsapp_confirm: "Подтвердить в WhatsApp",
+                modal_placeholder_from: "ОТКУДА?", modal_placeholder_to: "КУДА?", modal_label_pickup_date: "Забрать", modal_label_return_date: "Вернуть", modal_placeholder_delivery: "АДРЕС ДОСТАВКИ", modal_btn_create_doc: "Создать документ", modal_btn_whatsapp_confirm: "Отправить запрос на бронирование в агентство через WhatsApp", btn_pdf_label: "Скачать документ бронирования (PDF)",
                 admin_panel_title: "Панель агента", admin_placeholder_user: "ИМЯ ПОЛЬЗОВАТЕЛЯ", admin_placeholder_pass: "ПАРОЛЬ", admin_btn_login: "Войти", admin_sec_title: "Бронирования", admin_btn_clear: "Очистить список", admin_no_res: "Бронирований пока нет."
             }
         };
@@ -767,7 +773,18 @@
             setDisplay('res-veh', res.veh);
             setDisplay('res-price', res.price);
 
-            const waMsg = `*MOONCHILL - YENİ TALEP*\nİsim: ${res.name}\nDetay: ${res.route}\nZaman: ${res.date}\nTutar: ${res.price}`;
+            // JİLET GİBİ KURUMSAL WHATSAPP METNİ OLUŞTURUCU
+            const waMsg = `*🌟 MOONCHILL TRAVEL - YENİ REZERVASYON TALEBİ*\n\n` +
+                          `👤 *MÜŞTERİ:* ${res.name}\n` +
+                          `📞 *İLETİŞİM / WA:* ${res.phone}\n\n` +
+                          `📌 *HİZMET TÜRÜ:* ${res.type}\n` +
+                          `🚘 *HİZMET DETAYI:* ${res.veh}\n` +
+                          `🗺️ *ROTA / DETAY:* ${res.route}\n` +
+                          `📅 *ZAMAN / DATE:* ${res.date}\n\n` +
+                          `💰 *TOPLAM TUTAR:* ${res.price}\n\n` +
+                          `⚙️ *SİSTEM ID:* #${res.id}\n` +
+                          `📍 _Kızılarık Mah. 2769. Sok. No:28 Muratpaşa/ANTALYA_`;
+
             const waBtn = document.getElementById('res-wa-btn');
             if (waBtn) waBtn.onclick = () => window.open(`https://wa.me/905324966624?text=${encodeURIComponent(waMsg)}`, '_blank');
 
@@ -780,7 +797,7 @@
         window.updatePDFLabels = function() {
             const lang = i18nPDF[currentLang] || i18nPDF.TR;
             const map = {
-                'pdf-label-title': lang.title, 'pdf-label-status': lang.status, 'pdf-label-name': lang.name, 'pdf-label-contact': lang.contact, 'pdf-label-route': lang.route, 'pdf-label-veh': lang.veh, 'pdf-label-date': lang.date, 'pdf-label-total-side': lang.total, 'pdf-label-payment': lang.payment, 'pdf-label-footer': lang.footer, 'btn-pdf-label': lang.btn
+                'pdf-label-title': lang.title, 'pdf-label-status': lang.status, 'pdf-label-name': lang.name, 'pdf-label-contact': lang.contact, 'pdf-label-route': lang.route, 'pdf-label-veh': lang.veh, 'pdf-label-date': lang.date, 'pdf-label-total-side': lang.total, 'pdf-label-payment': lang.payment, 'pdf-label-footer': lang.footer
             };
             Object.entries(map).forEach(([id, text]) => setDisplay(id, text));
         };
@@ -874,17 +891,16 @@
             const name = (document.getElementById('res-name').innerText || 'Moonchill').replace(/[^\w-]+/g, '_');
             
             const btnLabel = document.getElementById('btn-pdf-label');
-            const originalLabel = btnLabel.innerText;
-            btnLabel.innerText = currentLang === 'TR' ? 'Oluşturuluyor...' : 'Generating...';
+            btnLabel.innerText = currentLang === 'TR' ? 'BELGE OLUŞTURULUYOR...' : 'GENERATING...';
 
-            html2pdf().set({
-                margin: 10,
+            html2pdf().from(element).set({
+                margin: [15, 15, 15, 15],
                 filename: `Moonchill_Request_${name}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, logging: false, useCORS: true },
+                html2canvas: { scale: 2, useCORS: true, allowTaint: false, logging: false },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            }).from(element).save().then(() => {
-                btnLabel.innerText = originalLabel;
+            }).save().then(() => {
+                btnLabel.innerText = currentLang === 'TR' ? 'Rezervasyon Belgesini İndir (PDF)' : 'Download Reservation Document (PDF)';
             });
         };
 
