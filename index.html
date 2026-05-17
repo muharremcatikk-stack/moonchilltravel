@@ -29,7 +29,7 @@
         .hero-bg {
             background-image:
                 linear-gradient(rgba(17, 24, 39, 0.28), rgba(30, 58, 138, 0.72)),
-                url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop');
+                url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
@@ -59,10 +59,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center text-white">
             <a href="#home" class="text-xl md:text-2xl font-black uppercase tracking-tight">MOONCHILL<span class="text-accent">TRAVEL</span></a>
             <nav class="hidden lg:flex space-x-6 text-[11px] font-black uppercase tracking-widest">
-                <a href="#home" data-i18n="nav_home" class="hover:text-accent transition">Ana Sayfa</a>
-                <a href="#travel-services" data-i18n="nav_services" class="hover:text-accent transition">Hizmetlerimiz</a>
-                <a href="#recommended" data-i18n="nav_recommended" class="hover:text-accent transition">Önerilenler</a>
-                <a href="#fares" data-i18n="nav_fares" class="hover:text-accent transition">Fiyatlar</a>
+                <a href="#home" class="hover:text-accent transition">Ana Sayfa</a>
+                <a href="#travel-services" class="hover:text-accent transition">Hizmetlerimiz</a>
+                <a href="#recommended" class="hover:text-accent transition">Önerilenler</a>
+                <a href="#fares" class="hover:text-accent transition">Fiyatlar</a>
             </nav>
             <div class="flex items-center space-x-4">
                 <div class="relative group cursor-pointer font-black text-[10px] tracking-widest uppercase">
@@ -70,11 +70,9 @@
                     <div class="absolute right-0 mt-3 w-40 bg-white border border-gray-100 rounded-xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all text-dark">
                         <button type="button" onclick="window.changeLang('TR')" class="block w-full text-left px-6 py-2 hover:bg-gray-50">TÜRKÇE</button>
                         <button type="button" onclick="window.changeLang('EN')" class="block w-full text-left px-6 py-2 hover:bg-gray-50">ENGLISH</button>
-                        <button type="button" onclick="window.changeLang('DE')" class="block w-full text-left px-6 py-2 hover:bg-gray-50">DEUTSCH</button>
-                        <button type="button" onclick="window.changeLang('RU')" class="block w-full text-left px-6 py-2 hover:bg-gray-50">РУССКИЙ</button>
                     </div>
                 </div>
-                <button type="button" onclick="window.openBookingModal()" data-i18n="btn_booking" class="bg-accent hover:bg-accentHover text-white px-5 md:px-6 py-2.5 rounded-lg font-black text-xs shadow-lg uppercase transition active:scale-95">Rezervasyon</button>
+                <button type="button" onclick="window.openBookingModal()" class="bg-accent hover:bg-accentHover text-white px-5 md:px-6 py-2.5 rounded-lg font-black text-xs shadow-lg uppercase transition active:scale-95">Rezervasyon</button>
             </div>
         </div>
     </header>
@@ -82,26 +80,26 @@
     <main>
         <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center md:text-left text-white">
-                <h1 data-i18n="hero_title" class="text-4xl md:text-7xl xl:text-8xl font-black mb-6 leading-tight uppercase tracking-tight">TATİLİN <span class="text-accent italic">EN VIP</span> HALİ</h1>
-                <p data-i18n="hero_subtitle" class="text-lg md:text-2xl mb-12 font-light max-w-2xl leading-relaxed">Transferden kiralık araca kadar tüm seyahat planınız tek bir çatıda.</p>
+                <h1 class="text-4xl md:text-7xl xl:text-8xl font-black mb-6 leading-tight uppercase tracking-tight">TATİLİN <span class="text-accent italic">EN VIP</span> HALİ</h1>
+                <p class="text-lg md:text-2xl mb-12 font-light max-w-2xl leading-relaxed">Transferden kiralık araca kadar tüm seyahat planınız tek bir çatıda.</p>
                 <div class="bg-white/95 backdrop-blur-md rounded-[28px] shadow-2xl p-6 md:p-10 w-full max-w-5xl border border-white/20 mx-auto md:mx-0">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end text-left text-dark">
                         <div class="flex flex-col text-[10px] uppercase font-bold tracking-widest">
-                            <label for="hero-pickup" data-i18n="label_pickup" class="text-gray-500 mb-2 ml-1">Alış Yeri</label>
+                            <label for="hero-pickup" class="text-gray-500 mb-2 ml-1">Alış Yeri</label>
                             <select id="hero-pickup" class="w-full border-2 border-gray-100 rounded-2xl p-4 bg-white outline-none focus:border-primary transition font-bold text-sm">
-                                <option value="Antalya Havalimanı (AYT)" data-i18n="opt_ayt">Antalya (AYT)</option>
-                                <option value="Dalaman Havalimanı (DLM)" data-i18n="opt_dlm">Dalaman (DLM)</option>
+                                <option value="Antalya Havalimanı (AYT)">Antalya (AYT)</option>
+                                <option value="Dalaman Havalimanı (DLM)">Dalaman (DLM)</option>
                             </select>
                         </div>
                         <div class="flex flex-col text-[10px] uppercase font-bold tracking-widest">
-                            <label for="hero-dropoff" data-i18n="label_dropoff" class="text-gray-500 mb-2 ml-1">Varış Bölgesi</label>
+                            <label for="hero-dropoff" class="text-gray-500 mb-2 ml-1">Varış Bölgesi</label>
                             <select id="hero-dropoff" class="w-full border-2 border-gray-100 rounded-2xl p-4 bg-white outline-none focus:border-primary transition font-bold text-sm"></select>
                         </div>
                         <div class="flex flex-col text-[10px] uppercase font-bold tracking-widest">
-                            <label for="hero-date" data-i18n="label_date" class="text-gray-500 mb-2 ml-1">Tarih</label>
+                            <label for="hero-date" class="text-gray-500 mb-2 ml-1">Tarih</label>
                             <input type="date" id="hero-date" class="w-full border-2 border-gray-100 rounded-2xl p-4 outline-none focus:border-primary transition font-bold text-sm">
                         </div>
-                        <button type="button" onclick="window.startBookingFromHero()" data-i18n="btn_view_price" class="bg-primary hover:bg-primaryHover text-white font-black rounded-2xl py-4 transition shadow-xl uppercase tracking-widest text-xs">Fiyatı Gör</button>
+                        <button type="button" onclick="window.startBookingFromHero()" class="bg-primary hover:bg-primaryHover text-white font-black rounded-2xl py-4 transition shadow-xl uppercase tracking-widest text-xs">Fiyatı Gör</button>
                     </div>
                 </div>
             </div>
@@ -109,22 +107,22 @@
 
         <section id="travel-services" class="py-24 bg-white text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 data-i18n="section_services" class="text-3xl md:text-5xl font-black text-primary mb-20 uppercase tracking-tighter">Hizmetlerimiz</h2>
+                <h2 class="text-3xl md:text-5xl font-black text-primary mb-20 uppercase tracking-tighter">Hizmetlerimiz</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <article class="p-10 md:p-12 bg-white rounded-[28px] border border-gray-100 shadow-xl hover:shadow-2xl transition flex flex-col items-center">
                         <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mb-8"><i class="fa-solid fa-plane-up text-3xl text-primary"></i></div>
-                        <h3 data-i18n="service_flight" class="text-xl mb-4 font-black">Uçak Bileti</h3>
-                        <button type="button" onclick="window.openGenericModal('flight')" data-i18n="btn_pre_booking" class="text-primary text-xs font-black uppercase tracking-widest border-b-2 border-primary/20 pb-1 transition">Ön Rezervasyon</button>
+                        <h3 class="text-xl mb-4 font-black">Uçak Bileti</h3>
+                        <button type="button" onclick="window.openGenericModal('flight')" class="text-primary text-xs font-black uppercase tracking-widest border-b-2 border-primary/20 pb-1 transition">Ön Rezervasyon</button>
                     </article>
                     <article class="p-10 md:p-12 bg-dark text-white rounded-[28px] shadow-2xl md:-translate-y-6 flex flex-col items-center">
                         <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mb-8 shadow-xl"><i class="fa-solid fa-hotel text-3xl text-white"></i></div>
-                        <h3 data-i18n="service_hotel" class="text-xl mb-4 font-black">Otel</h3>
-                        <button type="button" onclick="window.openGenericModal('hotel')" data-i18n="btn_book_now" class="text-accent text-xs font-black uppercase tracking-widest border-b-2 border-accent/30 pb-1 transition">Rezervasyon Yap</button>
+                        <h3 class="text-xl mb-4 font-black">Otel</h3>
+                        <button type="button" onclick="window.openGenericModal('hotel')" class="text-accent text-xs font-black uppercase tracking-widest border-b-2 border-accent/30 pb-1 transition">Rezervasyon Yap</button>
                     </article>
                     <article class="p-10 md:p-12 bg-white rounded-[28px] border border-gray-100 shadow-xl hover:shadow-2xl transition flex flex-col items-center text-dark">
                         <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mb-8"><i class="fa-solid fa-key text-3xl text-primary"></i></div>
-                        <h3 data-i18n="service_car" class="text-xl mb-4 font-black">Araç Kiralama</h3>
-                        <button type="button" onclick="window.openCarRentalModal()" data-i18n="btn_view_models" class="text-primary text-xs font-black uppercase tracking-widest border-b-2 border-primary/20 pb-1 transition">Modelleri Gör</button>
+                        <h3 class="text-xl mb-4 font-black">Araç Kiralama</h3>
+                        <button type="button" onclick="window.openCarRentalModal()" class="text-primary text-xs font-black uppercase tracking-widest border-b-2 border-primary/20 pb-1 transition">Modelleri Gör</button>
                     </article>
                 </div>
             </div>
@@ -132,39 +130,27 @@
 
         <section id="recommended" class="py-24 bg-slate-50 border-y border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-dark">
-                <h2 data-i18n="section_recommended" class="text-3xl md:text-5xl font-black text-primary mb-4 uppercase tracking-tighter">Sizin İçin Önerdiklerimiz</h2>
-                <p data-i18n="subtitle_recommended" class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-20">En Popüler VIP Fırsatları</p>
+                <h2 class="text-3xl md:text-5xl font-black text-primary mb-4 uppercase tracking-tighter">Sizin İçin Önerdiklerimiz</h2>
+                <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-20">En Popüler VIP Fırsatları</p>
                 <div id="recommended-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left"></div>
             </div>
         </section>
 
         <section id="fleet" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-dark">
-                <h2 data-i18n="section_fleet" class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Transfer Filomuz</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left uppercase font-black">
-                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-                        <img src="https://images.unsplash.com/photo-1619551480748-399746644865?auto=format&fit=crop&w=600&q=80" alt="VIP Minivan Mercedes" class="h-52 w-full object-cover">
-                        <div class="p-8">
-                            <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minivan</h3>
-                            <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes V-Class / Vito (1-6 PAX)</p>
-                            <button type="button" onclick="window.openBookingModal('', '', 'VIP Minivan')" data-i18n="btn_reserve" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button>
-                        </div>
+                <h2 class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Transfer Filomuz</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800" alt="VIP Minivan" class="h-60 w-full object-cover">
+                        <div class="p-8"><h3 class="text-lg uppercase mb-4 text-primary font-black">VIP Minivan</h3><button type="button" onclick="window.openBookingModal('', '', 'VIP Minivan')" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button></div>
                     </article>
-                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="VIP Minibüs Mercedes Sprinter" class="h-52 w-full object-cover">
-                        <div class="p-8">
-                            <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minibüs</h3>
-                            <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes Sprinter VIP (7-13 PAX)</p>
-                            <button type="button" onclick="window.openBookingModal('', '', 'VIP Minibüs')" data-i18n="btn_reserve" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button>
-                        </div>
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all">
+                        <img src="https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&w=800" alt="VIP Minibüs" class="h-60 w-full object-cover">
+                        <div class="p-8"><h3 class="text-lg uppercase mb-4 text-primary font-black">VIP Minibüs</h3><button type="button" onclick="window.openBookingModal('', '', 'VIP Minibüs')" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button></div>
                     </article>
-                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80" alt="VIP Sedan Mercedes" class="h-52 w-full object-cover">
-                        <div class="p-8">
-                            <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Sedan</h3>
-                            <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes E-Class / S-Class (1-4 PAX)</p>
-                            <button type="button" onclick="window.openBookingModal('', '', 'VIP Sedan')" data-i18n="btn_reserve" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button>
-                        </div>
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all">
+                        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=800" alt="VIP Sedan" class="h-60 w-full object-cover">
+                        <div class="p-8"><h3 class="text-lg uppercase mb-4 text-primary font-black">VIP Sedan</h3><button type="button" onclick="window.openBookingModal('', '', 'VIP Sedan')" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button></div>
                     </article>
                 </div>
             </div>
@@ -172,16 +158,16 @@
 
         <section id="fares" class="py-24 bg-slate-50 border-t border-gray-200 text-dark">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 data-i18n="section_fares" class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Detaylı Fiyat Listesi</h2>
+                <h2 class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Detaylı Fiyat Listesi</h2>
                 <div class="overflow-x-auto rounded-[28px] shadow-2xl bg-white border border-gray-100">
                     <table class="w-full text-left text-xs md:text-sm font-bold uppercase">
                         <thead class="bg-primary text-white text-[10px] tracking-widest">
                             <tr>
-                                <th class="p-6 md:p-8" data-i18n="th_dropoff">Varış Bölgesi</th>
-                                <th class="p-6 md:p-8 text-center" data-i18n="th_sedan">Sedan</th>
-                                <th class="p-6 md:p-8 text-center" data-i18n="th_minivan">Minivan</th>
-                                <th class="p-6 md:p-8 text-center" data-i18n="th_minibus">Minibüs</th>
-                                <th class="p-6 md:p-8 text-center" data-i18n="th_reserve">Ayırt</th>
+                                <th class="p-6 md:p-8">Varış Bölgesi</th>
+                                <th class="p-6 md:p-8 text-center">Sedan</th>
+                                <th class="p-6 md:p-8 text-center">Minivan</th>
+                                <th class="p-6 md:p-8 text-center">Minibüs</th>
+                                <th class="p-6 md:p-8 text-center">Ayırt</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-50" id="fares-table-body"></tbody>
@@ -196,22 +182,21 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
                 <div>
                     <h4 class="text-2xl font-black uppercase mb-8 text-accent tracking-tighter">MOONCHILLTRAVEL</h4>
-                    <p data-i18n="footer_desc" class="text-blue-100 text-sm leading-relaxed">Profesyonel transfer ve seyahat acenteniz.</p>
+                    <p class="text-blue-100 text-sm leading-relaxed">Profesyonel transfer ve seyahat acenteniz.</p>
                 </div>
                 <div>
-                    <h4 data-i18n="footer_menu_title" class="text-[10px] font-black text-accent mb-8 tracking-[0.3em] uppercase">Hızlı Menü</h4>
+                    <h4 class="text-[10px] font-black text-accent mb-8 tracking-[0.3em] uppercase">Hızlı Menü</h4>
                     <ul class="space-y-4 text-xs font-bold text-blue-100 uppercase tracking-widest">
-                        <li><a href="#home" data-i18n="nav_home" class="hover:text-accent">Ana Sayfa</a></li>
-                        <li><button type="button" onclick="window.openAdminModal()" data-i18n="footer_admin_login" class="hover:text-accent">Acente Girişi</button></li>
+                        <li><a href="#home" class="hover:text-accent">Ana Sayfa</a></li>
+                        <li><button type="button" onclick="window.openAdminModal()" class="hover:text-accent">Acente Girişi</button></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 data-i18n="footer_contact_title" class="text-[10px] font-black text-accent mb-8 tracking-[0.3em] uppercase">İletişim</h4>
-                    <p class="text-xs text-blue-100 font-bold uppercase tracking-widest leading-loose mb-3"><i class="fa-solid fa-phone text-accent mr-2"></i> +90 532 496 66 24</p>
-                    <p class="text-xs text-blue-100 font-bold uppercase tracking-widest leading-relaxed flex items-start gap-2"><i class="fa-solid fa-location-dot text-accent mt-1"></i> <span id="footer-address-display" data-i18n="footer_address_text">Kızılarık Mah. 2769. Sok. No:28 Muratpaşa/ANTALYA</span></p>
+                    <h4 class="text-[10px] font-black text-accent mb-8 tracking-[0.3em] uppercase">İletişim</h4>
+                    <p class="text-xs text-blue-100 font-bold uppercase tracking-widest leading-loose">+90 532 496 66 24</p>
                 </div>
             </div>
-            <p data-i18n="footer_copyright" class="text-[10px] text-center text-blue-200 mt-20 font-black uppercase tracking-widest">&copy; 2026 Moonchill Global VIP</p>
+            <p class="text-[10px] text-center text-blue-200 mt-20 font-black uppercase tracking-widest">&copy; 2026 Moonchill Global VIP</p>
         </div>
     </footer>
 
@@ -219,10 +204,10 @@
         <div class="bg-white w-full max-w-2xl rounded-[32px] shadow-2xl relative overflow-hidden flex flex-col max-h-[92vh]">
             <button type="button" onclick="window.closeBookingModal()" class="absolute top-6 right-7 text-white/70 text-3xl z-20 hover:text-white transition" aria-label="Kapat">&times;</button>
             <div class="bg-primary p-8 md:p-10 text-white text-center shadow-lg">
-                <h2 data-i18n="modal_transfer_title" class="text-2xl font-black tracking-tighter uppercase">VIP Rezervasyon</h2>
+                <h2 class="text-2xl font-black tracking-tighter uppercase">VIP Rezervasyon</h2>
                 <div class="flex justify-center items-center gap-6 mt-6 uppercase text-[10px] font-black tracking-widest">
-                    <div id="step-ind-1" class="flex items-center gap-2"><span class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-xs">1</span> <span data-i18n="modal_step1_title">Planlama</span></div>
-                    <div id="step-ind-2" class="flex items-center gap-2 opacity-30"><span class="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center text-xs">2</span> <span data-i18n="modal_step2_title">İletişim</span></div>
+                    <div id="step-ind-1" class="flex items-center gap-2"><span class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-xs">1</span> <span>Planlama</span></div>
+                    <div id="step-ind-2" class="flex items-center gap-2 opacity-30"><span class="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center text-xs">2</span> <span>İletişim</span></div>
                 </div>
             </div>
             <div class="p-6 md:p-8 modal-scroll overflow-y-auto">
@@ -230,8 +215,8 @@
                     <div id="modal-step1">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8 text-sm">
                             <select name="Alis_Noktasi" id="modal-pickup" class="w-full border-2 border-gray-100 p-5 rounded-2xl bg-gray-50 outline-none uppercase text-xs focus:border-primary transition font-black">
-                                <option value="Antalya Havalimanı (AYT)" data-i18n="opt_ayt">Antalya (AYT)</option>
-                                <option value="Dalaman Havalimanı (DLM)" data-i18n="opt_dlm">Dalaman (DLM)</option>
+                                <option value="Antalya Havalimanı (AYT)">Antalya (AYT)</option>
+                                <option value="Dalaman Havalimanı (DLM)">Dalaman (DLM)</option>
                             </select>
                             <select id="modal-dropoff" name="Varis_Noktasi" onchange="window.calculateModalPrice()" required class="w-full border-2 border-gray-100 p-5 rounded-2xl font-black bg-gray-50 outline-none uppercase text-xs focus:border-primary transition"></select>
                             <input type="date" name="Tarih" id="modal-date" required class="w-full border-2 border-gray-100 p-5 rounded-2xl font-black uppercase text-xs">
@@ -261,26 +246,26 @@
                             </label>
                         </div>
                         <div class="mb-8 bg-slate-50 p-6 rounded-3xl border border-gray-100 uppercase">
-                            <span data-i18n="modal_label_extras" class="text-[10px] text-gray-400 mb-4 block tracking-[0.2em] font-black">Ek Hizmetler (+5 EUR)</span>
+                            <span class="text-[10px] text-gray-400 mb-4 block tracking-[0.2em] font-black">Ek Hizmetler (+5 EUR)</span>
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                                <div class="flex flex-col gap-1"><span data-i18n="modal_extra_baby" class="text-[8px] font-bold uppercase">Bebek Koltuğu</span><select name="Ek_Bebek" id="ek-bebek" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
-                                <div class="flex flex-col gap-1"><span data-i18n="modal_extra_child" class="text-[8px] font-bold uppercase">Çocuk Koltuğu</span><select name="Ek_Cocuk" id="ek-cocuk" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
-                                <div class="flex flex-col gap-1"><span data-i18n="modal_extra_bike" class="text-[8px] font-bold uppercase">Bisiklet</span><select name="Ek_Bisiklet" id="ek-bisiklet" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
-                                <div class="flex flex-col gap-1"><span data-i18n="modal_extra_baggage" class="text-[8px] font-bold uppercase">Ek Bagaj</span><select name="Ek_Bagaj" id="ek-bagaj" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
+                                <div class="flex flex-col gap-1"><span class="text-[8px] font-bold uppercase">Bebek Koltuğu</span><select name="Ek_Bebek" id="ek-bebek" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
+                                <div class="flex flex-col gap-1"><span class="text-[8px] font-bold uppercase">Çocuk Koltuğu</span><select name="Ek_Cocuk" id="ek-cocuk" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
+                                <div class="flex flex-col gap-1"><span class="text-[8px] font-bold uppercase">Bisiklet</span><select name="Ek_Bisiklet" id="ek-bisiklet" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
+                                <div class="flex flex-col gap-1"><span class="text-[8px] font-bold uppercase">Ek Bagaj</span><select name="Ek_Bagaj" id="ek-bagaj" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
                             </div>
                         </div>
                         <div class="p-7 bg-gray-900 rounded-[28px] text-white flex justify-between items-center shadow-xl uppercase">
-                            <span data-i18n="modal_label_total" class="font-black text-[10px] tracking-widest text-gray-400">Toplam Tutar</span>
+                            <span class="font-black text-[10px] tracking-widest text-gray-400">Toplam Tutar</span>
                             <span id="final-total-display" class="text-4xl font-black text-accent tracking-tighter italic">-- EUR</span>
                         </div>
-                        <button type="button" onclick="window.showStep(2)" data-i18n="modal_btn_next" class="w-full mt-8 py-5 bg-primary text-white rounded-3xl font-black uppercase text-xs tracking-widest shadow-2xl active:scale-95 transition">İlerle</button>
+                        <button type="button" onclick="window.showStep(2)" class="w-full mt-8 py-5 bg-primary text-white rounded-3xl font-black uppercase text-xs tracking-widest shadow-2xl active:scale-95 transition">İlerle</button>
                     </div>
                     <div id="modal-step2" class="hidden space-y-8">
-                        <input type="text" name="Isim" required data-i18n="modal_placeholder_name" placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 border-gray-200 p-5 font-black uppercase text-xl outline-none focus:border-primary">
-                        <input type="tel" name="Telefon" required data-i18n="modal_placeholder_whatsapp" placeholder="WHATSAPP" class="w-full border-b-2 border-gray-200 p-5 outline-none focus:border-primary font-black uppercase">
+                        <input type="text" name="Isim" required placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 border-gray-200 p-5 font-black uppercase text-xl outline-none focus:border-primary">
+                        <input type="tel" name="Telefon" required placeholder="WHATSAPP" class="w-full border-b-2 border-gray-200 p-5 outline-none focus:border-primary font-black uppercase">
                         <div class="grid grid-cols-2 gap-4">
-                            <button type="button" onclick="window.showStep(1)" data-i18n="modal_btn_back" class="py-5 bg-slate-100 text-primary rounded-3xl font-black text-xs uppercase">Geri</button>
-                            <button type="submit" data-i18n="modal_btn_submit_transfer" class="py-5 bg-accent text-white rounded-3xl font-black text-xs uppercase shadow-xl hover:bg-accentHover transition">Ön Rezervasyon Al</button>
+                            <button type="button" onclick="window.showStep(1)" class="py-5 bg-slate-100 text-primary rounded-3xl font-black text-xs uppercase">Geri</button>
+                            <button type="submit" class="py-5 bg-accent text-white rounded-3xl font-black text-xs uppercase shadow-xl hover:bg-accentHover transition">Ön Rezervasyon Al</button>
                         </div>
                     </div>
                 </form>
@@ -296,8 +281,8 @@
                 <form id="genericRequestForm" onsubmit="window.submitService(event, document.getElementById('hidden-service-type').value)" class="space-y-6">
                     <input type="hidden" id="hidden-service-type">
                     <div id="flight-fields" class="hidden space-y-6">
-                        <input type="text" name="Nereden" data-i18n="modal_placeholder_from" placeholder="NEREDEN?" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
-                        <input type="text" name="Nereye" data-i18n="modal_placeholder_to" placeholder="NEREYE?" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                        <input type="text" name="Nereden" placeholder="NEREDEN?" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                        <input type="text" name="Nereye" placeholder="NEREYE?" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
                         <input type="date" name="Tarih" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
                     </div>
                     <div id="hotel-fields" class="hidden space-y-6">
@@ -309,27 +294,27 @@
                         <input type="hidden" name="Gunluk_Fiyat" id="car-price-hidden">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 uppercase font-black text-xs">
                             <div class="flex flex-col gap-2">
-                                <span data-i18n="modal_label_pickup_date">Alış</span>
+                                <span>Alış</span>
                                 <input type="date" name="Alis_Tarihi" id="calc-alis-date" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black">
                                 <input type="time" name="Alis_Saati" id="calc-alis-time" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black">
                             </div>
                             <div class="flex flex-col gap-2">
-                                <span data-i18n="modal_label_return_date">İade</span>
+                                <span>İade</span>
                                 <input type="date" name="Iade_Tarihi" id="calc-iade-date" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black">
                                 <input type="time" name="Iade_Saati" id="calc-iade-time" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black">
                             </div>
                         </div>
                         <div class="p-6 bg-slate-900 rounded-3xl text-white flex justify-between items-center shadow-xl uppercase">
-                            <span data-i18n="modal_label_total" class="text-[10px] tracking-widest text-gray-400 font-black">Toplam Tutar</span>
+                            <span class="text-[10px] tracking-widest text-gray-400 font-black">Toplam Tutar</span>
                             <span id="rental-total-display" class="text-3xl font-black text-accent tracking-tighter italic">-- EUR</span>
                         </div>
-                        <input type="text" name="Alis_Noktasi" data-i18n="modal_placeholder_delivery" placeholder="TESLİMAT ADRESİ" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                        <input type="text" name="Alis_Noktasi" placeholder="TESLİMAT ADRESİ" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
                     </div>
                     <div class="border-t-2 pt-6 space-y-6">
-                        <input type="text" name="Isim" required data-i18n="modal_placeholder_name" placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 p-4 outline-none focus:border-primary uppercase font-black">
-                        <input type="tel" name="Telefon" required data-i18n="modal_placeholder_whatsapp" placeholder="WHATSAPP" class="w-full border-b-2 p-4 outline-none focus:border-primary font-black uppercase">
+                        <input type="text" name="Isim" required placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 p-4 outline-none focus:border-primary uppercase font-black">
+                        <input type="tel" name="Telefon" required placeholder="WHATSAPP" class="w-full border-b-2 p-4 outline-none focus:border-primary font-black uppercase">
                     </div>
-                    <button type="submit" class="w-full py-5 bg-accent text-white rounded-3xl uppercase shadow-2xl tracking-[0.2em] font-black text-xs hover:bg-accentHover transition"><span data-i18n="modal_btn_create_doc">Belgeyi Oluştur</span> <i class="fa-solid fa-file-invoice ml-2"></i></button>
+                    <button type="submit" class="w-full py-5 bg-accent text-white rounded-3xl uppercase shadow-2xl tracking-[0.2em] font-black text-xs hover:bg-accentHover transition">Belgeyi Oluştur <i class="fa-solid fa-file-invoice ml-2"></i></button>
                 </form>
             </div>
         </div>
@@ -339,7 +324,7 @@
         <div class="bg-white w-full max-w-5xl rounded-[32px] shadow-2xl relative overflow-hidden flex flex-col max-h-[92vh]">
             <button type="button" onclick="window.closeCarRentalModal()" class="absolute top-6 right-7 text-white/70 text-3xl z-20 hover:text-white transition" aria-label="Kapat">&times;</button>
             <div class="bg-primary p-8 text-white text-center uppercase tracking-widest font-black shadow-lg">
-                <h2 data-i18n="service_car" class="text-2xl tracking-tighter">Araç Kiralama</h2>
+                <h2 class="text-2xl tracking-tighter">Araç Kiralama</h2>
             </div>
             <div class="p-6 md:p-10 overflow-y-auto modal-scroll">
                 <div id="car-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
@@ -350,72 +335,42 @@
     <div id="confirmModalOverlay" class="fixed inset-0 bg-black/90 z-[250] hidden justify-center items-center backdrop-blur-xl p-4 overflow-y-auto">
         <div class="bg-white w-full max-w-xl rounded-[36px] shadow-2xl relative flex flex-col p-6 md:p-10 my-10 border-8 border-accent/20 text-dark">
             <button type="button" onclick="window.closeConfirmModal()" class="absolute top-7 right-9 text-gray-300 text-4xl hover:text-primary transition" aria-label="Kapat">&times;</button>
-            
-            <div id="pdf-container" style="background-color: #ffffff; padding: 25px; font-family: Arial, sans-serif; color: #111111; border: 1px solid #eeeeee; border-radius: 12px;">
-                <div style="border-bottom: 2px dashed #1E3A8A; padding-bottom: 25px; text-align: center; margin-bottom: 25px;">
-                    <h2 style="font-weight: 900; font-size: 26px; margin: 0; color: #1E3A8A; letter-spacing: -1px;">MOONCHILL<span style="color: #F59E0B; margin-left: 4px;">TRAVEL</span></h2>
-                    <p id="pdf-label-title" style="font-size: 11px; margin: 12px 0; color: #666666; letter-spacing: 5px; font-weight: bold; text-transform: uppercase;">Ön Rezervasyon Belgesi</p>
-                    <div id="pdf-label-status" style="margin-top: 10px; display: inline-block; padding: 6px 24px; background-color: #eff6ff; color: #1E3A8A; font-weight: bold; border-radius: 20px; font-size: 11px; border: 1px solid #dbeafe; text-transform: uppercase;">Talebiniz Alındı</div>
+            <div id="pdf-container" class="bg-white p-4">
+                <div class="flex flex-col items-center mb-10 border-b pb-10 text-center text-primary uppercase font-black tracking-widest">
+                    <h2 class="text-2xl text-dark tracking-tighter">MOONCHILL<span class="text-accent ml-1">TRAVEL</span></h2>
+                    <p id="pdf-label-title" class="text-[10px] mt-4 tracking-[0.5em] text-gray-400">Ön Rezervasyon Belgesi</p>
+                    <div id="pdf-label-status" class="mt-6 px-8 py-2 bg-blue-50 rounded-full text-[10px] shadow-sm">Talebiniz Alındı</div>
                 </div>
-
-                <div style="text-transform: uppercase; font-size: 12px;">
-                    <div style="margin-bottom: 15px;">
-                        <span id="pdf-label-name" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px; text-transform: uppercase;">Müşteri / Customer</span>
-                        <p id="res-name" style="font-weight: bold; font-size: 16px; margin: 0; color: #111111;">--</p>
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <span id="pdf-label-contact" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px; text-transform: uppercase;">İletişim / Contact</span>
-                        <p id="res-tel" style="font-weight: bold; font-size: 16px; margin: 0; color: #111111;">--</p>
-                    </div>
-                    <div style="padding: 15px; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 10px; margin-bottom: 20px;">
-                        <span id="pdf-label-route" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 5px; text-transform: uppercase;">Rezervasyon Detayı</span>
-                        <p id="res-route" style="font-weight: bold; color: #111111; font-size: 13px; margin: 0; line-height: 1.4;">--</p>
-                    </div>
-                    <div style="margin-bottom: 15px;">
-                        <span id="pdf-label-veh" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px; text-transform: uppercase;">Hizmet / Service</span>
-                        <p id="res-veh" style="font-weight: bold; color: #1E3A8A; font-size: 13px; margin: 0;">--</p>
-                    </div>
-                    <div style="margin-bottom: 25px;">
-                        <span id="pdf-label-date" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px; text-transform: uppercase;">Zaman / Date</span>
-                        <p id="res-date" style="font-weight: bold; color: #111111; font-size: 13px; margin: 0;">--</p>
-                    </div>
-                    
-                    <div style="padding: 15px; background-color: #1E3A8A; color: #ffffff; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                        <span id="pdf-label-total-side" style="font-weight: bold; font-size: 11px; color: #bfdbfe; letter-spacing: 2px; text-transform: uppercase;">Toplam:</span>
-                        <span id="res-price" style="font-size: 30px; font-weight: 900; color: #F59E0B; font-style: italic; margin: 0;">--</span>
-                    </div>
+                <div class="grid grid-cols-2 gap-y-8 gap-x-6 text-[11px] uppercase">
+                    <div><span id="pdf-label-name" class="block text-[8px] text-gray-400 mb-2 font-black">Müşteri / Customer</span><p id="res-name" class="font-black text-dark text-base tracking-tighter leading-none">--</p></div>
+                    <div><span id="pdf-label-contact" class="block text-[8px] text-gray-400 mb-2 font-black">İletişim / Contact</span><p id="res-tel" class="font-black text-dark text-base tracking-tighter leading-none">--</p></div>
+                    <div class="col-span-2 p-6 bg-gray-50 rounded-[28px] border border-gray-100 flex flex-col gap-2 shadow-sm"><span id="pdf-label-route" class="text-[9px] text-gray-400 font-black">Rezervasyon Detayı</span><p id="res-route" class="font-black text-dark text-xs leading-relaxed">--</p></div>
+                    <div><span id="pdf-label-veh" class="block text-[8px] text-gray-400 mb-2 font-black">Hizmet / Service</span><p id="res-veh" class="font-black text-primary text-[10px]">--</p></div>
+                    <div><span id="pdf-label-date" class="block text-[8px] text-gray-400 mb-2 font-black">Zaman / Date</span><p id="res-date" class="font-black text-dark text-[10px]">--</p></div>
+                    <div class="col-span-2 p-6 bg-primary rounded-[28px] text-white flex justify-between items-center shadow-2xl shadow-primary/20"><span id="pdf-label-total-side" class="font-black text-[10px] tracking-widest text-blue-100">Toplam:</span><span id="res-price" class="text-4xl font-black text-accent tracking-tighter italic">--</span></div>
                 </div>
-
-                <p id="pdf-label-payment" style="font-size: 9px; color: #1E3A8A; text-align: center; margin-top: 35px; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 20px; text-transform: uppercase; font-weight: bold;">* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.</p>
-                <div id="pdf-label-footer" style="margin-top: 15px; font-size: 9px; text-align: center; color: #888888; font-weight: bold; letter-spacing: 0.5px; line-height: 1.4; text-transform: uppercase;">MOONCHILL TRAVEL - KIZILARIK MAH. 2769. SOK. NO:28 MURATPAŞA/ANTALYA | +90 532 496 66 24</div>
+                <p id="pdf-label-payment" class="text-[8px] text-primary mt-10 font-black text-center italic tracking-widest leading-relaxed uppercase border-t border-dashed pt-8">* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.</p>
+                <div id="pdf-label-footer" class="mt-8 text-[9px] text-center text-gray-400 font-black uppercase italic tracking-widest">Antalya | +90 532 496 66 24</div>
             </div>
-
-            <div class="mt-6 space-y-3 font-black text-xs uppercase tracking-wider">
-                <button id="res-wa-btn" type="button" class="w-full py-5 bg-green-500 hover:bg-green-600 text-white rounded-2xl flex items-center justify-center gap-4 transition active:scale-95 shadow-xl shadow-green-500/20">
-                    <span data-i18n="modal_btn_whatsapp_confirm">WhatsApp'tan Talebi Acenteye Gönder</span> <i class="fa-brands fa-whatsapp text-2xl"></i>
-                </button>
-                
-                <button type="button" onclick="window.downloadPDF()" class="w-full py-5 bg-primary hover:bg-primaryHover text-white rounded-2xl flex items-center justify-center gap-4 transition active:scale-95 shadow-xl shadow-primary/20">
-                    <i class="fa-solid fa-file-pdf text-2xl text-accent"></i> <span id="btn-pdf-label" data-i18n="btn_pdf_label">Rezervasyon Belgesini İndir (PDF)</span>
-                </button>
-            </div>
+            <button type="button" onclick="window.downloadPDF()" class="w-full py-5 bg-primary text-white rounded-3xl font-black uppercase text-[11px] mt-10 shadow-2xl flex items-center justify-center gap-4 transition hover:scale-105 active:scale-95 tracking-widest shadow-primary/30"><i class="fa-solid fa-file-pdf text-2xl text-accent"></i> <span id="btn-pdf-label">İndir</span></button>
+            <button id="res-wa-btn" type="button" class="w-full py-5 bg-green-500 text-white rounded-3xl font-black uppercase text-[11px] mt-4 flex items-center justify-center gap-4 transition hover:scale-105 active:scale-95 tracking-widest shadow-green-500/30">WhatsApp'tan Onayla <i class="fa-brands fa-whatsapp text-2xl"></i></button>
         </div>
     </div>
 
     <div id="adminModalOverlay" class="fixed inset-0 bg-black/80 z-[240] hidden justify-center items-center backdrop-blur-md p-4 text-dark">
         <div class="bg-white w-full max-w-4xl rounded-[32px] shadow-2xl relative overflow-hidden flex flex-col max-h-[92vh]">
             <button type="button" onclick="window.closeAdminModal()" class="absolute top-6 right-7 text-white/70 text-3xl z-20 hover:text-white transition" aria-label="Kapat">&times;</button>
-            <div class="bg-primary p-8 text-white text-center uppercase tracking-widest font-black shadow-lg"><h2 data-i18n="admin_panel_title" class="text-2xl tracking-tighter">Acente Paneli</h2></div>
+            <div class="bg-primary p-8 text-white text-center uppercase tracking-widest font-black shadow-lg"><h2 class="text-2xl tracking-tighter">Acente Paneli</h2></div>
             <div class="p-8 md:p-10 overflow-y-auto modal-scroll">
                 <div id="admin-login-sec" class="max-w-md mx-auto space-y-5">
-                    <input id="admin-user" type="text" data-i18n="admin_placeholder_user" placeholder="KULLANICI ADI" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
-                    <input id="admin-pass" type="password" data-i18n="admin_placeholder_pass" placeholder="ŞİFRE" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
-                    <button type="button" onclick="window.checkAdminLogin()" data-i18n="admin_btn_login" class="w-full py-5 bg-primary text-white rounded-3xl font-black uppercase text-xs tracking-widest">Giriş Yap</button>
+                    <input id="admin-user" type="text" placeholder="KULLANICI ADI" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                    <input id="admin-pass" type="password" placeholder="ŞİFRE" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                    <button type="button" onclick="window.checkAdminLogin()" class="w-full py-5 bg-primary text-white rounded-3xl font-black uppercase text-xs tracking-widest">Giriş Yap</button>
                 </div>
                 <div id="admin-dashboard" class="hidden">
                     <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between mb-8">
-                        <h3 data-i18n="admin_sec_title" class="text-2xl font-black text-primary uppercase tracking-tighter">Rezervasyonlar</h3>
-                        <button type="button" onclick="window.clearReservations()" data-i18n="admin_btn_clear" class="px-5 py-3 bg-slate-100 text-primary rounded-2xl text-xs font-black uppercase">Listeyi Temizle</button>
+                        <h3 class="text-2xl font-black text-primary uppercase tracking-tighter">Rezervasyonlar</h3>
+                        <button type="button" onclick="window.clearReservations()" class="px-5 py-3 bg-slate-100 text-primary rounded-2xl text-xs font-black uppercase">Listeyi Temizle</button>
                     </div>
                     <div id="admin-table-body" class="space-y-4"></div>
                 </div>
@@ -446,127 +401,77 @@
             "İSTANBUL": [400, 600, 850]
         };
 
-        const destDisplayNames = {
-            TR: {
-                "ALANYA": "Alanya", "Antalya Şehir Merkezi": "Antalya Şehir Merkezi", "Lara": "Lara", "Kundu": "Kundu", "Belek": "Belek", "Kemer": "Kemer", "Beldibi": "Beldibi", "Göynük": "Göynük", "Çamyuva": "Çamyuva", "Tekirova": "Tekirova", "MARMARİS": "Marmaris", "GÖCEK": "Göcek", "ÖLÜDENİZ": "Ölüdeniz", "Fethiye": "Fethiye", "İZMİR": "İzmir", "İSTANBUL": "İstanbul"
-            },
-            EN: {
-                "ALANYA": "Alanya", "Antalya Şehir Merkezi": "Antalya City Center", "Lara": "Lara", "Kundu": "Kundu", "Belek": "Belek", "Kemer": "Kemer", "Beldibi": "Beldibi", "Göynük": "Goynuk", "Çamyuva": "Camyuva", "Tekirova": "Tekirova", "MARMARİS": "Marmaris", "GÖCEK": "Gocek", "ÖLÜDENİZ": "Oludeniz", "Fethiye": "Fethiye", "İZMİR": "Izmir", "İSTANBUL": "Istanbul"
-            },
-            DE: {
-                "ALANYA": "Alanya", "Antalya Şehir Merkezi": "Antalya Stadtzentrum", "Lara": "Lara", "Kundu": "Kundu", "Belek": "Belek", "Kemer": "Kemer", "Beldibi": "Beldibi", "Göynük": "Goynuk", "Çamyuva": "Camyuva", "Tekirova": "Tekirova", "MARMARİS": "Marmaris", "GÖCEK": "Gocek", "ÖLÜDENİZ": "Oludeniz", "Fethiye": "Fethiye", "İZMİR": "Izmir", "İSTANBUL": "Istanbul"
-            },
-            RU: {
-                "ALANYA": "Аланья", "Antalya Şehir Merkezi": "Центр Анталии", "Lara": "Лара", "Kundu": "Кунду", "Belek": "Белек", "Kemer": "Кемер", "Beldibi": "Бельдиби", "Göynük": "Гейнюк", "Çamyuva": "Чамьюва", "Tekirova": "Текирова", "MARMARİS": "Мармарис", "GÖCEK": "Гечек", "ÖLÜDENİZ": "Олюдениз", "Fethiye": "Фетхие", "İZMİR": "Измир", "İSTANBUL": "Стамбул"
-            }
-        };
-
         const carFleet = [
-            { name: "Fiat Egea", type_tr: "Ekonomik", type_en: "Economic", type_de: "Ökonomisch", type_ru: "Эконом", price: 55 },
-            { name: "Renault Clio", type_tr: "Ekonomik", type_en: "Economic", type_de: "Ökonomisch", type_ru: "Эконом", price: 55 },
-            { name: "Toyota Corolla", type_tr: "Konfor", type_en: "Comfort", type_de: "Komfort", type_ru: "Комфорт", price: 85 },
-            { name: "VW T-Roc", type_tr: "SUV", type_en: "SUV", type_de: "SUV", type_ru: "Внедорожник", price: 100 },
-            { name: "Dacia Duster", type_tr: "SUV", type_en: "SUV", type_de: "SUV", type_ru: "Внедорожник", price: 85 },
-            { name: "Mercedes C-Class", type_tr: "Lüks", type_en: "Luxury", type_de: "Luxus", type_ru: "Люкс", price: 140 }
+            { name: "Fiat Egea", type: "Economic", price: 55 },
+            { name: "Renault Clio", type: "Economic", price: 55 },
+            { name: "Toyota Corolla", type: "Comfort", price: 85 },
+            { name: "VW T-Roc", type: "SUV", price: 100 },
+            { name: "Dacia Duster", type: "SUV", price: 85 },
+            { name: "Mercedes C-Class", type: "Luxury", price: 140 }
         ];
 
         const recommendedItems = [
-            { title_tr: "AYT > Belek VIP", title_en: "AYT > Belek VIP", title_de: "AYT > Belek VIP", title_ru: "AYT > Белек VIP", sub_tr: "Minivan Konforu", sub_en: "Minivan Comfort", sub_de: "Minivan-Komfort", sub_ru: "Комфорт минивэна", price: "45 EUR", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Antalya Havalimanı (AYT)', 'Belek', 'VIP Minivan'), button_tr: "Seç", button_en: "Select", button_de: "Auswählen", button_ru: "Выбрать" },
-            { title_tr: "Toyota Corolla", title_en: "Toyota Corolla", title_de: "Toyota Corolla", title_ru: "Toyota Corolla", sub_tr: "Günün Fırsatı", sub_en: "Deal of the Day", sub_de: "Angebot des Tages", sub_ru: "Предложение дня", price: "85 EUR", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=600", action: () => window.openCarBookingFlow('Toyota Corolla', 85), button_tr: "Kirala", button_en: "Rent", button_de: "Mieten", button_ru: "Аrenдовать" },
-            { title_tr: "DLM > Fethiye", title_en: "DLM > Fethiye", title_de: "DLM > Fethiye", title_ru: "DLM > Фетхие", sub_tr: "Ege'ye VIP Geçiş", sub_en: "VIP Aegean Pass", sub_de: "VIP Ägäis-Pass", sub_ru: "VIP Эгейский пасс", price: "115 EUR", image: "https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Dalaman Havalimanı (DLM)', 'Fethiye', 'VIP Sedan'), button_tr: "Ayırt", button_en: "Book", button_de: "Buchen", button_ru: "Забронировать" },
-            { title_tr: "Lara Otelleri", title_en: "Lara Hotels", title_de: "Lara Hotels", title_ru: "Отели Лары", sub_tr: "Özel İndirim", sub_en: "Special Discount", sub_de: "Sonderrabatt", sub_ru: "Специальная скидка", price: "Teklif Al", price_en: "Get Quote", price_de: "Angebot", price_ru: "Цена по запросу", image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600", action: () => window.openGenericModal('hotel'), button_tr: "Bak", button_en: "View", button_de: "Ansehen", button_ru: "Смотреть" }
+            { title: "AYT > Belek VIP", sub: "Minivan Konforu", price: "45 EUR", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Antalya Havalimanı (AYT)', 'Belek', 'VIP Minivan'), button: "Seç" },
+            { title: "Toyota Corolla", sub: "Günün Fırsatı", price: "85 EUR", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=600", action: () => window.openCarBookingFlow('Toyota Corolla', 85), button: "Kirala" },
+            { title: "DLM > Fethiye", sub: "Ege'ye VIP Geçiş", price: "115 EUR", image: "https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Dalaman Havalimanı (DLM)', 'Fethiye', 'VIP Sedan'), button: "Ayırt" },
+            { title: "Lara Hotels", sub: "Özel İndirim", price: "Teklif Al", image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600", action: () => window.openGenericModal('hotel'), button: "Bak" }
         ];
 
-        const pageTranslations = {
+        const i18n = {
             TR: {
-                nav_home: "Ana Sayfa", nav_services: "Hizmetlerimiz", nav_recommended: "Önerilenler", nav_fares: "Fiyatlar", btn_booking: "Rezervasyon",
-                hero_title: 'TATİLİN <span class="text-accent italic">EN VIP</span> HALİ', hero_subtitle: "Transferden kiralık araca kadar tüm seyahat planınız tek bir çatıda.",
-                label_pickup: "Alış Yeri", label_dropoff: "Varış Bölgesi", label_date: "Tarih", btn_view_price: "Fiyatı Gör", opt_ayt: "Antalya (AYT)", opt_dlm: "Dalaman (DLM)",
-                section_services: "Hizmetlerimiz", service_flight: "Uçak Bileti", service_hotel: "Otel", service_car: "Araç Kiralama", btn_pre_booking: "Ön Rezervasyon", btn_book_now: "Rezervasyon Yap", btn_view_models: "Modelleri Gör",
-                section_recommended: "Sizin İçin Önerdiklerimiz", subtitle_recommended: "En Popüler VIP Fırsatları", section_fleet: "Transfer Filomuz", btn_reserve: "Ayırt", section_fares: "Detaylı Fiyat Listesi",
-                th_dropoff: "Varış Bölgesi", th_sedan: "Sedan", th_minivan: "Minivan", th_minibus: "Minibüs", th_reserve: "Ayırt",
-                footer_desc: "Profesyonel transfer ve seyahat acenteniz.", footer_menu_title: "Hızlı Menü", footer_admin_login: "Acente Girişi", footer_contact_title: "İletişim", footer_copyright: "&copy; 2026 Moonchill Global VIP",
-                footer_address_text: "Kızılarık Mah. 2769. Sok. No:28 Muratpaşa/ANTALYA",
-                modal_transfer_title: "VIP Rezervasyon", modal_step1_title: "Planlama", modal_step2_title: "İletişim", modal_label_extras: "Ek Hizmetler (+5 EUR)", modal_extra_baby: "Bebek Koltuğu", modal_extra_child: "Çocuk Koltuğu", modal_extra_bike: "Bisiklet", modal_extra_baggage: "Ek Bagaj", modal_label_total: "Toplam Tutar", modal_btn_next: "İlerle", modal_placeholder_name: "ADINIZ SOYADINIZ", modal_placeholder_whatsapp: "WHATSAPP", modal_btn_back: "Geri", modal_btn_submit_transfer: "Ön Rezervasyon Al",
-                modal_placeholder_from: "NEREDEN?", modal_placeholder_to: "NEREYE?", modal_label_pickup_date: "Alış", modal_label_return_date: "İade", modal_placeholder_delivery: "TESLİMAT ADRESİ", modal_btn_create_doc: "Belgeyi Oluştur", modal_btn_whatsapp_confirm: "WhatsApp'tan Talebi Acenteye Gönder", btn_pdf_label: "Rezervasyon Belgesini İndir (PDF)",
-                admin_panel_title: "Acente Paneli", admin_placeholder_user: "KULLANICI ADI", admin_placeholder_pass: "ŞİFRE", admin_btn_login: "Giriş Yap", admin_sec_title: "Rezervasyonlar", admin_btn_clear: "Listeyi Temizle", admin_no_res: "Henüz rezervasyon yok."
+                title: "Ön Rezervasyon Belgesi",
+                status: "Talebiniz Alındı",
+                name: "Müşteri / Customer",
+                contact: "İletişim / Contact",
+                route: "Rezervasyon Detayı",
+                veh: "Hizmet / Service",
+                date: "Zaman / Date",
+                total: "Toplam:",
+                payment: "* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.",
+                footer: "Antalya | +90 532 496 66 24",
+                btn: "İndir"
             },
             EN: {
-                nav_home: "Home", nav_services: "Our Services", nav_recommended: "Recommended", nav_fares: "Fares", btn_booking: "Book Now",
-                hero_title: 'THE MOST <span class="text-accent italic">VIP WAY</span> OF VACATION', hero_subtitle: "Your entire travel plan from transfer to car rental under one roof.",
-                label_pickup: "Pickup Location", label_dropoff: "Drop-off Region", label_date: "Date", btn_view_price: "View Price", opt_ayt: "Antalya Airport (AYT)", opt_dlm: "Dalaman Airport (DLM)",
-                section_services: "Our Services", service_flight: "Flight Ticket", service_hotel: "Hotel", service_car: "Car Rental", btn_pre_booking: "Pre-Booking", btn_book_now: "Book Room", btn_view_models: "View Models",
-                section_recommended: "Recommended For You", subtitle_recommended: "Most Popular VIP Deals", section_fleet: "Our Transfer Fleet", btn_reserve: "Book", section_fares: "Detailed Price List",
-                th_dropoff: "Drop-off Region", th_sedan: "Sedan", th_minivan: "Minivan", th_minibus: "Minibus", th_reserve: "Book",
-                footer_desc: "Your professional transfer and travel agency.", footer_menu_title: "Quick Menu", footer_admin_login: "Agency Login", footer_contact_title: "Contact", footer_copyright: "&copy; 2026 Moonchill Global VIP",
-                footer_address_text: "Kizilarik Mah. 2769. St. No:28 Muratpasa, Antalya / Turkey",
-                modal_transfer_title: "VIP Booking", modal_step1_title: "Planning", modal_step2_title: "Contact", modal_label_extras: "Extra Services (+5 EUR)", modal_extra_baby: "Baby Seat", modal_extra_child: "Child Seat", modal_extra_bike: "Bicycle", modal_extra_baggage: "Extra Luggage", modal_label_total: "Total Amount", modal_btn_next: "Next", modal_placeholder_name: "YOUR NAME & SURNAME", modal_placeholder_whatsapp: "WHATSAPP NUMBER", modal_btn_back: "Back", modal_btn_submit_transfer: "Get Pre-Reservation",
-                modal_placeholder_from: "FROM WHERE?", modal_placeholder_to: "TO WHERE?", modal_label_pickup_date: "Pickup", modal_label_return_date: "Return", modal_placeholder_delivery: "DELIVERY ADDRESS", modal_btn_create_doc: "Create Document", modal_btn_whatsapp_confirm: "Send Booking Request to Agency via WhatsApp", btn_pdf_label: "Download Reservation Document (PDF)",
-                admin_panel_title: "Agency Panel", admin_placeholder_user: "USERNAME", admin_placeholder_pass: "PASSWORD", admin_btn_login: "Login", admin_sec_title: "Reservations", admin_btn_clear: "Clear List", admin_no_res: "No reservations yet."
-            },
-            DE: {
-                nav_home: "Startseite", nav_services: "Unsere Dienste", nav_recommended: "Empfohlen", nav_fares: "Preise", btn_booking: "Buchen",
-                hero_title: 'DIE <span class="text-accent italic">VIP-ART</span> IHRES URLAUBS', hero_subtitle: "Ihre gesamte Reiseplanung vom Transfer bis zur Autovermietung unter einem Dach.",
-                label_pickup: "Abholort", label_dropoff: "Zielregion", label_date: "Datum", btn_view_price: "Preis Anzeigen", opt_ayt: "Flughafen Antalya (AYT)", opt_dlm: "Flughafen Dalaman (DLM)",
-                section_services: "Unsere Dienste", service_flight: "Flugticket", service_hotel: "Hotel", service_car: "Autovermietung", btn_pre_booking: "Vorreservierung", btn_book_now: "Zimmer Buchen", btn_view_models: "Modelle Anzeigen",
-                section_recommended: "Für Sie Empfohlen", subtitle_recommended: "Beliebteste VIP-Angebote", section_fleet: "Unsere Transferflotte", btn_reserve: "Buchen", section_fares: "Detaillierte Preisliste",
-                th_dropoff: "Zielregion", th_sedan: "Limousine", th_minivan: "Minivan", th_minibus: "Minibus", th_reserve: "Buchen",
-                footer_desc: "Ihr professioneller Transfer- und Reisedienstleister.", footer_menu_title: "Schnellmenü", footer_admin_login: "Agentur-Login", footer_contact_title: "Kontakt", footer_copyright: "&copy; 2026 Moonchill Global VIP",
-                footer_address_text: "Kizilarik Mah. 2769. Str. No:28 Muratpasa, Antalya / Türkei",
-                modal_transfer_title: "VIP-Buchung", modal_step1_title: "Planung", modal_step2_title: "Kontakt", modal_label_extras: "Zusatzleistungen (+5 EUR)", modal_extra_baby: "Babysitz", modal_extra_child: "Kindersitz", modal_extra_bike: "Fahrrad", modal_extra_baggage: "Zusatzgepäck", modal_label_total: "Gesamtbetrag", modal_btn_next: "Weiter", modal_placeholder_name: "IHR VOR- & NACHNAME", modal_placeholder_whatsapp: "WHATSAPP-NUMMER", modal_btn_back: "Zurück", modal_btn_submit_transfer: "Vorreservierung Erhalten",
-                modal_placeholder_from: "VON WO?", modal_placeholder_to: "WOHIN?", modal_label_pickup_date: "Abholung", modal_label_return_date: "Rückgabe", modal_placeholder_delivery: "LIEFERADRESSE", modal_btn_create_doc: "Dokument Erstellen", modal_btn_whatsapp_confirm: "Buchungsanfrage per WhatsApp an Agentur senden", btn_pdf_label: "Reservierungsdokument herunterladen (PDF)",
-                admin_panel_title: "Agentur-Panel", admin_placeholder_user: "BENUTZERNAME", admin_placeholder_pass: "PASSWORT", admin_btn_login: "Login", admin_sec_title: "Reservierungen", admin_btn_clear: "Liste Leeren", admin_no_res: "Noch keine Reservierungen."
-            },
-            RU: {
-                nav_home: "Главная", nav_services: "Услуги", nav_recommended: "Рекомендуем", nav_fares: "Цены", btn_booking: "Забронировать",
-                hero_title: '<span class="text-accent italic">VIP-ВАРИАНТ</span> ВАШЕГО ОТДЫХА', hero_subtitle: "Весь ваш plan путешествия от трансфера до аренды автомобиля под одной крышей.",
-                label_pickup: "Место посадки", label_dropoff: "Регион прибытия", label_date: "Дата", btn_view_price: "Показать цену", opt_ayt: "Аэропорт Анталии (AYT)", opt_dlm: "Аэропорт Даламан (DLM)",
-                section_services: "Наши услуги", service_flight: "Авиабилет", service_hotel: "Отель", service_car: "Прокат авто", btn_pre_booking: "Предварительная бронь", btn_book_now: "Забронировать номер", btn_view_models: "Посмотреть модели",
-                section_recommended: "Мы рекомендуем", subtitle_recommended: "Самые популярные VIP предложения", section_fleet: "Наш автопарк", btn_reserve: "Заказать", section_fares: "Подробный прайс-лист",
-                th_dropoff: "Регион прибытия", th_sedan: "Седан", th_minivan: "Минивэн", th_minibus: "Миниавтобус", th_reserve: "Заказать",
-                footer_desc: "Ваше профессиональное трансферное и туристическое агентство.", footer_menu_title: "Быстрое меню", footer_admin_login: "Вход для агентов", footer_contact_title: "Контакты", footer_copyright: "&copy; 2026 Moonchill Global VIP",
-                footer_address_text: "Кызыларык Мах. 2769. Ул. Номер:28 Муратпаша, Анталья / Турция",
-                modal_transfer_title: "VIP Бронирование", modal_step1_title: "Планирование", modal_step2_title: "Контакты", modal_label_extras: "Доп. услуги (+5 EUR)", modal_extra_baby: "Детское кресло", modal_extra_child: "Детское сиденье", modal_extra_bike: "Велосипед", modal_extra_baggage: "Доп. багаж", modal_label_total: "Общая сумма", modal_btn_next: "Далее", modal_placeholder_name: "ВАШЕ ИМЯ И ФАМИЛИЯ", modal_placeholder_whatsapp: "НОМЕР WHATSAPP", modal_btn_back: "Назад", modal_btn_submit_transfer: "Получить предбронь",
-                modal_placeholder_from: "ОТКУДА?", modal_placeholder_to: "КУДА?", modal_label_pickup_date: "Забрать", modal_label_return_date: "Вернуть", modal_placeholder_delivery: "АДРЕС ДОСТАВКИ", modal_btn_create_doc: "Создать документ", modal_btn_whatsapp_confirm: "Отправить запрос на бронирование в агентство через WhatsApp", btn_pdf_label: "Скачать документ бронирования (PDF)",
-                admin_panel_title: "Панель агента", admin_placeholder_user: "ИМЯ ПОЛЬЗОВАТЕЛЯ", admin_placeholder_pass: "ПАРОЛЬ", admin_btn_login: "Войти", admin_sec_title: "Бронирования", admin_btn_clear: "Очистить список", admin_no_res: "Бронирований пока нет."
-            }
-        };
-
-        const i18nPDF = {
-            TR: {
-                title: "Ön Rezervasyon Belgesi", status: "Talebiniz Alındı", name: "Müşteri / Customer", contact: "İletişim / Contact", route: "Rezervasyon Detayı", veh: "Hizmet / Service", date: "Zaman / Date", total: "Toplam:", payment: "* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.", footer: "MOONCHILL TRAVEL - KIZILARIK MAH. 2769. SOK. NO:28 MURATPAŞA/ANTALYA | +90 532 496 66 24", btn: "İndir"
-            },
-            EN: {
-                title: "Pre-Reservation Document", status: "Request Received", name: "Customer", contact: "Contact", route: "Reservation Detail", veh: "Service", date: "Date / Time", total: "Total:", payment: "* Payment will be collected by cash or card at service start.", footer: "MOONCHILL TRAVEL - KIZILARIK MAH. 2769. ST. NO:28 MURATPASA, ANTALYA / TURKEY | +90 532 496 66 24", btn: "Download"
-            },
-            DE: {
-                title: "Vorreservierungsdokument", status: "Anfrage Erhalten", name: "Kunde / Customer", contact: "Kontakt / Contact", route: "Reservierungsdetails", veh: "Dienstleistung / Service", date: "Datum / Zeit", total: "Gesamt:", payment: "* Die Zahlung erfolgt bei Dienstbeginn in bar oder per Karte.", footer: "MOONCHILL TRAVEL - KIZILARIK MAH. 2769. STR. NO:28 MURATPASA, ANTALYA / TÜRKEI | +90 532 496 66 24", btn: "Download"
-            },
-            RU: {
-                title: "Документ предварительного бронирования", status: "Запрос получен", name: "Клиент / Customer", contact: "Контакт / Contact", route: "Детали бронирования", veh: "Услуга / Service", date: "Дата / Время", total: "Итого:", payment: "* Оплата производится при начале обслуживания наличными или картой.", footer: "MOONCHILL TRAVEL - КЫЗЫЛАРЫК МАХ. 2769. УЛ. НОМЕР:28 МУРАТПАША, АНТАЛЬЯ / ТУРЦИЯ | +90 532 496 66 24", btn: "Скачать"
+                title: "Pre-Reservation Document",
+                status: "Your Request Has Received",
+                name: "Customer",
+                contact: "Contact",
+                route: "Reservation Detail",
+                veh: "Service",
+                date: "Date / Time",
+                total: "Total:",
+                payment: "* Payment will be collected by cash or card at service start.",
+                footer: "Antalya | +90 532 496 66 24",
+                btn: "Download"
             }
         };
 
         function storageKey() { return `${appId}:reservations`; }
-        function getReservations() { try { return JSON.parse(localStorage.getItem(storageKey()) || '[]'); } catch { return []; } }
-        function saveReservation(reservation) { const list = getReservations(); list.unshift(reservation); localStorage.setItem(storageKey(), JSON.stringify(list)); }
-        function formatMoney(value) { return `${value} EUR`; }
-        function setDisplay(id, value) { const el = document.getElementById(id); if (el) el.innerText = value; }
-        function setModalOpen(id, open) { const el = document.getElementById(id); if (!el) return; el.classList.toggle('hidden', !open); el.classList.toggle('flex', open); document.body.style.overflow = open ? 'hidden' : 'auto'; }
 
-        window.updatePageLanguage = function() {
-            const lang = pageTranslations[currentLang] || pageTranslations.TR;
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (lang[key]) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = lang[key];
-                    } else {
-                        el.innerHTML = lang[key];
-                    }
-                }
-            });
-        };
+        function getReservations() {
+            try { return JSON.parse(localStorage.getItem(storageKey()) || '[]'); } catch { return []; }
+        }
+
+        function saveReservation(reservation) {
+            const list = getReservations();
+            list.unshift(reservation);
+            localStorage.setItem(storageKey(), JSON.stringify(list));
+        }
+
+        function formatMoney(value) { return `${value} EUR`; }
+
+        function setDisplay(id, value) {
+            const el = document.getElementById(id);
+            if (el) el.innerText = value;
+        }
+
+        function setModalOpen(id, open) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.classList.toggle('hidden', !open);
+            el.classList.toggle('flex', open);
+            document.body.style.overflow = open ? 'hidden' : 'auto';
+        }
 
         window.setupApp = function() {
             const table = document.getElementById('fares-table-body');
@@ -576,14 +481,8 @@
             const carList = document.getElementById('car-list-container');
             const recommendedGrid = document.getElementById('recommended-grid');
 
-            const currentDests = destDisplayNames[currentLang] || destDisplayNames.TR;
-            let selectLabel = 'Bölge Seçin';
-            if(currentLang === 'EN') selectLabel = 'Select Region';
-            if(currentLang === 'DE') selectLabel = 'Region Auswählen';
-            if(currentLang === 'RU') selectLabel = 'Выберите регион';
-
-            const destinationOptions = [`<option value="">${selectLabel}</option>`]
-                .concat(Object.keys(pricingData).map((place) => `<option value="${place}">${currentDests[place] || place}</option>`))
+            const destinationOptions = ['<option value="">Bölge Seçin</option>']
+                .concat(Object.keys(pricingData).map((place) => `<option value="${place}">${place}</option>`))
                 .join('');
 
             if (hSelect) hSelect.innerHTML = destinationOptions;
@@ -591,70 +490,42 @@
             if (hotelList) hotelList.innerHTML = destinationOptions;
 
             if (table) {
-                let btnText = 'Seç';
-                if(currentLang === 'EN') btnText = 'Select';
-                if(currentLang === 'DE') btnText = 'Auswählen';
-                if(currentLang === 'RU') btnText = 'Выбрать';
-
                 table.innerHTML = Object.entries(pricingData).map(([place, prices]) => `
                     <tr class="hover:bg-blue-50 border-b border-gray-100">
-                        <td class="p-6 md:p-8 tracking-tighter">${currentDests[place] || place}</td>
+                        <td class="p-6 md:p-8 tracking-tighter">${place}</td>
                         <td class="p-6 md:p-8 text-center text-gray-500">${formatMoney(prices[0])}</td>
                         <td class="p-6 md:p-8 text-center text-primary italic font-black">${formatMoney(prices[1])}</td>
                         <td class="p-6 md:p-8 text-center text-gray-500">${formatMoney(prices[2])}</td>
-                        <td class="p-6 md:p-8 text-center"><button type="button" onclick="window.openBookingModal('', '${place}')" class="bg-primary text-white text-[9px] px-6 py-2 rounded-xl uppercase hover:bg-accent transition font-black">${btnText}</button></td>
+                        <td class="p-6 md:p-8 text-center"><button type="button" onclick="window.openBookingModal('', '${place}')" class="bg-primary text-white text-[9px] px-6 py-2 rounded-xl uppercase hover:bg-accent transition font-black">Seç</button></td>
                     </tr>
                 `).join('');
             }
 
             if (carList) {
-                let btnCar = 'Seç ve Devam Et';
-                let dailyLabel = 'Günlük';
-                if(currentLang === 'EN') { btnCar = 'Select & Continue'; dailyLabel = 'Daily'; }
-                if(currentLang === 'DE') { btnCar = 'Wählen & Weiter'; dailyLabel = 'Täglich'; }
-                if(currentLang === 'RU') { btnCar = 'Выбрать и продолжить'; dailyLabel = 'В день'; }
-
-                carList.innerHTML = carFleet.map((car) => {
-                    let typeName = car.type_tr;
-                    if(currentLang === 'EN') typeName = car.type_en;
-                    if(currentLang === 'DE') typeName = car.type_de;
-                    if(currentLang === 'RU') typeName = car.type_ru;
-
-                    return `
-                    <article class="p-8 border-2 border-gray-50 rounded-[28px] hover:border-primary transition bg-white flex flex-col justify-between shadow-lg uppercase font-black tracking-tight">
-                        <div class="flex justify-between items-start mb-8 uppercase gap-4">
-                            <div><h3 class="text-2xl text-primary font-black leading-none">${car.name}</h3><p class="text-[9px] text-gray-400 mt-1 tracking-widest uppercase">${typeName}</p></div>
-                            <div class="text-primary text-right font-black"><span class="block text-4xl italic tracking-tighter">${formatMoney(car.price)}</span><span class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">${dailyLabel}</span></div>
+                carList.innerHTML = carFleet.map((car) => `
+                    <article class="p-8 border-2 border-gray-50 rounded-[28px] hover:border-primary transition bg-white flex flex-col justify-between shadow-lg">
+                        <div class="flex justify-between items-start mb-8 tracking-tighter font-black uppercase gap-4">
+                            <div><h3 class="text-2xl text-primary font-black uppercase tracking-tighter leading-none">${car.name}</h3><p class="text-[9px] text-gray-400 mt-1 uppercase tracking-widest">${car.type}</p></div>
+                            <div class="text-primary text-right font-black"><span class="block text-4xl italic tracking-tighter">${formatMoney(car.price)}</span><span class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Günlük</span></div>
                         </div>
-                        <button type="button" onclick="window.openCarBookingFlow('${car.name}', ${car.price})" class="w-full py-5 bg-primary text-white rounded-[22px] font-black text-[11px] tracking-widest hover:bg-accent transition active:scale-95 uppercase">${btnCar}</button>
+                        <button type="button" onclick="window.openCarBookingFlow('${car.name}', ${car.price})" class="w-full py-5 bg-primary text-white rounded-[22px] font-black text-[11px] tracking-widest hover:bg-accent transition active:scale-95 uppercase">Seç ve Devam Et</button>
                     </article>
-                `;
-                }).join('');
+                `).join('');
             }
 
             if (recommendedGrid) {
-                recommendedGrid.innerHTML = recommendedItems.map((item, index) => {
-                    let title = item.title_tr;
-                    let sub = item.sub_tr;
-                    let price = item.price;
-                    let btnLabel = item.button_tr;
-                    if(currentLang === 'EN') { title = item.title_en; sub = item.sub_en; price = item.price_en || item.price; btnLabel = item.button_en; }
-                    if(currentLang === 'DE') { title = item.title_de; sub = item.sub_de; price = item.price_de || item.price; btnLabel = item.button_de; }
-                    if(currentLang === 'RU') { title = item.title_ru; sub = item.sub_ru; price = item.price_ru || item.price; btnLabel = item.button_ru; }
-
-                    return `
+                recommendedGrid.innerHTML = recommendedItems.map((item, index) => `
                     <article class="bg-white rounded-[28px] overflow-hidden shadow-xl border border-gray-100 group flex flex-col hover:-translate-y-3 transition-all">
-                        <div class="h-48 relative overflow-hidden"><img src="${item.image}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                        <div class="p-7 flex-grow flex flex-col justify-between text-dark uppercase font-black tracking-tight">
-                            <div><h4 class="text-sm font-black">${title}</h4><p class="text-[9px] text-gray-400 font-bold uppercase mb-4 tracking-widest">${sub}</p></div>
+                        <div class="h-48 relative overflow-hidden"><img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                        <div class="p-7 flex-grow flex flex-col justify-between">
+                            <div><h4 class="text-sm font-black uppercase">${item.title}</h4><p class="text-[9px] text-gray-400 font-bold uppercase mb-4 tracking-widest">${item.sub}</p></div>
                             <div class="flex justify-between items-center pt-5 border-t border-gray-50 uppercase">
-                                <span class="text-lg font-black text-primary italic">${price}</span>
-                                <button type="button" data-rec-index="${index}" class="recommended-action bg-primary text-white text-[9px] font-black px-5 py-2.5 rounded-xl uppercase hover:bg-accent transition shadow-lg">${btnLabel}</button>
+                                <span class="text-lg font-black text-primary italic">${item.price}</span>
+                                <button type="button" data-rec-index="${index}" class="recommended-action bg-primary text-white text-[9px] font-black px-5 py-2.5 rounded-xl uppercase hover:bg-accent transition shadow-lg">${item.button}</button>
                             </div>
                         </div>
                     </article>
-                `;
-                }).join('');
+                `).join('');
                 document.querySelectorAll('.recommended-action').forEach((button) => {
                     button.addEventListener('click', () => recommendedItems[Number(button.dataset.recIndex)].action());
                 });
@@ -666,7 +537,6 @@
                 if (el) el.min = today;
             });
 
-            window.updatePageLanguage();
             window.updatePDFLabels();
         };
 
@@ -715,7 +585,6 @@
         window.submitService = function(e, type) {
             e.preventDefault();
             const fd = new FormData(e.target);
-            const currentDests = destDisplayNames[currentLang] || destDisplayNames.TR;
             const resData = {
                 id: window.crypto?.randomUUID ? window.crypto.randomUUID() : String(Date.now()),
                 type,
@@ -728,34 +597,24 @@
                 const extras = ['Ek_Bebek', 'Ek_Cocuk', 'Ek_Bisiklet', 'Ek_Bagaj']
                     .map((key) => Number(fd.get(key) || 0))
                     .reduce((sum, value) => sum + value, 0);
-                const rawDropoff = fd.get('Varis_Noktasi') || 'Area';
-                const translatedDropoff = currentDests[rawDropoff] || rawDropoff;
-                resData.route = `${fd.get('Alis_Noktasi') || 'Airport'} > ${translatedDropoff}`;
+                resData.route = `${fd.get('Alis_Noktasi') || 'Airport'} > ${fd.get('Varis_Noktasi') || 'Area'}`;
                 resData.date = `${fd.get('Tarih')} @ ${fd.get('Saat')}`;
                 resData.veh = `${fd.get('Arac')}${extras ? ' (+Extras)' : ''}`;
                 resData.price = document.getElementById('final-total-display')?.innerText || '-- EUR';
             } else if (type === 'Kiralama') {
                 const rentalTotal = window.calculateRentalPrice();
-                resData.route = `${fd.get('Arac_Modeli')} (${fd.get('Alis_Noktasi') || 'TESLİMAT ADRESİ BEKLENİYOR'})`;
+                resData.route = `${fd.get('Arac_Modeli')} (${fd.get('Alis_Noktasi') || 'Teslimat adresi bekleniyor'})`;
                 resData.date = `${fd.get('Alis_Tarihi') || '-'} ${fd.get('Alis_Saati') || ''} / ${fd.get('Iade_Tarihi') || '-'} ${fd.get('Iade_Saati') || ''}`;
                 resData.veh = 'Rent-A-Car';
-                let pendingText = 'Teklif Bekleniyor';
-                if(currentLang === 'EN') pendingText = 'Quote Pending';
-                if(currentLang === 'DE') pendingText = 'Angebot Ausstehend';
-                if(currentLang === 'RU') pendingText = 'Ожидается предложение';
-                resData.price = rentalTotal ? formatMoney(rentalTotal) : pendingText;
+                resData.price = rentalTotal ? formatMoney(rentalTotal) : 'Fiyat Teklifi Bekleniyor';
             } else {
                 const route = type === 'Uçak'
-                    ? `${fd.get('Nereden') || 'NEREDEN?'} > ${fd.get('Nereye') || 'NEREYE?'}`
-                    : (currentDests[fd.get('Bolge')] || fd.get('Bolge') || 'Özel İstek');
+                    ? `${fd.get('Nereden') || 'Nereden'} > ${fd.get('Nereye') || 'Nereye'}`
+                    : fd.get('Bolge') || 'Special Request';
                 resData.route = route;
                 resData.date = fd.get('Tarih') || fd.get('Giris_Tarihi') || 'TBD';
                 resData.veh = type;
-                let pendingText = 'Teklif Bekleniyor';
-                if(currentLang === 'EN') pendingText = 'Quote Pending';
-                if(currentLang === 'DE') pendingText = 'Angebot Ausstehend';
-                if(currentLang === 'RU') pendingText = 'Ожидается предложение';
-                resData.price = pendingText;
+                resData.price = 'Fiyat Teklifi Bekleniyor';
             }
 
             saveReservation(resData);
@@ -773,18 +632,7 @@
             setDisplay('res-veh', res.veh);
             setDisplay('res-price', res.price);
 
-            // JİLET GİBİ KURUMSAL WHATSAPP METNİ OLUŞTURUCU
-            const waMsg = `*🌟 MOONCHILL TRAVEL - YENİ REZERVASYON TALEBİ*\n\n` +
-                          `👤 *MÜŞTERİ:* ${res.name}\n` +
-                          `📞 *İLETİŞİM / WA:* ${res.phone}\n\n` +
-                          `📌 *HİZMET TÜRÜ:* ${res.type}\n` +
-                          `🚘 *HİZMET DETAYI:* ${res.veh}\n` +
-                          `🗺️ *ROTA / DETAY:* ${res.route}\n` +
-                          `📅 *ZAMAN / DATE:* ${res.date}\n\n` +
-                          `💰 *TOPLAM TUTAR:* ${res.price}\n\n` +
-                          `⚙️ *SİSTEM ID:* #${res.id}\n` +
-                          `📍 _Kızılarık Mah. 2769. Sok. No:28 Muratpaşa/ANTALYA_`;
-
+            const waMsg = `*MOONCHILL - YENİ TALEP*\nİsim: ${res.name}\nDetay: ${res.route}\nZaman: ${res.date}\nTutar: ${res.price}`;
             const waBtn = document.getElementById('res-wa-btn');
             if (waBtn) waBtn.onclick = () => window.open(`https://wa.me/905324966624?text=${encodeURIComponent(waMsg)}`, '_blank');
 
@@ -795,9 +643,19 @@
         };
 
         window.updatePDFLabels = function() {
-            const lang = i18nPDF[currentLang] || i18nPDF.TR;
+            const lang = i18n[currentLang] || i18n.TR;
             const map = {
-                'pdf-label-title': lang.title, 'pdf-label-status': lang.status, 'pdf-label-name': lang.name, 'pdf-label-contact': lang.contact, 'pdf-label-route': lang.route, 'pdf-label-veh': lang.veh, 'pdf-label-date': lang.date, 'pdf-label-total-side': lang.total, 'pdf-label-payment': lang.payment, 'pdf-label-footer': lang.footer
+                'pdf-label-title': lang.title,
+                'pdf-label-status': lang.status,
+                'pdf-label-name': lang.name,
+                'pdf-label-contact': lang.contact,
+                'pdf-label-route': lang.route,
+                'pdf-label-veh': lang.veh,
+                'pdf-label-date': lang.date,
+                'pdf-label-total-side': lang.total,
+                'pdf-label-payment': lang.payment,
+                'pdf-label-footer': lang.footer,
+                'btn-pdf-label': lang.btn
             };
             Object.entries(map).forEach(([id, text]) => setDisplay(id, text));
         };
@@ -821,8 +679,7 @@
         window.changeLang = function(lang) {
             currentLang = lang;
             setDisplay('current-lang-desktop', lang);
-            window.updatePageLanguage();
-            window.setupApp();
+            window.updatePDFLabels();
         };
 
         window.openBookingModal = function(pickup = '', dropoff = '', vehicle = '') {
@@ -845,13 +702,7 @@
             document.getElementById('flight-fields').classList.toggle('hidden', type !== 'flight');
             document.getElementById('hotel-fields').classList.toggle('hidden', type !== 'hotel');
             document.getElementById('rental-fields').classList.add('hidden');
-            
-            let titleText = type === 'flight' ? 'Uçak Bileti' : 'Otel Rezervasyon';
-            if(currentLang === 'EN') titleText = type === 'flight' ? 'Flight Ticket' : 'Hotel Reservation';
-            if(currentLang === 'DE') titleText = type === 'flight' ? 'Flugticket' : 'Hotelreservierung';
-            if(currentLang === 'RU') titleText = type === 'flight' ? 'Авиабилет' : 'Бронирование отеля';
-            
-            setDisplay('generic-modal-title', titleText);
+            setDisplay('generic-modal-title', type === 'flight' ? 'Uçak Bileti' : 'Otel Rezervasyon');
         };
 
         window.closeGenericModal = function() { setModalOpen('genericRequestModalOverlay', false); };
@@ -866,13 +717,7 @@
             document.getElementById('rental-fields').classList.remove('hidden');
             document.getElementById('flight-fields').classList.add('hidden');
             document.getElementById('hotel-fields').classList.add('hidden');
-            
-            let titleText = `${name} Kiralama`;
-            if(currentLang === 'EN') titleText = `${name} Rental`;
-            if(currentLang === 'DE') titleText = `${name} Mieten`;
-            if(currentLang === 'RU') titleText = `${name} Аренда`;
-            
-            setDisplay('generic-modal-title', titleText);
+            setDisplay('generic-modal-title', `${name} Rental`);
             document.getElementById('car-model-hidden').value = name;
             document.getElementById('car-price-hidden').value = price;
             window.calculateRentalPrice();
@@ -889,19 +734,17 @@
         window.downloadPDF = function() {
             const element = document.getElementById('pdf-container');
             const name = (document.getElementById('res-name').innerText || 'Moonchill').replace(/[^\w-]+/g, '_');
-            
-            const btnLabel = document.getElementById('btn-pdf-label');
-            btnLabel.innerText = currentLang === 'TR' ? 'BELGE OLUŞTURULUYOR...' : 'GENERATING...';
-
-            html2pdf().from(element).set({
-                margin: [15, 15, 15, 15],
+            if (!window.html2pdf) {
+                window.print();
+                return;
+            }
+            html2pdf().set({
+                margin: 0.5,
                 filename: `Moonchill_Request_${name}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, allowTaint: false, logging: false },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            }).save().then(() => {
-                btnLabel.innerText = currentLang === 'TR' ? 'Rezervasyon Belgesini İndir (PDF)' : 'Download Reservation Document (PDF)';
-            });
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            }).from(element).save();
         };
 
         window.openAdminModal = function() {
@@ -920,8 +763,7 @@
                 document.getElementById('admin-dashboard').classList.remove('hidden');
                 window.loadReservations();
             } else {
-                const alertMsg = currentLang === 'TR' ? 'Kullanıcı adı veya şifre hatalı.' : 'Invalid username or password.';
-                alert(alertMsg);
+                alert('Kullanıcı adı veya şifre hatalı.');
             }
         };
 
@@ -930,12 +772,11 @@
             if (!list) return;
             const reservations = getReservations();
             if (!reservations.length) {
-                const noResText = currentLang === 'TR' ? 'Henüz rezervasyon yok.' : 'No reservations yet.';
-                list.innerHTML = `<p class="text-center text-gray-400 font-bold uppercase tracking-widest">${noResText}</p>`;
+                list.innerHTML = '<p class="text-center text-gray-400 font-bold uppercase tracking-widest">Henüz rezervasyon yok.</p>';
                 return;
             }
             list.innerHTML = reservations.map((r) => `
-                <article class="p-6 border-2 rounded-[24px] flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white shadow-sm gap-4 uppercase font-black tracking-tight">
+                <article class="p-6 border-2 rounded-[24px] flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white shadow-sm gap-4 uppercase font-black">
                     <div>
                         <span class="bg-primary text-white px-3 py-1 rounded-full text-[9px]">${r.type}</span>
                         <div class="mt-3"><span class="block text-primary">${r.name}</span><span class="text-gray-400 text-[10px]">${r.route}</span></div>
@@ -946,8 +787,10 @@
         };
 
         window.clearReservations = function() {
-            const confirmMsg = currentLang === 'TR' ? 'Tüm kayıtlı rezervasyonlar silinsin mi?' : 'Are you sure you want to clear all reservations?';
-            if (confirm(confirmMsg)) { localStorage.removeItem(storageKey()); window.loadReservations(); }
+            if (confirm('Tüm kayıtlı rezervasyonlar silinsin mi?')) {
+                localStorage.removeItem(storageKey());
+                window.loadReservations();
+            }
         };
 
         document.addEventListener('keydown', (event) => {
@@ -956,6 +799,7 @@
             }
         });
 
+        // Cloudflare Rocket Loader & Senkronizasyon Kilitlerini Çözen Güvenli Tetikleyici
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', window.setupApp);
         } else {
