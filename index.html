@@ -143,7 +143,7 @@
                 <h2 data-i18n="section_fleet" class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Transfer Filomuz</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left uppercase font-black">
                     <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="VIP Minivan Mercedes Vito V-Class" class="h-56 w-full object-cover">
+                        <img src="https://i.imgur.com/Hp0YGHO.jpg" alt="VIP Minivan Mercedes Vito" class="h-56 w-full object-cover">
                         <div class="p-8">
                             <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minivan</h3>
                             <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes V-Class / Vito (1-6 PAX)</p>
@@ -151,7 +151,11 @@
                         </div>
                     </article>
                     <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-                        <img src="https://images.unsplash.com/photo-1561055657-b9e0bf0fa360?auto=format&fit=crop&w=600&q=80" alt="VIP Minibüs Mercedes Sprinter VIP" class="h-56 w-full object-cover">
+                        <div class="h-56 w-full bg-gradient-to-br from-primary to-dark flex flex-col items-center justify-center text-white text-center p-6">
+                            <i class="fa-solid fa-bus text-4xl text-accent mb-3"></i>
+                            <span class="text-xs tracking-widest font-black">GÖRSEL BEKLENİYOR</span>
+                            <span class="text-[9px] text-blue-200 mt-1">MERCEDES SPRINTER VIP</span>
+                        </div>
                         <div class="p-8">
                             <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minibüs</h3>
                             <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes Sprinter VIP (7-13 PAX)</p>
@@ -159,7 +163,11 @@
                         </div>
                     </article>
                     <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-                        <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=600&q=80" alt="VIP Sedan Mercedes S-Class E-Class" class="h-56 w-full object-cover">
+                        <div class="h-56 w-full bg-gradient-to-br from-primary to-dark flex flex-col items-center justify-center text-white text-center p-6">
+                            <i class="fa-solid fa-car text-4xl text-accent mb-3"></i>
+                            <span class="text-xs tracking-widest font-black">GÖRSEL BEKLENİYOR</span>
+                            <span class="text-[9px] text-blue-200 mt-1">MERCEDES S-CLASS / E-CLASS</span>
+                        </div>
                         <div class="p-8">
                             <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Sedan</h3>
                             <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes E-Class / S-Class (1-4 PAX)</p>
@@ -355,13 +363,13 @@
                 <p class="text-xs text-green-600"><i class="fa-solid fa-circle-check mr-2"></i>Ön Talep Başarıyla Alındı</p>
             </div>
 
-            <div class="space-y-4 font-black text-xs uppercase tracking-wider">
+            <div class="mt-6 space-y-3 font-black text-xs uppercase tracking-wider">
                 <button id="res-wa-btn" type="button" class="w-full py-5 bg-green-500 hover:bg-green-600 text-white rounded-2xl flex items-center justify-center gap-4 transition active:scale-95 shadow-xl shadow-green-500/20">
                     <span data-i18n="modal_btn_whatsapp_confirm">Talebi WhatsApp'tan Acenteye Gönder</span> <i class="fa-brands fa-whatsapp text-2xl"></i>
                 </button>
                 
                 <button type="button" onclick="window.downloadPDF()" class="w-full py-5 bg-primary hover:bg-primaryHover text-white rounded-2xl flex items-center justify-center gap-4 transition active:scale-95 shadow-xl shadow-primary/20">
-                    <i class="fa-solid fa-file-pdf text-2xl text-accent"></i> <span id="btn-pdf-label" data-i18n="btn_pdf_label">Rezervasyon Belgesini İndir (PDF)</span>
+                    <i class="fa-solid fa-file-pdf text-2xl text-accent"></i> <span id="btn-pdf-label">Rezervasyon Belgesini İndir (PDF)</span>
                 </button>
             </div>
         </div>
@@ -454,7 +462,7 @@
                 "ALANYA": "Alanya", "Antalya Şehir Merkezi": "Antalya Şehir Merkezi", "Lara": "Lara", "Kundu": "Kundu", "Belek": "Belek", "Kemer": "Kemer", "Beldibi": "Beldibi", "Göynük": "Göynük", "Çamyuva": "Çamyuva", "Tekirova": "Tekirova", "MARMARİS": "Marmaris", "GÖCEK": "Göcek", "ÖLÜDENİZ": "Ölüdeniz", "Fethiye": "Fethiye", "İZMİR": "İzmir", "İSTANBUL": "İstanbul"
             },
             EN: {
-                "ALANYA": "Alanya", "Antalya Şehir Merkezi": "Antalya City Center", "Lara": "Lara", "Kundu": "Kundu", "Belek": "Belek", "Kemer": "Kemer", "Beldibi": "Beldibi", "Göynük": "Goynuk", "Çamyuva": "Camyuva", "Tekirova": "Tekirova", "MARMARİS": "Marmaris", "GÖCEK": "Gocek", "ÖLÜDENİZ": "Oludeniz", "Fethiye": "Fethiye", "İZMİR": "Izmir", "İSTANBUL": "Istanbul"
+                "ALANYA": "Alanya", "Antalya Şehir Merkezi": "Antalya City Center", "Lara": "Lara", "Kundu": "Kundu", "Belek": "Belek", "Kemer": "Kemer", "Beldibi": "Beldibi", "Goynük": "Goynuk", "Çamyuva": "Camyuva", "Tekirova": "Tekirova", "MARMARİS": "Marmaris", "GÖCEK": "Gocek", "ÖLÜDENİZ": "Oludeniz", "Fethiye": "Fethiye", "İZMİR": "Izmir", "İSTANBUL": "Istanbul"
             },
             DE: {
                 "ALANYA": "Alanya", "Antalya Şehir Merkezi": "Antalya Stadtzentrum", "Lara": "Lara", "Kundu": "Kundu", "Belek": "Belek", "Kemer": "Kemer", "Beldibi": "Beldibi", "Göynük": "Goynuk", "Çamyuva": "Camyuva", "Tekirova": "Tekirova", "MARMARİS": "Marmaris", "GÖCEK": "Gocek", "ÖLÜDENİZ": "Oludeniz", "Fethiye": "Fethiye", "İZMİR": "Izmir", "İSTANBUL": "Istanbul"
@@ -474,7 +482,7 @@
         ];
 
         const recommendedItems = [
-            { title_tr: "AYT > Belek VIP", title_en: "AYT > Belek VIP", title_de: "AYT > Belek VIP", title_ru: "AYT > Белек VIP", sub_tr: "Minivan Konforu", sub_en: "Minivan Comfort", sub_de: "Minivan-Komfort", sub_ru: "Комфорт минивэна", price: "45 EUR", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Antalya Havalimanı (AYT)', 'Belek', 'VIP Minivan'), button_tr: "Seç", button_en: "Select", button_de: "Auswählen", button_ru: "Выбрать" },
+            { title_tr: "AYT > Belek VIP", title_en: "AYT > Belek VIP", title_de: "AYT > Belek VIP", title_ru: "AYT > Белек VIP", sub_tr: "Minivan Konforu", sub_en: "Minivan Comfort", sub_de: "Minivan-Komfort", sub_ru: "Комфорт miniвэна", price: "45 EUR", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Antalya Havalimanı (AYT)', 'Belek', 'VIP Minivan'), button_tr: "Seç", button_en: "Select", button_de: "Auswählen", button_ru: "Выбрать" },
             { title_tr: "Toyota Corolla", title_en: "Toyota Corolla", title_de: "Toyota Corolla", title_ru: "Toyota Corolla", sub_tr: "Günün Fırsatı", sub_en: "Deal of the Day", sub_de: "Angebot des Tages", sub_ru: "Предложение дня", price: "85 EUR", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=600", action: () => window.openCarBookingFlow('Toyota Corolla', 85), button_tr: "Kirala", button_en: "Rent", button_de: "Mieten", button_ru: "Арендовать" },
             { title_tr: "DLM > Fethiye", title_en: "DLM > Fethiye", title_de: "DLM > Fethiye", title_ru: "DLM > Фетхие", sub_tr: "Ege'ye VIP Geçiş", sub_en: "VIP Aegean Pass", sub_de: "VIP Ägäis-Pass", sub_ru: "VIP Эгейский пасс", price: "115 EUR", image: "https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Dalaman Havalimanı (DLM)', 'Fethiye', 'VIP Sedan'), button_tr: "Ayırt", button_en: "Book", button_de: "Buchen", button_ru: "Забронировать" },
             { title_tr: "Lara Otelleri", title_en: "Lara Hotels", title_de: "Lara Hotels", title_ru: "Отели Лары", sub_tr: "Özel İndirim", sub_en: "Special Discount", sub_de: "Sonderrabatt", sub_ru: "Специальная скидка", price: "Teklif Al", price_en: "Get Quote", price_de: "Angebot", price_ru: "Цена по запросу", image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600", action: () => window.openGenericModal('hotel'), button_tr: "Bak", button_en: "View", button_de: "Ansehen", button_ru: "Смотреть" }
@@ -491,7 +499,7 @@
                 footer_desc: "Profesyonel transfer ve seyahat acenteniz.", footer_menu_title: "Hızlı Menü", footer_admin_login: "Acente Girişi", footer_contact_title: "İletişim", footer_copyright: "&copy; 2026 Moonchill Global VIP",
                 footer_address_text: "Kızılarık Mah. 2769. Sok. No:28 Muratpaşa/ANTALYA",
                 modal_transfer_title: "VIP Rezervasyon", modal_step1_title: "Planlama", modal_step2_title: "İletişim", modal_label_extras: "Ek Hizmetler (+5 EUR)", modal_extra_baby: "Bebek Koltuğu", modal_extra_child: "Çocuk Koltuğu", modal_extra_bike: "Bisiklet", modal_extra_baggage: "Ek Bagaj", modal_label_total: "Toplam Tutar", modal_btn_next: "İlerle", modal_placeholder_name: "ADINIZ SOYADINIZ", modal_placeholder_whatsapp: "WHATSAPP", modal_btn_back: "Geri", modal_btn_submit_transfer: "Ön Rezervasyon Al",
-                modal_placeholder_from: "NEREDEN?", modal_placeholder_to: "NEREYE?", modal_label_pickup_date: "Alış", modal_label_return_date: "İade", modal_placeholder_delivery: "TESLİMAT ADRESİ", modal_btn_create_doc: "Belgeyi Oluştur", modal_btn_whatsapp_confirm: "Talebi WhatsApp'tan Acenteye Gönder", btn_pdf_label: "Rezervasyon Belgesini İndir (PDF)",
+                modal_placeholder_from: "NEREDEN?", modal_placeholder_to: "NEREYE?", modal_label_pickup_date: "Alış", modal_label_return_date: "İade", modal_placeholder_delivery: "TESLİMAT ADRESİ", modal_btn_create_doc: "Belgeyi Oluştur", modal_btn_whatsapp_confirm: "Talebi WhatsApp'tan Acenteye Gönder",
                 admin_panel_title: "Acente Paneli", admin_placeholder_user: "KULLANICI ADI", admin_placeholder_pass: "ŞİFRE", admin_btn_login: "Giriş Yap", admin_sec_title: "Rezervasyonlar", admin_btn_clear: "Listeyi Temizle", admin_no_res: "Henüz rezervasyon yok."
             },
             EN: {
@@ -504,7 +512,7 @@
                 footer_desc: "Your professional transfer and travel agency.", footer_menu_title: "Quick Menu", footer_admin_login: "Agency Login", footer_contact_title: "Contact", footer_copyright: "&copy; 2026 Moonchill Global VIP",
                 footer_address_text: "Kizilarik Mah. 2769. St. No:28 Muratpasa, Antalya / Turkey",
                 modal_transfer_title: "VIP Booking", modal_step1_title: "Planning", modal_step2_title: "Contact", modal_label_extras: "Extra Services (+5 EUR)", modal_extra_baby: "Baby Seat", modal_extra_child: "Child Seat", modal_extra_bike: "Bicycle", modal_extra_baggage: "Extra Luggage", modal_label_total: "Total Amount", modal_btn_next: "Next", modal_placeholder_name: "YOUR NAME & SURNAME", modal_placeholder_whatsapp: "WHATSAPP NUMBER", modal_btn_back: "Back", modal_btn_submit_transfer: "Get Pre-Reservation",
-                modal_placeholder_from: "FROM WHERE?", modal_placeholder_to: "TO WHERE?", modal_label_pickup_date: "Pickup", modal_label_return_date: "Return", modal_placeholder_delivery: "DELIVERY ADDRESS", modal_btn_create_doc: "Create Document", modal_btn_whatsapp_confirm: "Send Booking Request via WhatsApp", btn_pdf_label: "Download Reservation Document (PDF)",
+                modal_placeholder_from: "FROM WHERE?", modal_placeholder_to: "TO WHERE?", modal_label_pickup_date: "Pickup", modal_label_return_date: "Return", modal_placeholder_delivery: "DELIVERY ADDRESS", modal_btn_create_doc: "Create Document", modal_btn_whatsapp_confirm: "Send Booking Request via WhatsApp",
                 admin_panel_title: "Agency Panel", admin_placeholder_user: "USERNAME", admin_placeholder_pass: "PASSWORD", admin_btn_login: "Login", admin_sec_title: "Reservations", admin_btn_clear: "Clear List", admin_no_res: "No reservations yet."
             },
             DE: {
@@ -516,19 +524,21 @@
                 th_dropoff: "Zielregion", th_sedan: "Limousine", th_minivan: "Minivan", th_minibus: "Minibus", th_reserve: "Buchen",
                 footer_desc: "Ihr professioneller Transfer- und Reisedienstleister.", footer_menu_title: "Schnellmenü", footer_admin_login: "Agentur-Login", footer_contact_title: "Kontakt", footer_copyright: "&copy; 2026 Moonchill Global VIP",
                 footer_address_text: "Kizilarik Mah. 2769. Str. No:28 Muratpasa, Antalya / Türkei",
-                modal_transfer_title: "VIP-Buchung", modal_step1_title: "Planung", modal_step2_title: "Kontakt", modal_label_extras: "Zusatzleistungen (+5 EUR)", modal_extra_baby: "Babysitz", modal_extra_child: "Kindersitz", modal_extra_bike: "Fahrrad", modal_extra_baggage: "Zusatzgepäck", modal_label_total: "Gesamtbetrag", modal_btn_next: "Weiter", modal_placeholder_name: "IHR VOR- & NACHNAME", modal_placeholder_whatsapp: "WHATSAPP-NUMMER", modal_btn_back: "Zurück", modal_btn_submit_transfer: "Vorreservierung per WhatsApp senden", btn_pdf_label: "Reservierungsdokument herunterladen (PDF)",
+                modal_transfer_title: "VIP-Buchung", modal_step1_title: "Planung", modal_step2_title: "Kontakt", modal_label_extras: "Zusatzleistungen (+5 EUR)", modal_extra_baby: "Babysitz", modal_extra_child: "Kindersitz", modal_extra_bike: "Fahrrad", modal_extra_baggage: "Zusatzgepäck", modal_label_total: "Gesamtbetrag", modal_btn_next: "Weiter", modal_placeholder_name: "IHR VOR- & NACHNAME", modal_placeholder_whatsapp: "WHATSAPP-NUMMER", modal_btn_back: "Zurück", modal_btn_submit_transfer: "Vorreservierung per WhatsApp senden",
+                modal_placeholder_from: "VON WO?", modal_placeholder_to: "WOHIN?", modal_label_pickup_date: "Abholung", modal_label_return_date: "Rückgabe", modal_placeholder_delivery: "LIEFERADRESSE", modal_btn_create_doc: "Dokument Erstellen", modal_btn_whatsapp_confirm: "Buchungsanfrage per WhatsApp an Agentur senden",
                 admin_panel_title: "Agentur-Panel", admin_placeholder_user: "BENUTZERNAME", admin_placeholder_pass: "PASSWORT", admin_btn_login: "Login", admin_sec_title: "Reservierungen", admin_btn_clear: "Liste Leeren", admin_no_res: "Noch keine Reservierungen."
             },
             RU: {
                 nav_home: "Главная", nav_services: "Услуги", nav_recommended: "Рекомендуем", nav_fares: "Цены", btn_booking: "Забронировать",
-                hero_title: '<span class="text-accent italic">VIP-ВАРИАНТ</span> ВАШЕГО ОТДЫХА', hero_subtitle: "Весь ваш план путешествия от трансфера до аренды автомобиля под одной крышей.",
+                hero_title: '<span class="text-accent italic">VIP-ВАРИАНТ</span> ВАШЕГО ОТДЫХА', hero_subtitle: "Весь ваш план путешествия от трансфера до аренды автомобиля под одной крушей.",
                 label_pickup: "Место посадки", label_dropoff: "Регион прибытия", label_date: "Дата", btn_view_price: "Показать цену", opt_ayt: "Аэропорт Анталии (AYT)", opt_dlm: "Аэропорт Даламан (DLM)",
                 section_services: "Наши услуги", service_flight: "Авиабилет", service_hotel: "Отель", service_car: "Прокат авто", btn_pre_booking: "Предварительная бронь", btn_book_now: "Забронировать номер", btn_view_models: "Посмотреть модели",
                 section_recommended: "Мы рекомендуем", subtitle_recommended: "Самые популярные VIP предложения", section_fleet: "Наш автопарк", btn_reserve: "Заказать", section_fares: "Подробный прайс-лист",
                 th_dropoff: "Регион прибытия", th_sedan: "Седан", th_minivan: "Минивэн", th_minibus: "Миниавтобус", th_reserve: "Заказать",
                 footer_desc: "Ваше профессиональное трансферное и туристическое агентство.", footer_menu_title: "Быстрое меню", footer_admin_login: "Вход для агентов", footer_contact_title: "Контакты", footer_copyright: "&copy; 2026 Moonchill Global VIP",
                 footer_address_text: "Кызыларык Мах. 2769. Ул. Номер:28 Муратпаша, Анталья / Турция",
-                modal_transfer_title: "VIP Бронирование", modal_step1_title: "Планирование", modal_step2_title: "Контакты", modal_label_extras: "Доп. услуги (+5 EUR)", modal_extra_baby: "Детское кресло", modal_extra_child: "Детское сиденье", modal_extra_bike: "Велосипед", modal_extra_baggage: "Доп. багаж", modal_label_total: "Общая сумма", modal_btn_next: "Далее", modal_placeholder_name: "ВАШЕ ИМЯ И ФАМИЛИЯ", modal_placeholder_whatsapp: "НОМЕР WHATSAPP", modal_btn_back: "Назад", modal_btn_submit_transfer: "Отправить запрос в WhatsApp", btn_pdf_label: "Скачать документ бронирования (PDF)",
+                modal_transfer_title: "VIP Бронирование", modal_step1_title: "Планирование", modal_step2_title: "Контакты", modal_label_extras: "Доп. услуги (+5 EUR)", modal_extra_baby: "Детское кресло", modal_extra_child: "Детское сиденье", modal_extra_bike: "Велосипед", modal_extra_baggage: "Доп. багаж", modal_label_total: "Общая сумма", modal_btn_next: "Далее", modal_placeholder_name: "ВАШЕ ИМЯ И ФАМИЛИЯ", modal_placeholder_whatsapp: "НОМЕР WHATSAPP", modal_btn_back: "Назад", modal_btn_submit_transfer: "Отправить запрос в WhatsApp",
+                modal_placeholder_from: "ОТКУДА?", modal_placeholder_to: "КУДА?", modal_label_pickup_date: "Забрать", modal_label_return_date: "Вернуть", modal_placeholder_delivery: "АДРЕС ДОСТАВКИ", modal_btn_create_doc: "Создать документ", modal_btn_whatsapp_confirm: "Отправить запрос на бронирование в агентство через WhatsApp",
                 admin_panel_title: "Панель агента", admin_placeholder_user: "ИМЯ ПОЛЬЗОВАТЕЛЯ", admin_placeholder_pass: "ПАРОЛЬ", admin_btn_login: "Войти", admin_sec_title: "Бронирования", admin_btn_clear: "Очистить список", admin_no_res: "Бронирований пока нет."
             }
         };
@@ -541,7 +551,7 @@
                 title: "Pre-Reservation Document", status: "Request Received", name: "Customer", contact: "Contact", route: "Reservation Detail", veh: "Service", date: "Date / Time", total: "Total:", payment: "* Payment will be collected by cash or card at service start.", footer: "MOONCHILL TRAVEL - KIZILARIK MAH. 2769. ST. NO:28 MURATPASA, ANTALYA / TURKEY | +90 532 496 66 24"
             },
             DE: {
-                title: "Vorreservierungsdokument", status: "Anfrage Erhalten", name: "Kunde / Customer", contact: "Kontakt / Contact", route: "Reservierungsdetails", veh: "Dienstleistung / Service", date: "Datum / Zeit", total: "Gesamt:", payment: "* Die Zahlung erfolgt bei Dienstbeginn in bar oder per Karte.", footer: "MOONCHILL TRAVEL - KIZILARIK MAH. 2769. STR. NO:28 MURATPASA, ANTALYA / TÜRKEI | +90 532 496 66 24"
+                title: "Vorreservierungsdokument", status: "Anfrage Erhalten", name: "Kunde / Customer", contact: "Kontakt / Contact", route: "Reservierungsdetails", veh: "Dienstleistung / Service", date: "Datum / Zeit", total: "Gesamt:", payment: "* Die Zahlung erfolgt bei Dienstbeginn in bar or per Karte.", footer: "MOONCHILL TRAVEL - KIZILARIK MAH. 2769. STR. NO:28 MURATPASA, ANTALYA / TÜRKEI | +90 532 496 66 24"
             },
             RU: {
                 title: "Документ предварительного бронирования", status: "Запрос получен", name: "Клиент / Customer", contact: "Контакт / Contact", route: "Детали бронирования", veh: "Услуга / Service", date: "Дата / Время", total: "Итого:", payment: "* Оплата производится при начале обслуживания наличными или картой.", footer: "MOONCHILL TRAVEL - КЫЗЫЛАРЫК МАХ. 2769. УЛ. НОМЕР:28 МУРАТПАША, АНТАЛЬЯ / ТУРЦИЯ | +90 532 496 66 24"
@@ -678,7 +688,7 @@
             const ed = document.getElementById('calc-iade-date')?.value;
             const et = document.getElementById('calc-iade-time')?.value;
             const daily = Number(document.getElementById('car-price-hidden')?.value || 0);
-            if (sd && st && ed && et && daily) {
+            if (sd && start && ed && et && daily) {
                 const start = new Date(`${sd}T${st}`);
                 const end = new Date(`${ed}T${et}`);
                 const ms = end - start;
@@ -768,7 +778,6 @@
         };
 
         window.showConfirmUI = function(res) {
-            // Ekranda her zaman yüklü olan PDF şablonunu anlık verilerle doldur
             document.querySelectorAll('#res-name').forEach(el => el.innerText = res.name);
             document.querySelectorAll('#res-tel').forEach(el => el.innerText = res.phone);
             document.querySelectorAll('#res-route').forEach(el => el.innerText = res.route);
@@ -776,16 +785,16 @@
             document.querySelectorAll('#res-veh').forEach(el => el.innerText = res.veh);
             document.querySelectorAll('#res-price').forEach(el => el.innerText = res.price);
 
-            // Jilet gibi resmi bildirim şablonu metni
-            const waMsg = `*🌟 MOONCHILL TRAVEL - REZERVASYON TALEBİ*\n\n` +
+            // AKILLI KURUMSAL METİN MOTORU (WhatsApp'a bu formatta düşecek)
+            const waMsg = `*🌟 MOONCHILL TRAVEL - YENİ REZERVASYON TALEBİ*\n\n` +
                           `👤 *MÜŞTERİ / GUEST:* ${res.name}\n` +
                           `📞 *İLETİŞİM / TEL:* ${res.phone}\n\n` +
-                          `📌 *HİZMET / SERVICE:* ${res.type}\n` +
-                          `🚘 *ARAÇ / VEHICLE:* ${res.veh}\n` +
-                          `🗺️ *ROTA / DETAILS:* ${res.route}\n` +
+                          `📌 *HİZMET TÜRÜ:* ${res.type}\n` +
+                          `🚘 *ARAÇ / DETAY:* ${res.veh}\n` +
+                          `🗺️ *ROTA:* ${res.route}\n` +
                           `📅 *ZAMAN / DATE:* ${res.date}\n\n` +
-                          `💰 *TOPLAM / TOTAL:* ${res.price}\n\n` +
-                          `⚙️ *TALEP NO:* #MC-${res.id}\n` +
+                          `💰 *TOPLAM TUTAR:* ${res.price}\n\n` +
+                          `⚙️ *TALEP ID:* #MC-${res.id}\n` +
                           `📍 _Kızılarık Mah. 2769. Sok. No:28 Muratpaşa/ANTALYA_`;
 
             const waBtn = document.getElementById('res-wa-btn');
@@ -890,22 +899,21 @@
         };
 
         window.downloadPDF = function() {
-            // EKRAN DIŞINDA HAZIR BEKLEYEN SAĞLAM YAPIDAN PDF ÜRETİLİR (BOŞ ÇIKMA ŞANSI SIFIR)
             const element = document.getElementById('pdf-container');
-            const guestName = document.getElementById('bookingForm').elements['Isim']?.value || 'Moonchill';
-            const cleanName = guestName.replace(/[^\w-]+/g, '_');
+            const name = (document.getElementById('res-name').innerText || 'Moonchill').replace(/[^\w-]+/g, '_');
             
             const btnLabel = document.getElementById('btn-pdf-label');
-            btnLabel.innerText = currentLang === 'TR' ? 'BELGE OLUŞTURULUYOR...' : 'GENERATING...';
+            const originalLabel = btnLabel.innerText;
+            btnLabel.innerText = currentLang === 'TR' ? 'Oluşturuluyor...' : 'Generating...';
 
-            html2pdf().from(element).set({
-                margin: [10, 10, 10, 10],
-                filename: `Moonchill_Reservation_${cleanName}.pdf`,
+            html2pdf().set({
+                margin: 10,
+                filename: `Moonchill_Reservation_${name}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, allowTaint: false, logging: false },
+                html2canvas: { scale: 2, logging: false, useCORS: true },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            }).save().then(() => {
-                btnLabel.innerText = currentLang === 'TR' ? 'Rezervasyon Belgesini İndir (PDF)' : 'Download Reservation Document (PDF)';
+            }).from(element).save().then(() => {
+                btnLabel.innerText = originalLabel;
             });
         };
 
