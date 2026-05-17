@@ -39,7 +39,7 @@
         }
         .animate-wa { animation: pulse-wa 2s infinite; }
         @keyframes pulse-wa {
-            0 { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
             70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
@@ -143,7 +143,11 @@
                 <h2 data-i18n="section_fleet" class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Transfer Filomuz</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left uppercase font-black">
                     <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-                        <img src="vito.jpg" alt="VIP Minivan Mercedes Vito" class="h-56 w-full object-cover">
+                        <div class="h-56 w-full bg-gradient-to-br from-slate-900 to-blue-950 flex flex-col items-center justify-center text-white p-6 text-center border-b border-gray-800">
+                            <i class="fa-solid fa-van-shuttle text-5xl text-accent mb-3"></i>
+                            <span class="text-sm font-black tracking-widest">MERCEDES VITO VIP</span>
+                            <span class="text-[9px] text-blue-300 mt-1">✨ LUXURY MINIVAN (1-6 PAX)</span>
+                        </div>
                         <div class="p-8">
                             <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minivan</h3>
                             <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes V-Class / Vito (1-6 PAX)</p>
@@ -151,7 +155,11 @@
                         </div>
                     </article>
                     <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-                        <img src="sprinter.jpg" alt="VIP Minibüs Mercedes Sprinter" class="h-56 w-full object-cover">
+                        <div class="h-56 w-full bg-gradient-to-br from-slate-900 to-blue-950 flex flex-col items-center justify-center text-white p-6 text-center border-b border-gray-800">
+                            <i class="fa-solid fa-bus text-5xl text-accent mb-3"></i>
+                            <span class="text-sm font-black tracking-widest">MERCEDES SPRINTER VIP</span>
+                            <span class="text-[9px] text-blue-300 mt-1">✨ PREMIUM MINIBUS (7-13 PAX)</span>
+                        </div>
                         <div class="p-8">
                             <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minibüs</h3>
                             <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes Sprinter VIP (7-13 PAX)</p>
@@ -159,7 +167,11 @@
                         </div>
                     </article>
                     <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-                        <img src="sedan.jpg" alt="VIP Sedan Mercedes" class="h-56 w-full object-cover">
+                        <div class="h-56 w-full bg-gradient-to-br from-slate-900 to-blue-950 flex flex-col items-center justify-center text-white p-6 text-center border-b border-gray-800">
+                            <i class="fa-solid fa-car-side text-5xl text-accent mb-3"></i>
+                            <span class="text-sm font-black tracking-widest">MERCEDES S-CLASS</span>
+                            <span class="text-[9px] text-blue-300 mt-1">✨ LUXURY SEDAN (1-4 PAX)</span>
+                        </div>
                         <div class="p-8">
                             <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Sedan</h3>
                             <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes E-Class / S-Class (1-4 PAX)</p>
@@ -327,8 +339,8 @@
                         <input type="text" name="Alis_Noktasi" data-i18n="modal_placeholder_delivery" placeholder="TESLİMAT ADRESİ" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
                     </div>
                     <div class="border-t-2 pt-6 space-y-6">
-                        <input type="text" name="Isim" required data-i18n="modal_placeholder_name" placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 p-4 outline-none focus:border-primary uppercase font-black">
-                        <input type="tel" name="Telefon" required data-i18n="modal_placeholder_whatsapp" placeholder="WHATSAPP" class="w-full border-b-2 p-4 outline-none focus:border-primary font-black uppercase">
+                        <input type="text" name="Isim" placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 p-4 outline-none focus:border-primary uppercase font-black">
+                        <input type="tel" name="Telefon" placeholder="WHATSAPP" class="w-full border-b-2 p-4 outline-none focus:border-primary font-black uppercase">
                     </div>
                     <button type="submit" class="w-full py-5 bg-accent text-white rounded-3xl uppercase shadow-2xl tracking-[0.2em] font-black text-xs hover:bg-accentHover transition"><span data-i18n="modal_btn_create_doc">Belgeyi Oluştur</span> <i class="fa-solid fa-file-invoice ml-2"></i></button>
                 </form>
@@ -378,27 +390,27 @@
             <div style="font-size: 13px; line-height: 1.6;">
                 <div style="margin-bottom: 15px;">
                     <span id="pdf-label-name" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px;">Müşteri / Customer</span>
-                    <p class="dynamic-name" style="font-weight: bold; font-size: 16px; margin: 0; color: #111111;">--</p>
+                    <p class="dynamic-name" id="pdf-res-name" style="font-weight: bold; font-size: 16px; margin: 0; color: #111111;">--</p>
                 </div>
                 <div style="margin-bottom: 20px;">
                     <span id="pdf-label-contact" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px;">İletişim / Contact</span>
-                    <p class="dynamic-tel" style="font-weight: bold; font-size: 16px; margin: 0; color: #111111;">--</p>
+                    <p class="dynamic-tel" id="pdf-res-tel" style="font-weight: bold; font-size: 16px; margin: 0; color: #111111;">--</p>
                 </div>
                 <div style="padding: 15px; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 10px; margin-bottom: 20px;">
                     <span id="pdf-label-route" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 5px;">Rezervasyon Detayı</span>
-                    <p class="dynamic-route" style="font-weight: bold; color: #111111; font-size: 14px; margin: 0; line-height: 1.4;">--</p>
+                    <p class="dynamic-route" id="pdf-res-route" style="font-weight: bold; color: #111111; font-size: 14px; margin: 0; line-height: 1.4;">--</p>
                 </div>
                 <div style="margin-bottom: 15px;">
                     <span id="pdf-label-veh" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px;">Hizmet / Service</span>
-                    <p class="dynamic-veh" style="font-weight: bold; color: #1E3A8A; font-size: 14px; margin: 0;">--</p>
+                    <p class="dynamic-veh" id="pdf-res-veh" style="font-weight: bold; color: #1E3A8A; font-size: 14px; margin: 0;">--</p>
                 </div>
                 <div style="margin-bottom: 25px;">
                     <span id="pdf-label-date" style="font-size: 9px; color: #777777; font-weight: bold; display: block; margin-bottom: 3px;">Zaman / Date</span>
-                    <p class="dynamic-date" style="font-weight: bold; color: #111111; font-size: 14px; margin: 0;">--</p>
+                    <p class="dynamic-date" id="pdf-res-date" style="font-weight: bold; color: #111111; font-size: 14px; margin: 0;">--</p>
                 </div>
                 <div style="padding: 20px; background-color: #1E3A8A; color: #ffffff; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
                     <span id="pdf-label-total-side" style="font-weight: bold; font-size: 11px; color: #bfdbfe; letter-spacing: 2px;">Toplam:</span>
-                    <span class="dynamic-price" style="font-size: 32px; font-weight: 900; color: #F59E0B; font-style: italic; margin: 0;">--</span>
+                    <span class="dynamic-price" id="pdf-res-price" style="font-size: 32px; font-weight: 900; color: #F59E0B; font-style: italic; margin: 0;">--</span>
                 </div>
             </div>
             <p id="pdf-label-payment" style="font-size: 9px; color: #1E3A8A; text-align: center; margin-top: 40px; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 25px; font-weight: bold;">* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.</p>
@@ -534,42 +546,23 @@
             }
         };
 
-        const i18nPDF = {
-            TR: {
-                title: "Ön Rezervasyon Belgesi", status: "Talebiniz Alındı", name: "Müşteri / Customer", contact: "İletişim / Contact", route: "Rezervasyon Detayı", veh: "Hizmet / Service", date: "Zaman / Date", total: "Toplam:", payment: "* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.", footer: "MOONCHILL TRAVEL - KIZILARIK MAH. 2769. SOK. NO:28 MURATPAŞA/ANTALYA | +90 532 496 66 24"
-            },
-            EN: {
-                title: "Pre-Reservation Document", status: "Request Received", name: "Customer", contact: "Contact", route: "Reservation Detail", veh: "Service", date: "Date / Time", total: "Total:", payment: "* Payment will be collected by cash or card at service start.", footer: "MOONCHILL TRAVEL - KIZILARIK MAH. 2769. ST. NO:28 MURATPASA, ANTALYA / TURKEY | +90 532 496 66 24"
-            },
-            DE: {
-                title: "Vorreservierungsdokument", status: "Anfrage Erhalten", name: "Kunde / Customer", contact: "Kontakt / Contact", route: "Reservierungsdetails", veh: "Dienstleistung / Service", date: "Datum / Zeit", total: "Gesamt:", payment: "* Die Zahlung erfolgt bei Dienstbeginn in bar or per Karte.", footer: "MOONCHILL TRAVEL - KIZILARIK MAH. 2769. STR. NO:28 MURATPASA, ANTALYA / TÜRKEI | +90 532 496 66 24"
-            },
-            RU: {
-                title: "Документ предварительного бронирования", status: "Запрос получен", name: "Клиент / Customer", contact: "Контакт / Contact", route: "Детали бронирования", veh: "Услуга / Service", date: "Дата / Время", total: "Итого:", payment: "* Оплата производится при начале обслуживания наличными или картой.", footer: "MOONCHILL TRAVEL - КЫЗЫЛАРЫК МАХ. 2769. УЛ. НОМЕР:28 МУРАТПАША, АНТАЛЬЯ / ТУРЦИЯ | +90 532 496 66 24"
-            }
-        };
+        function formatMoney(value) { return value + ' EUR'; }
+        function setDisplay(id, value) { const el = document.getElementById(id); if (el) el.innerText = value; }
+        function setModalOpen(id, open) { const el = document.getElementById(id); if (!el) return; el.classList.toggle('hidden', !open); el.classList.toggle('flex', open); document.body.style.overflow = open ? 'hidden' : 'auto'; }
 
-        function calculateRentalPrice() {
-            const sd = document.getElementById('calc-alis-date')?.value;
-            const st = document.getElementById('calc-alis-time')?.value;
-            const ed = document.getElementById('calc-iade-date')?.value;
-            const et = document.getElementById('calc-iade-time')?.value;
-            const daily = Number(document.getElementById('car-price-hidden')?.value || 0);
-            if (sd && st && ed && et && daily) {
-                const start = new Date(`${sd}T${st}`);
-                const end = new Date(`${ed}T${et}`);
-                const ms = end - start;
-                if (ms > 0) {
-                    const days = Math.max(1, Math.ceil(ms / 86400000));
-                    const total = days * daily;
-                    setDisplay('rental-total-display', formatMoney(total));
-                    return total;
+        window.updatePageLanguage = function() {
+            const lang = pageTranslations[currentLang] || pageTranslations.TR;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (lang[key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = lang[key];
+                    } else {
+                        el.innerHTML = lang[key];
+                    }
                 }
-            }
-            setDisplay('rental-total-display', '-- EUR');
-            return 0;
-        }
-        window.calculateRentalPrice = calculateRentalPrice;
+            });
+        };
 
         window.setupApp = function() {
             const table = document.getElementById('fares-table-body');
@@ -585,8 +578,8 @@
             if(currentLang === 'DE') selectLabel = 'Region Auswählen';
             if(currentLang === 'RU') selectLabel = 'Выберите регион';
 
-            const destinationOptions = [`<option value="">${selectLabel}</option>`]
-                .concat(Object.keys(pricingData).map((place) => `<option value="${place}">${currentDests[place] || place}</option>`))
+            const destinationOptions = ['<option value="">' + selectLabel + '</option>']
+                .concat(Object.keys(pricingData).map(function(place) { return '<option value="' + place + '">' + (currentDests[place] || place) + '</option>'; }))
                 .join('');
 
             if (hSelect) hSelect.innerHTML = destinationOptions;
@@ -599,15 +592,16 @@
                 if(currentLang === 'DE') btnText = 'Auswählen';
                 if(currentLang === 'RU') btnText = 'Выбрать';
 
-                table.innerHTML = Object.entries(pricingData).map(([place, prices]) => `
-                    <tr class="hover:bg-blue-50 border-b border-gray-100">
-                        <td class="p-6 md:p-8 tracking-tighter">${currentDests[place] || place}</td>
-                        <td class="p-6 md:p-8 text-center text-gray-500">${formatMoney(prices[0])}</td>
-                        <td class="p-6 md:p-8 text-center text-primary italic font-black">${formatMoney(prices[1])}</td>
-                        <td class="p-6 md:p-8 text-center text-gray-500">${formatMoney(prices[2])}</td>
-                        <td class="p-6 md:p-8 text-center"><button type="button" onclick="window.openBookingModal('', '${place}')" class="bg-primary text-white text-[9px] px-6 py-2 rounded-xl uppercase hover:bg-accent transition font-black">${btnText}</button></td>
-                    </tr>
-                `).join('');
+                table.innerHTML = Object.entries(pricingData).map(function(entry) {
+                    var place = entry[0], prices = entry[1];
+                    return '<tr class="hover:bg-blue-50 border-b border-gray-100">' +
+                        '<td class="p-6 md:p-8 tracking-tighter">' + (currentDests[place] || place) + '</td>' +
+                        '<td class="p-6 md:p-8 text-center text-gray-500">' + formatMoney(prices[0]) + '</td>' +
+                        '<td class="p-6 md:p-8 text-center text-primary italic font-black">' + formatMoney(prices[1]) + '</td>' +
+                        '<td class="p-6 md:p-8 text-center text-gray-500">' + formatMoney(prices[2]) + '</td>' +
+                        '<td class="p-6 md:p-8 text-center"><button type="button" onclick="window.openBookingModal(\'\', \'' + place + '\')" class="bg-primary text-white text-[9px] px-6 py-2 rounded-xl uppercase hover:bg-accent transition font-black">' + btnText + '</button></td>' +
+                    '</tr>';
+                }).join('');
             }
 
             if (carList) {
@@ -617,26 +611,24 @@
                 if(currentLang === 'DE') { btnCar = 'Wählen & Weiter'; dailyLabel = 'Täglich'; }
                 if(currentLang === 'RU') { btnCar = 'Выбрать и продолжить'; dailyLabel = 'В день'; }
 
-                carList.innerHTML = carFleet.map((car) => {
+                carList.innerHTML = carFleet.map(function(car) {
                     let typeName = car.type_tr;
                     if(currentLang === 'EN') typeName = car.type_en;
                     if(currentLang === 'DE') typeName = car.type_de;
                     if(currentLang === 'RU') typeName = car.type_ru;
 
-                    return `
-                    <article class="p-8 border-2 border-gray-50 rounded-[28px] hover:border-primary transition bg-white flex flex-col justify-between shadow-lg uppercase font-black tracking-tight">
-                        <div class="flex justify-between items-start mb-8 uppercase gap-4">
-                            <div><h3 class="text-2xl text-primary font-black leading-none">${car.name}</h3><p class="text-[9px] text-gray-400 mt-1 tracking-widest uppercase">${typeName}</p></div>
-                            <div class="text-primary text-right font-black"><span class="block text-4xl italic tracking-tighter">${formatMoney(car.price)}</span><span class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">${dailyLabel}</span></div>
-                        </div>
-                        <button type="button" onclick="window.openCarBookingFlow('${car.name}', ${car.price})" class="w-full py-5 bg-primary text-white rounded-[22px] font-black text-[11px] tracking-widest hover:bg-accent transition active:scale-95 uppercase">${btnCar}</button>
-                    </article>
-                `;
+                    return '<article class="p-8 border-2 border-gray-50 rounded-[28px] hover:border-primary transition bg-white flex flex-col justify-between shadow-lg uppercase font-black tracking-tight">' +
+                        '<div class="flex justify-between items-start mb-8 uppercase gap-4">' +
+                            '<div><h3 class="text-2xl text-primary font-black leading-none">' + car.name + '</h3><p class="text-[9px] text-gray-400 mt-1 tracking-widest uppercase">' + typeName + '</p></div>' +
+                            '<div class="text-primary text-right font-black"><span class="block text-4xl italic tracking-tighter">' + formatMoney(car.price) + '</span><span class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">' + dailyLabel + '</span></div>' +
+                        '</div>' +
+                        '<button type="button" onclick="window.openCarBookingFlow(\'' + car.name + '\', ' + car.price + ')" class="w-full py-5 bg-primary text-white rounded-[22px] font-black text-[11px] tracking-widest hover:bg-accent transition active:scale-95 uppercase">' + btnCar + '</button>' +
+                    '</article>';
                 }).join('');
             }
 
             if (recommendedGrid) {
-                recommendedGrid.innerHTML = recommendedItems.map((item, index) => {
+                recommendedGrid.innerHTML = recommendedItems.map(function(item, index) {
                     let title = item.title_tr;
                     let sub = item.sub_tr;
                     let price = item.price;
@@ -645,26 +637,24 @@
                     if(currentLang === 'DE') { title = item.title_de; sub = item.sub_de; price = item.price_de || item.price; btnLabel = item.button_de; }
                     if(currentLang === 'RU') { title = item.title_ru; sub = item.sub_ru; price = item.price_ru || item.price; btnLabel = item.button_ru; }
 
-                    return `
-                    <article class="bg-white rounded-[28px] overflow-hidden shadow-xl border border-gray-100 group flex flex-col hover:-translate-y-3 transition-all">
-                        <div class="h-48 relative overflow-hidden"><img src="${item.image}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                        <div class="p-7 flex-grow flex flex-col justify-between text-dark uppercase font-black tracking-tight">
-                            <div><h4 class="text-sm font-black">${title}</h4><p class="text-[9px] text-gray-400 font-bold uppercase mb-4 tracking-widest">${sub}</p></div>
-                            <div class="flex justify-between items-center pt-5 border-t border-gray-50 uppercase">
-                                <span class="text-lg font-black text-primary italic">${price}</span>
-                                <button type="button" data-rec-index="${index}" class="recommended-action bg-primary text-white text-[9px] font-black px-5 py-2.5 rounded-xl uppercase hover:bg-accent transition shadow-lg">${btnLabel}</button>
-                            </div>
-                        </div>
-                    </article>
-                `;
+                    return '<article class="bg-white rounded-[28px] overflow-hidden shadow-xl border border-gray-100 group flex flex-col hover:-translate-y-3 transition-all">' +
+                        '<div class="h-48 relative overflow-hidden"><img src="' + item.image + '" alt="' + title + '" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>' +
+                        '<div class="p-7 flex-grow flex flex-col justify-between text-dark uppercase font-black tracking-tight">' +
+                            '<div><h4 class="text-sm font-black">' + title + '</h4><p class="text-[9px] text-gray-400 font-bold uppercase mb-4 tracking-widest">' + sub + '</p></div>' +
+                            '<div class="flex justify-between items-center pt-5 border-t border-gray-50 uppercase">' +
+                                '<span class="text-lg font-black text-primary italic">' + price + '</span>' +
+                                '<button type="button" data-rec-index="' + index + '" class="recommended-action bg-primary text-white text-[9px] font-black px-5 py-2.5 rounded-xl uppercase hover:bg-accent transition shadow-lg">' + btnLabel + '</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</article>';
                 }).join('');
-                document.querySelectorAll('.recommended-action').forEach((button) => {
-                    button.addEventListener('click', () => recommendedItems[Number(button.dataset.recIndex)].action());
+                document.querySelectorAll('.recommended-action').forEach(function(button) {
+                    button.addEventListener('click', function() { recommendedItems[Number(button.dataset.recIndex)].action(); });
                 });
             }
 
             const today = new Date().toISOString().slice(0, 10);
-            ['hero-date', 'modal-date', 'calc-alis-date', 'calc-iade-date'].forEach((id) => {
+            ['hero-date', 'modal-date', 'calc-alis-date', 'calc-iade-date'].forEach(function(id) {
                 const el = document.getElementById(id);
                 if (el) el.min = today;
             });
@@ -673,7 +663,7 @@
             window.updatePDFLabels();
         };
 
-        // KİLİTLENMEYİ KIRAN YENİ AKILLI ADIM DOĞRULAMA MOTORU
+        // ENGELLERİ KALDIRAN YENİ ADIM MOTORU
         window.showStep = function(step) {
             const s1 = document.getElementById('modal-step1');
             const s2 = document.getElementById('modal-step2');
@@ -682,16 +672,8 @@
             
             if (step === 2) {
                 const dropoff = document.getElementById('modal-dropoff').value;
-                const date = document.getElementById('modal-date').value;
-                const time = document.getElementById('modal-time').value;
-                
                 if (!dropoff) {
-                    alert(currentLang === 'TR' ? 'LÜTFEN VARIŞ BÖLGESİNİ SEÇİN!' : 'PLEASE SELECT A DROP-OFF REGION!');
-                    document.getElementById('modal-step1-scroller').scrollTop = 0;
-                    return;
-                }
-                if (!date || !time) {
-                    alert(currentLang === 'TR' ? 'LÜTFEN TARİH VE SAAT ALANLARINI DOLDURUN!' : 'PLEASE FILL IN THE DATE AND TIME FIELDS!');
+                    alert(currentLang === 'TR' ? 'LÜTFEN BİR VARIŞ BÖLGESİ SEÇİN!' : 'PLEASE SELECT A DROP-OFF REGION!');
                     return;
                 }
             }
@@ -706,6 +688,86 @@
             }
         };
 
+        window.submitService = function(e, type) {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            const currentDests = destDisplayNames[currentLang] || destDisplayNames.TR;
+            
+            // Son adım güvenlik kontrolü
+            const nameVal = document.getElementById('modal-name')?.value;
+            const telVal = document.getElementById('modal-tel')?.value;
+            if (type === 'Transfer' && (!nameVal || !telVal)) {
+                alert(currentLang === 'TR' ? 'LÜTFEN ADINIZI VE WHATSAPP NUMARANIZI DOLDURUN!' : 'PLEASE ENTER YOUR NAME AND WHATSAPP NUMBER!');
+                return;
+            }
+
+            const resData = {
+                id: String(Date.now()).slice(-6),
+                type: type,
+                name: fd.get('Isim') || nameVal || '',
+                phone: fd.get('Telefon') || telVal || '',
+                createdAt: new Date().toISOString()
+            };
+
+            if (type === 'Transfer') {
+                const extras = ['Ek_Bebek', 'Ek_Cocuk', 'Ek_Bisiklet', 'Ek_Bagaj']
+                    .map(function(key) { return Number(fd.get(key) || 0); })
+                    .reduce(function(sum, value) { return sum + value; }, 0);
+                const rawDropoff = fd.get('Varis_Noktasi') || 'Antalya';
+                const translatedDropoff = currentDests[rawDropoff] || rawDropoff;
+                resData.route = (fd.get('Alis_Noktasi') || 'Airport') + ' > ' + translatedDropoff;
+                resData.date = (fd.get('Tarih') || '--') + ' @ ' + (fd.get('Saat') || '--');
+                resData.veh = fd.get('Arac') + (extras ? ' (+Extras)' : '');
+                resData.price = document.getElementById('final-total-display')?.innerText || '-- EUR';
+            } else {
+                resData.route = type + ' Talebi';
+                resData.date = '--';
+                resData.veh = type;
+                resData.price = 'Teklif Bekleniyor';
+            }
+
+            saveReservation(resData);
+            window.updatePDFLabels();
+            window.showConfirmUI(resData);
+            e.target.reset();
+            window.calculateModalPrice();
+        };
+
+        window.showConfirmUI = function(res) {
+            document.querySelectorAll('.dynamic-name').forEach(function(el) { el.innerText = res.name; });
+            document.querySelectorAll('.dynamic-tel').forEach(function(el) { el.innerText = res.phone; });
+            document.querySelectorAll('.dynamic-route').forEach(function(el) { el.innerText = res.route; });
+            document.querySelectorAll('.dynamic-date').forEach(function(el) { el.innerText = res.date; });
+            document.querySelectorAll('.dynamic-veh').forEach(function(el) { el.innerText = res.veh; });
+            document.querySelectorAll('.dynamic-price').forEach(function(el) { el.innerText = res.price; });
+
+            const waMsg = `*🌟 MOONCHILL TRAVEL - YENİ TALEBİNİZ*\n\n` +
+                          `👤 *MÜŞTERİ:* ${res.name}\n` +
+                          `📞 *İLETİŞİM / WA:* ${res.phone}\n\n` +
+                          `📌 *HİZMET TÜRÜ:* ${res.type}\n` +
+                          `🚘 *ARAÇ / DETAY:* ${res.veh}\n` +
+                          `🗺️ *ROTA:* ${res.route}\n` +
+                          `📅 *ZAMAN / DATE:* ${res.date}\n\n` +
+                          `💰 *TOPLAM TUTAR:* ${res.price}\n\n` +
+                          `📍 _Kızılarık Mah. Muratpaşa, Antalya_`;
+
+            const waBtn = document.getElementById('res-wa-btn');
+            if (waBtn) waBtn.onclick = function() { window.open('https://wa.me/905324966624?text=' + encodeURIComponent(waMsg), '_blank'); };
+
+            setModalOpen('bookingModalOverlay', false);
+            setModalOpen('genericRequestModalOverlay', false);
+            setModalOpen('carRentalModalOverlay', false);
+            setModalOpen('confirmModalOverlay', true);
+        };
+
+        window.updatePDFLabels = function() {
+            const lang = i18nPDF[currentLang] || i18nPDF.TR;
+            const map = {
+                'pdf-label-title': lang.title, 'pdf-label-status': lang.status, 'pdf-label-name': lang.name, 'pdf-label-contact': lang.contact, 'pdf-label-route': lang.route, 'pdf-label-veh': lang.veh, 'pdf-label-date': lang.date, 'pdf-label-total-side': lang.total, 'pdf-label-payment': lang.payment, 'pdf-label-footer': lang.footer
+            };
+            Object.entries(map).forEach(function(entry) { var id = entry[0], text = entry[1]; setDisplay(id, text); });
+        };
+
         window.changeLang = function(lang) {
             currentLang = lang;
             setDisplay('current-lang-desktop', lang);
@@ -713,12 +775,12 @@
             window.setupApp();
         };
 
-        window.openBookingModal = function(pickup = '', dropoff = '', vehicle = '') {
+        window.openBookingModal = function(pickup, dropoff, vehicle) {
             setModalOpen('bookingModalOverlay', true);
             if (pickup) document.getElementById('modal-pickup').value = pickup;
             if (dropoff) document.getElementById('modal-dropoff').value = dropoff;
             if (vehicle) {
-                const vehicleInput = document.querySelector(`input[name="Arac"][value="${vehicle}"]`);
+                const vehicleInput = document.querySelector('input[name="Arac"][value="' + vehicle + '"]');
                 if (vehicleInput) vehicleInput.checked = true;
             }
             window.showStep(1);
@@ -726,45 +788,7 @@
         };
 
         window.closeBookingModal = function() { setModalOpen('bookingModalOverlay', false); };
-
-        window.openGenericModal = function(type) {
-            setModalOpen('genericRequestModalOverlay', true);
-            document.getElementById('hidden-service-type').value = type === 'flight' ? 'Uçak' : 'Otel';
-            document.getElementById('flight-fields').classList.toggle('hidden', type !== 'flight');
-            document.getElementById('hotel-fields').classList.toggle('hidden', type !== 'hotel');
-            document.getElementById('rental-fields').classList.add('hidden');
-            
-            let titleText = type === 'flight' ? 'Uçak Bileti' : 'Otel Rezervasyon';
-            if(currentLang === 'EN') titleText = type === 'flight' ? 'Flight Ticket' : 'Hotel Reservation';
-            if(currentLang === 'DE') titleText = type === 'flight' ? 'Flugticket' : 'Hotelreservierung';
-            if(currentLang === 'RU') titleText = type === 'flight' ? 'Авиабилет' : 'Бронирование отеля';
-            
-            setDisplay('generic-modal-title', titleText);
-        };
-
-        window.closeGenericModal = function() { setModalOpen('genericRequestModalOverlay', false); };
-        window.openCarRentalModal = function() { setModalOpen('carRentalModalOverlay', true); };
-        window.closeCarRentalModal = function() { setModalOpen('carRentalModalOverlay', false); };
         window.closeConfirmModal = function() { setModalOpen('confirmModalOverlay', false); };
-
-        window.openCarBookingFlow = function(name, price) {
-            setModalOpen('carRentalModalOverlay', false);
-            setModalOpen('genericRequestModalOverlay', true);
-            document.getElementById('hidden-service-type').value = 'Kiralama';
-            document.getElementById('rental-fields').classList.remove('hidden');
-            document.getElementById('flight-fields').classList.add('hidden');
-            document.getElementById('hotel-fields').classList.add('hidden');
-            
-            let titleText = `${name} Kiralama`;
-            if(currentLang === 'EN') titleText = `${name} Rental`;
-            if(currentLang === 'DE') titleText = `${name} Mieten`;
-            if(currentLang === 'RU') titleText = `${name} Аренда`;
-            
-            setDisplay('generic-modal-title', titleText);
-            document.getElementById('car-model-hidden').value = name;
-            document.getElementById('car-price-hidden').value = price;
-            window.calculateRentalPrice();
-        };
 
         window.startBookingFromHero = function() {
             const pickup = document.getElementById('hero-pickup')?.value || '';
@@ -776,74 +800,19 @@
 
         window.downloadPDF = function() {
             const element = document.getElementById('pdf-container');
-            const guestName = document.getElementById('modal-name')?.value || 'Moonchill';
-            const cleanName = guestName.replace(/[^\w-]+/g, '_');
-            
             const btnLabel = document.getElementById('btn-pdf-label');
-            btnLabel.innerText = currentLang === 'TR' ? 'BELGE OLUŞTURULUYOR...' : 'GENERATING...';
+            btnLabel.innerText = currentLang === 'TR' ? 'OLUŞTURULUYOR...' : 'GENERATING...';
 
             html2pdf().from(element).set({
                 margin: [10, 10, 10, 10],
-                filename: `Moonchill_Reservation_${cleanName}.pdf`,
+                filename: 'Moonchill_Reservation.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2, useCORS: true, allowTaint: false, logging: false },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            }).save().then(() => {
+            }).save().then(function() {
                 btnLabel.innerText = currentLang === 'TR' ? 'Rezervasyon Belgesini İndir (PDF)' : 'Download Reservation Document (PDF)';
             });
         };
-
-        window.openAdminModal = function() {
-            setModalOpen('adminModalOverlay', true);
-            document.getElementById('admin-login-sec').classList.remove('hidden');
-            document.getElementById('admin-dashboard').classList.add('hidden');
-        };
-
-        window.closeAdminModal = function() { setModalOpen('adminModalOverlay', false); };
-
-        window.checkAdminLogin = function() {
-            const u = document.getElementById('admin-user')?.value;
-            const p = document.getElementById('admin-pass')?.value;
-            if (u === 'DesertEagle' && p === 'Mc.103036') {
-                document.getElementById('admin-login-sec').classList.add('hidden');
-                document.getElementById('admin-dashboard').classList.remove('hidden');
-                window.loadReservations();
-            } else {
-                const alertMsg = currentLang === 'TR' ? 'Kullanıcı adı veya şifre hatalı.' : 'Invalid username or password.';
-                alert(alertMsg);
-            }
-        };
-
-        window.loadReservations = function() {
-            const list = document.getElementById('admin-table-body');
-            if (!list) return;
-            const reservations = getReservations();
-            if (!reservations.length) {
-                const noResText = currentLang === 'TR' ? 'Henüz rezervasyon yok.' : 'No reservations yet.';
-                list.innerHTML = `<p class="text-center text-gray-400 font-bold uppercase tracking-widest">${noResText}</p>`;
-                return;
-            }
-            list.innerHTML = reservations.map((r) => `
-                <article class="p-6 border-2 rounded-[24px] flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white shadow-sm gap-4 uppercase font-black tracking-tight">
-                    <div>
-                        <span class="bg-primary text-white px-3 py-1 rounded-full text-[9px]">${r.type}</span>
-                        <div class="mt-3"><span class="block text-primary">${r.name}</span><span class="text-gray-400 text-[10px]">${r.route}</span></div>
-                    </div>
-                    <div class="sm:text-right shrink-0"><span class="text-accent text-xl block italic">${r.price}</span><span class="text-[9px] text-primary">${r.date}</span></div>
-                </article>
-            `).join('');
-        };
-
-        window.clearReservations = function() {
-            const confirmMsg = currentLang === 'TR' ? 'Tüm kayıtlı rezervasyonlar silinsin mi?' : 'Are you sure you want to clear all reservations?';
-            if (confirm(confirmMsg)) { localStorage.removeItem(storageKey()); window.loadReservations(); }
-        };
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                ['bookingModalOverlay', 'genericRequestModalOverlay', 'carRentalModalOverlay', 'confirmModalOverlay', 'adminModalOverlay'].forEach((id) => setModalOpen(id, false));
-            }
-        });
 
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', window.setupApp);
