@@ -4,44 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moonchill Travel | VIP Transfer & Rent A Car</title>
-    
-    <!-- SEO -->
-    <meta name="description" content="Antalya ve Dalaman VIP Transfer, Lüks Araç Kiralama ve Seyahat Çözümleri.">
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- PDF Generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Poppins', 'sans-serif'] },
                     colors: {
-                        primary: '#1E3A8A', // Lacivert
-                        accent: '#F59E0B',  // Turuncu
+                        primary: '#1E3A8A',
+                        primaryHover: '#172C68',
+                        accent: '#F59E0B',
                         accentHover: '#D97706',
                         dark: '#111827'
                     }
                 }
             }
-        }
+        };
     </script>
-    
     <style>
+        body { background: #fff; }
         .hero-bg {
-            background-image: linear-gradient(rgba(30, 58, 138, 0.5), rgba(30, 58, 138, 0.7)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover; background-position: center;
+            background-image:
+                linear-gradient(rgba(17, 24, 39, 0.28), rgba(30, 58, 138, 0.72)),
+                url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
         }
-        body { background-color: #f8fafc; transition: all 0.3s ease; }
-        .luxury-text { font-weight: 900; text-transform: uppercase; }
-        input[type="radio"]:checked + div { border-color: #1E3A8A; background-color: #eff6ff; }
+        input[type="radio"]:checked + .vehicle-card {
+            border-color: #1E3A8A;
+            background-color: #eff6ff;
+        }
         .animate-wa { animation: pulse-wa 2s infinite; }
         @keyframes pulse-wa {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
@@ -50,561 +45,766 @@
         }
         .modal-scroll::-webkit-scrollbar { width: 5px; }
         .modal-scroll::-webkit-scrollbar-thumb { background: #1E3A8A; border-radius: 10px; }
-        .goog-te-banner-frame, .skiptranslate { display: none !important; }
     </style>
 </head>
-<body class="antialiased font-sans flex flex-col min-h-screen relative overflow-x-hidden text-dark font-black uppercase tracking-tight">
-
-    <!-- Canlı Destek -->
-    <a href="https://wa.me/905324966624" target="_blank" class="fixed bottom-6 right-6 z-[200] flex items-center gap-3 group">
+<body class="antialiased font-sans min-h-screen overflow-x-hidden text-dark">
+    <a href="https://wa.me/905324966624" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-[200] flex items-center gap-3 group">
         <div class="hidden md:block bg-white text-primary py-2 px-5 rounded-full shadow-xl border border-gray-100 font-bold text-xs uppercase opacity-0 group-hover:opacity-100 transition-opacity">Canlı Destek</div>
         <div class="w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl animate-wa hover:scale-110 transition-transform">
             <i class="fa-brands fa-whatsapp text-2xl md:text-3xl"></i>
         </div>
     </a>
 
-    <!-- Header Navigation -->
-    <header class="fixed w-full z-50 bg-primary shadow-lg h-20 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
-            <a href="#" class="text-xl md:text-2xl font-black uppercase">MOONCHILL<span class="text-accent">TRAVEL</span></a>
-            <nav class="hidden lg:flex space-x-6 text-[10px] tracking-widest uppercase font-black">
+    <header class="fixed w-full z-50 bg-primary shadow-lg h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center text-white">
+            <a href="#home" class="text-xl md:text-2xl font-black uppercase tracking-tight">MOONCHILL<span class="text-accent">TRAVEL</span></a>
+            <nav class="hidden lg:flex space-x-6 text-[11px] font-black uppercase tracking-widest">
                 <a href="#home" class="hover:text-accent transition">Ana Sayfa</a>
                 <a href="#travel-services" class="hover:text-accent transition">Hizmetlerimiz</a>
                 <a href="#recommended" class="hover:text-accent transition">Önerilenler</a>
+                <a href="#fares" class="hover:text-accent transition">Fiyatlar</a>
             </nav>
-            <div class="flex items-center space-x-4 uppercase font-black text-[10px]">
-                <div class="relative group cursor-pointer">
-                    <button class="flex items-center gap-1 uppercase"><i class="fa-solid fa-globe"></i> <span id="current-lang-desktop">TR</span></button>
+            <div class="flex items-center space-x-4">
+                <div class="relative group cursor-pointer font-black text-[10px] tracking-widest uppercase">
+                    <button class="flex items-center gap-1 uppercase" type="button"><i class="fa-solid fa-globe"></i> <span id="current-lang-desktop">TR</span></button>
                     <div class="absolute right-0 mt-3 w-40 bg-white border border-gray-100 rounded-xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all text-dark">
-                        <a href="javascript:void(0)" onclick="window.changeLang('tr', 'TR')" class="block px-6 py-2 hover:bg-gray-50 transition">TÜRKÇE</a>
-                        <a href="javascript:void(0)" onclick="window.changeLang('en', 'EN')" class="block px-6 py-2 hover:bg-gray-50 transition">ENGLISH</a>
-                        <a href="javascript:void(0)" onclick="window.changeLang('de', 'DE')" class="block px-6 py-2 hover:bg-gray-50 transition">DEUTSCH</a>
-                        <a href="javascript:void(0)" onclick="window.changeLang('ru', 'RU')" class="block px-6 py-2 hover:bg-gray-50 transition">РУССКИЙ</a>
+                        <button type="button" onclick="window.changeLang('TR')" class="block w-full text-left px-6 py-2 hover:bg-gray-50">TÜRKÇE</button>
+                        <button type="button" onclick="window.changeLang('EN')" class="block w-full text-left px-6 py-2 hover:bg-gray-50">ENGLISH</button>
                     </div>
                 </div>
-                <button onclick="window.openBookingModal()" class="bg-accent hover:bg-accentHover px-6 py-2.5 rounded-lg shadow-lg transition active:scale-95">Rezervasyon</button>
+                <button type="button" onclick="window.openBookingModal()" class="bg-accent hover:bg-accentHover text-white px-5 md:px-6 py-2.5 rounded-lg font-black text-xs shadow-lg uppercase transition active:scale-95">Rezervasyon</button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center relative pt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-white text-center md:text-left">
-            <h1 class="text-4xl md:text-8xl font-black mb-6 leading-tight uppercase font-black uppercase">TATİLİN <span class="text-accent italic font-black">EN VIP</span> HALİ</h1>
-            <p class="text-lg md:text-2xl mb-12 font-light max-w-2xl uppercase">Profesyonel transfer ve lüks kiralama çözümleri Antalya'da.</p>
-
-            <div class="bg-white/95 backdrop-blur-md rounded-[35px] shadow-2xl p-6 md:p-10 w-full max-w-5xl border border-white/20 mx-auto md:mx-0">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end text-left text-dark">
-                    <div class="flex flex-col text-[10px]">
-                        <label class="text-gray-500 mb-2 ml-1">Alış Yeri</label>
-                        <select id="hero-pickup" class="w-full border-2 p-4 rounded-2xl font-bold bg-white outline-none focus:border-primary transition font-black uppercase">
-                            <option value="Antalya Havalimanı (AYT)">Antalya (AYT)</option>
-                            <option value="Dalaman Havalimanı (DLM)">Dalaman (DLM)</option>
-                        </select>
-                    </div>
-                    <div class="flex flex-col text-[10px]">
-                        <label class="text-gray-400 mb-2 ml-1 uppercase">Varış Bölgesi</label>
-                        <select id="hero-dropoff" class="w-full border-2 p-4 rounded-2xl font-bold outline-none focus:border-primary transition uppercase font-black"></select>
-                    </div>
-                    <div class="flex flex-col text-[10px]">
-                        <label class="text-gray-400 mb-2 ml-1 uppercase">Tarih</label>
-                        <input type="date" id="hero-date" class="w-full border-2 p-4 rounded-2xl outline-none focus:border-primary transition font-bold">
-                    </div>
-                    <button onclick="window.startBookingFromHero()" class="bg-primary hover:bg-primaryHover text-white font-black rounded-xl py-4 transition shadow-xl uppercase text-xs uppercase font-black">Fiyatı Gör</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section id="travel-services" class="py-24 bg-white text-center font-black uppercase">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-5xl text-primary mb-20">Hizmetlerimiz</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="p-12 bg-white rounded-[45px] border border-gray-100 shadow-xl hover:shadow-2xl transition flex flex-col items-center">
-                    <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mb-8"><i class="fa-solid fa-plane-up text-3xl text-primary"></i></div>
-                    <h3 class="text-xl mb-4 font-black">Uçak Bileti</h3>
-                    <button onclick="window.openGenericModal('flight')" class="text-primary text-xs tracking-widest border-b-2 border-primary/20 pb-1 font-black">Ön Rezervasyon</button>
-                </div>
-                <div class="p-12 bg-dark text-white rounded-[45px] shadow-2xl transform md:-translate-y-6 flex flex-col items-center group">
-                    <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mb-8 shadow-xl"><i class="fa-solid fa-hotel text-3xl text-white"></i></div>
-                    <h3 class="text-xl font-black uppercase mb-4">Otel</h3>
-                    <button onclick="window.openGenericModal('hotel')" class="text-accent text-xs tracking-widest border-b-2 border-accent/30 pb-1 font-black">Rezervasyon Yap</button>
-                </div>
-                <div class="p-12 bg-white rounded-[45px] border border-gray-100 shadow-xl flex flex-col items-center text-dark">
-                    <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mb-8"><i class="fa-solid fa-key text-3xl text-primary"></i></div>
-                    <h3 class="text-xl font-black mb-4">Araç Kiralama</h3>
-                    <button onclick="window.openCarRentalModal()" class="text-primary text-xs tracking-widest border-b-2 border-primary/20 pb-1 font-black">Modelleri Gör</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recommended -->
-    <section id="recommended" class="py-24 bg-slate-50 border-y border-gray-200 uppercase font-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-dark">
-            <h2 class="text-3xl md:text-5xl font-black text-primary mb-4 uppercase">Önerilenler</h2>
-            <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-20 font-black">En Popüler VIP Seçimler</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left uppercase">
-                <div class="bg-white rounded-[40px] overflow-hidden shadow-xl border border-gray-100 group flex flex-col hover:-translate-y-3 transition-all duration-500">
-                    <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="VIP Transfer" class="w-full h-full object-cover"></div>
-                    <div class="p-8 flex-grow flex flex-col justify-between font-black uppercase font-black uppercase">
-                        <div><h4 class="text-dark mb-1 text-sm">AYT > Belek VIP</h4><p class="text-[9px] text-gray-400 mb-4 tracking-widest font-black uppercase">Konforlu Minivan</p></div>
-                        <div class="flex justify-between items-center pt-5 border-t border-gray-50 font-black uppercase"><span class="text-xl font-black text-primary italic font-black">€45</span><button onclick="window.openBookingModal('','Belek')" class="bg-primary text-white text-[9px] font-black px-5 py-2.5 rounded-xl uppercase hover:bg-accent transition shadow-lg font-black uppercase">Seç</button></div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-[40px] shadow-xl border border-gray-100 group flex flex-col hover:-translate-y-3 transition-all font-black">
-                    <div class="h-48 overflow-hidden font-black uppercase"><img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=600&q=80" alt="Toyota Corolla" class="w-full h-full object-cover font-black"></div>
-                    <div class="p-8 flex-grow flex flex-col justify-between uppercase">
-                        <div><h4 class="text-sm font-black tracking-tighter uppercase font-black">Toyota Corolla</h4><p class="text-[9px] text-gray-400 font-bold uppercase mb-4 tracking-widest uppercase font-black">Günün Fırsatı</p></div>
-                        <div class="flex justify-between items-center pt-5 border-t border-gray-50 font-black uppercase font-black uppercase"><span class="text-xl font-black text-primary italic font-black uppercase font-black">€85</span><button onclick="window.openCarBookingFlow('Toyota Corolla', 85)" class="bg-primary text-white text-[9px] px-5 py-2.5 rounded-xl uppercase hover:bg-accent transition shadow-lg font-black uppercase">Kirala</button></div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-[40px] shadow-xl border border-gray-100 group flex flex-col hover:-translate-y-3 transition-all font-black uppercase">
-                    <div class="h-48 overflow-hidden font-black uppercase font-black uppercase font-black uppercase"><img src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=600&q=80" alt="Dalaman" class="w-full h-full object-cover"></div>
-                    <div class="p-8 flex-grow flex flex-col justify-between font-black uppercase font-black uppercase">
-                        <div><h4 class="text-sm font-black tracking-tighter uppercase font-black font-black uppercase">DLM > Fethiye</h4><p class="text-[9px] text-gray-400 font-bold uppercase mb-4 tracking-widest font-black uppercase">VIP Ege Transferi</p></div>
-                        <div class="flex justify-between items-center pt-5 border-t border-gray-50 font-black uppercase font-black uppercase"><span class="text-xl font-black text-primary italic font-black uppercase">€115</span><button onclick="window.openBookingModal('Dalaman Havalimanı (DLM)','Fethiye')" class="bg-primary text-white text-[9px] font-black px-5 py-2.5 rounded-xl uppercase hover:bg-accent transition shadow-lg font-black uppercase font-black">Ayırt</button></div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-[40px] shadow-xl border border-gray-100 group flex flex-col hover:-translate-y-3 transition-all">
-                    <div class="h-48 overflow-hidden font-black"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80" alt="Hotel" class="w-full h-full object-cover"></div>
-                    <div class="p-8 flex-grow flex flex-col justify-between uppercase">
-                        <div><h4 class="text-sm font-black uppercase font-black uppercase">Lara Hotels</h4><p class="text-[9px] text-gray-400 mb-4 font-black">Acente Özel İndirimi</p></div>
-                        <div class="flex justify-between items-center pt-5 border-t border-gray-50 font-black uppercase font-black uppercase"><span class="text-[10px] text-accent uppercase font-black">Teklif Al</span><button onclick="window.openGenericModal('hotel')" class="bg-primary text-white text-[9px] font-black px-5 py-2.5 rounded-xl uppercase hover:bg-accent transition shadow-lg font-black uppercase font-black">Bak</button></div>
+    <main>
+        <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center md:text-left text-white">
+                <h1 class="text-4xl md:text-7xl xl:text-8xl font-black mb-6 leading-tight uppercase tracking-tight">TATİLİN <span class="text-accent italic">EN VIP</span> HALİ</h1>
+                <p class="text-lg md:text-2xl mb-12 font-light max-w-2xl leading-relaxed">Transferden kiralık araca kadar tüm seyahat planınız tek bir çatıda.</p>
+                <div class="bg-white/95 backdrop-blur-md rounded-[28px] shadow-2xl p-6 md:p-10 w-full max-w-5xl border border-white/20 mx-auto md:mx-0">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end text-left text-dark">
+                        <div class="flex flex-col text-[10px] uppercase font-bold tracking-widest">
+                            <label for="hero-pickup" class="text-gray-500 mb-2 ml-1">Alış Yeri</label>
+                            <select id="hero-pickup" class="w-full border-2 border-gray-100 rounded-2xl p-4 bg-white outline-none focus:border-primary transition font-bold text-sm">
+                                <option value="Antalya Havalimanı (AYT)">Antalya (AYT)</option>
+                                <option value="Dalaman Havalimanı (DLM)">Dalaman (DLM)</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col text-[10px] uppercase font-bold tracking-widest">
+                            <label for="hero-dropoff" class="text-gray-500 mb-2 ml-1">Varış Bölgesi</label>
+                            <select id="hero-dropoff" class="w-full border-2 border-gray-100 rounded-2xl p-4 bg-white outline-none focus:border-primary transition font-bold text-sm"></select>
+                        </div>
+                        <div class="flex flex-col text-[10px] uppercase font-bold tracking-widest">
+                            <label for="hero-date" class="text-gray-500 mb-2 ml-1">Tarih</label>
+                            <input type="date" id="hero-date" class="w-full border-2 border-gray-100 rounded-2xl p-4 outline-none focus:border-primary transition font-bold text-sm">
+                        </div>
+                        <button type="button" onclick="window.startBookingFromHero()" class="bg-primary hover:bg-primaryHover text-white font-black rounded-2xl py-4 transition shadow-xl uppercase tracking-widest text-xs">Fiyatı Gör</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Fiyat Listesi -->
-    <section id="fares" class="py-24 bg-white text-dark font-black uppercase tracking-widest font-black uppercase">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-dark font-black uppercase">
-            <h2 class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter font-black font-black">Fiyat Listesi</h2>
-            <div class="overflow-x-auto rounded-[35px] shadow-2xl bg-white border border-gray-100">
-                <table class="w-full text-left text-xs md:text-sm font-black uppercase font-black uppercase">
-                    <thead class="bg-primary text-white uppercase text-[10px] tracking-widest font-black uppercase font-black">
-                        <tr><th class="p-8">Bölge</th><th class="p-8 text-center">Sedan</th><th class="p-8 text-center">Minivan</th><th class="p-8 text-center">Minibüs</th><th class="p-8 text-center">Ayırt</th></tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-50 font-bold" id="fares-table-body"></tbody>
-                </table>
+        <section id="travel-services" class="py-24 bg-white text-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-5xl font-black text-primary mb-20 uppercase tracking-tighter">Hizmetlerimiz</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <article class="p-10 md:p-12 bg-white rounded-[28px] border border-gray-100 shadow-xl hover:shadow-2xl transition flex flex-col items-center">
+                        <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mb-8"><i class="fa-solid fa-plane-up text-3xl text-primary"></i></div>
+                        <h3 class="text-xl mb-4 font-black">Uçak Bileti</h3>
+                        <button type="button" onclick="window.openGenericModal('flight')" class="text-primary text-xs font-black uppercase tracking-widest border-b-2 border-primary/20 pb-1 transition">Ön Rezervasyon</button>
+                    </article>
+                    <article class="p-10 md:p-12 bg-dark text-white rounded-[28px] shadow-2xl md:-translate-y-6 flex flex-col items-center">
+                        <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mb-8 shadow-xl"><i class="fa-solid fa-hotel text-3xl text-white"></i></div>
+                        <h3 class="text-xl mb-4 font-black">Otel</h3>
+                        <button type="button" onclick="window.openGenericModal('hotel')" class="text-accent text-xs font-black uppercase tracking-widest border-b-2 border-accent/30 pb-1 transition">Rezervasyon Yap</button>
+                    </article>
+                    <article class="p-10 md:p-12 bg-white rounded-[28px] border border-gray-100 shadow-xl hover:shadow-2xl transition flex flex-col items-center text-dark">
+                        <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mb-8"><i class="fa-solid fa-key text-3xl text-primary"></i></div>
+                        <h3 class="text-xl mb-4 font-black">Araç Kiralama</h3>
+                        <button type="button" onclick="window.openCarRentalModal()" class="text-primary text-xs font-black uppercase tracking-widest border-b-2 border-primary/20 pb-1 transition">Modelleri Gör</button>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-primary text-white pt-24 pb-12 border-t-8 border-accent uppercase font-black tracking-widest">
+        <section id="recommended" class="py-24 bg-slate-50 border-y border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-dark">
+                <h2 class="text-3xl md:text-5xl font-black text-primary mb-4 uppercase tracking-tighter">Sizin İçin Önerdiklerimiz</h2>
+                <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-20">En Popüler VIP Fırsatları</p>
+                <div id="recommended-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left"></div>
+            </div>
+        </section>
+
+        <section id="fleet" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-dark">
+                <h2 class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Transfer Filomuz</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800" alt="VIP Minivan" class="h-60 w-full object-cover">
+                        <div class="p-8"><h3 class="text-lg uppercase mb-4 text-primary font-black">VIP Minivan</h3><button type="button" onclick="window.openBookingModal('', '', 'VIP Minivan')" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button></div>
+                    </article>
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all">
+                        <img src="https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&w=800" alt="VIP Minibüs" class="h-60 w-full object-cover">
+                        <div class="p-8"><h3 class="text-lg uppercase mb-4 text-primary font-black">VIP Minibüs</h3><button type="button" onclick="window.openBookingModal('', '', 'VIP Minibüs')" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button></div>
+                    </article>
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all">
+                        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=800" alt="VIP Sedan" class="h-60 w-full object-cover">
+                        <div class="p-8"><h3 class="text-lg uppercase mb-4 text-primary font-black">VIP Sedan</h3><button type="button" onclick="window.openBookingModal('', '', 'VIP Sedan')" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-accent transition shadow-lg">Ayırt</button></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="fares" class="py-24 bg-slate-50 border-t border-gray-200 text-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Detaylı Fiyat Listesi</h2>
+                <div class="overflow-x-auto rounded-[28px] shadow-2xl bg-white border border-gray-100">
+                    <table class="w-full text-left text-xs md:text-sm font-bold uppercase">
+                        <thead class="bg-primary text-white text-[10px] tracking-widest">
+                            <tr>
+                                <th class="p-6 md:p-8">Varış Bölgesi</th>
+                                <th class="p-6 md:p-8 text-center">Sedan</th>
+                                <th class="p-6 md:p-8 text-center">Minivan</th>
+                                <th class="p-6 md:p-8 text-center">Minibüs</th>
+                                <th class="p-6 md:p-8 text-center">Ayırt</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-50" id="fares-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-white pt-24 pb-12 border-t-8 border-accent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
-                <div><h4 class="text-2xl mb-8 text-accent uppercase font-black tracking-widest font-black uppercase">MOONCHILLTRAVEL</h4><p class="text-gray-400 text-sm font-black font-black uppercase">Profesyonel VIP Transfer ve Araç Kiralama.</p></div>
-                <div><h4 class="text-[10px] text-accent mb-8 font-black uppercase tracking-[0.3em]">Hızlı Bağlantı</h4><ul class="space-y-4 text-xs font-bold text-gray-400 uppercase tracking-widest font-black uppercase"><li><a href="#home">Ana Sayfa</a></li><li><button onclick="window.openAdminModal()" class="uppercase font-black font-black uppercase">Acente Girişi</button></li></ul></div>
-                <div><h4 class="text-[10px] text-accent mb-8 tracking-[0.3em]">İletişim</h4><p class="text-xs text-gray-400 font-bold leading-loose">+90 532 496 66 24</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div>
+                    <h4 class="text-2xl font-black uppercase mb-8 text-accent tracking-tighter">MOONCHILLTRAVEL</h4>
+                    <p class="text-blue-100 text-sm leading-relaxed">Profesyonel transfer ve seyahat acenteniz.</p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black text-accent mb-8 tracking-[0.3em] uppercase">Hızlı Menü</h4>
+                    <ul class="space-y-4 text-xs font-bold text-blue-100 uppercase tracking-widest">
+                        <li><a href="#home" class="hover:text-accent">Ana Sayfa</a></li>
+                        <li><button type="button" onclick="window.openAdminModal()" class="hover:text-accent">Acente Girişi</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black text-accent mb-8 tracking-[0.3em] uppercase">İletişim</h4>
+                    <p class="text-xs text-blue-100 font-bold uppercase tracking-widest leading-loose">+90 532 496 66 24</p>
+                </div>
             </div>
-            <p class="text-[10px] text-center text-gray-700 mt-20 font-black uppercase">&copy; 2026 Moonchill Global VIP</p>
+            <p class="text-[10px] text-center text-blue-200 mt-20 font-black uppercase tracking-widest">&copy; 2026 Moonchill Global VIP</p>
         </div>
     </footer>
 
-    <!-- MODALS -->
-    <!-- Booking Modal -->
-    <div id="bookingModalOverlay" class="fixed inset-0 bg-black/80 z-[100] hidden flex justify-center items-center backdrop-blur-md p-4 text-dark font-black uppercase">
-        <div class="bg-white w-full max-w-2xl rounded-[40px] shadow-2xl relative overflow-hidden flex flex-col max-h-[92vh] uppercase font-black">
-            <button onclick="window.closeBookingModal()" class="absolute top-8 right-8 text-gray-400 text-3xl z-20 hover:text-primary transition font-black uppercase">&times;</button>
-            <div class="bg-primary p-10 text-white text-center uppercase shadow-lg font-black"><h2 class="text-2xl font-black uppercase">VIP Rezervasyon</h2>
-                <div class="flex justify-center items-center gap-6 mt-6 uppercase text-[10px]">
-                    <div id="step-ind-1" class="flex items-center gap-2"><span class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-xs font-black shadow-lg uppercase font-black">1</span> <span class="font-black">PLANLAMA</span></div>
-                    <div id="step-ind-2" class="flex items-center gap-2 opacity-30 font-black uppercase"><span class="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center text-xs font-black font-black">2</span> <span class="font-black uppercase">İLETİŞİM</span></div>
+    <div id="bookingModalOverlay" class="fixed inset-0 bg-black/80 z-[100] hidden justify-center items-center backdrop-blur-md p-4 text-dark">
+        <div class="bg-white w-full max-w-2xl rounded-[32px] shadow-2xl relative overflow-hidden flex flex-col max-h-[92vh]">
+            <button type="button" onclick="window.closeBookingModal()" class="absolute top-6 right-7 text-white/70 text-3xl z-20 hover:text-white transition" aria-label="Kapat">&times;</button>
+            <div class="bg-primary p-8 md:p-10 text-white text-center shadow-lg">
+                <h2 class="text-2xl font-black tracking-tighter uppercase">VIP Rezervasyon</h2>
+                <div class="flex justify-center items-center gap-6 mt-6 uppercase text-[10px] font-black tracking-widest">
+                    <div id="step-ind-1" class="flex items-center gap-2"><span class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-xs">1</span> <span>Planlama</span></div>
+                    <div id="step-ind-2" class="flex items-center gap-2 opacity-30"><span class="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center text-xs">2</span> <span>İletişim</span></div>
                 </div>
             </div>
-            <div class="p-8 modal-scroll overflow-y-auto uppercase font-black">
-                <form id="transferForm" onsubmit="window.submitService(event, 'Transfer')">
+            <div class="p-6 md:p-8 modal-scroll overflow-y-auto">
+                <form id="bookingForm" onsubmit="window.submitService(event, 'Transfer')">
                     <div id="modal-step1">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 text-sm uppercase font-black uppercase">
-                            <select name="Alis_Noktasi" id="modal-pickup" class="w-full border-2 border-gray-100 p-5 rounded-2xl bg-gray-50 outline-none focus:border-primary font-black uppercase text-xs uppercase font-black"><option value="Antalya Havalimanı (AYT)">Antalya (AYT)</option><option value="Dalaman Havalimanı (DLM)">Dalaman (DLM)</option></select>
-                            <select id="modal-dropoff" name="Varis_Noktasi" onchange="window.calculateModalPrice()" class="w-full border-2 border-gray-100 p-5 rounded-2xl font-bold bg-gray-50 outline-none uppercase text-xs focus:border-primary transition font-black uppercase font-black"></select>
-                            <input type="date" name="Tarih" required class="w-full border-2 border-gray-100 p-5 rounded-2xl font-black text-xs uppercase font-black">
-                            <input type="time" name="Saat" required class="w-full border-2 border-gray-100 p-5 rounded-2xl font-black text-xs uppercase font-black">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8 text-sm">
+                            <select name="Alis_Noktasi" id="modal-pickup" class="w-full border-2 border-gray-100 p-5 rounded-2xl bg-gray-50 outline-none uppercase text-xs focus:border-primary transition font-black">
+                                <option value="Antalya Havalimanı (AYT)">Antalya (AYT)</option>
+                                <option value="Dalaman Havalimanı (DLM)">Dalaman (DLM)</option>
+                            </select>
+                            <select id="modal-dropoff" name="Varis_Noktasi" onchange="window.calculateModalPrice()" required class="w-full border-2 border-gray-100 p-5 rounded-2xl font-black bg-gray-50 outline-none uppercase text-xs focus:border-primary transition"></select>
+                            <input type="date" name="Tarih" id="modal-date" required class="w-full border-2 border-gray-100 p-5 rounded-2xl font-black uppercase text-xs">
+                            <input type="time" name="Saat" required class="w-full border-2 border-gray-100 p-5 rounded-2xl font-black uppercase text-xs">
                         </div>
-                        <div class="grid grid-cols-1 gap-3 mb-10 uppercase font-black font-black">
-                            <label class="flex justify-between items-center p-6 border-2 border-gray-100 rounded-[25px] cursor-pointer hover:border-primary transition active:scale-98 font-black uppercase font-black"><input type="radio" name="Arac" value="VIP Sedan" class="hidden" onchange="window.calculateModalPrice()"><div><span class="block font-black text-sm uppercase">VIP Sedan</span><span class="text-[9px] text-gray-400 font-bold uppercase tracking-widest font-black font-black">1-4 Kişi</span></div><span id="price-sedan" class="text-xl font-black text-primary italic font-black font-black uppercase">--</span></label>
-                            <label class="flex justify-between items-center p-6 border-2 border-gray-100 rounded-[25px] cursor-pointer hover:border-primary transition active:scale-98 font-black uppercase"><input type="radio" name="Arac" value="VIP Minivan" checked class="hidden" onchange="window.calculateModalPrice()"><div><span class="block font-black text-sm uppercase font-black uppercase font-black uppercase">VIP Minivan</span><span class="text-[9px] text-gray-400 font-bold tracking-widest font-black text-dark font-black uppercase uppercase font-black">1-6 Kişi</span></div><span id="price-minivan" class="text-xl font-black text-primary italic font-black uppercase font-black uppercase font-black">--</span></label>
-                            <span id="price-minibus" class="hidden">--</span>
+                        <div class="grid grid-cols-1 gap-3 mb-8">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="Arac" value="VIP Sedan" class="hidden" onchange="window.calculateModalPrice()">
+                                <div class="vehicle-card flex justify-between items-center p-5 border-2 border-gray-100 rounded-[22px] hover:border-primary transition">
+                                    <div><span class="block font-black text-sm uppercase">VIP Sedan</span><span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">1-4 Kişi</span></div>
+                                    <span id="price-sedan" class="text-xl font-black text-primary italic">--</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="Arac" value="VIP Minivan" checked class="hidden" onchange="window.calculateModalPrice()">
+                                <div class="vehicle-card flex justify-between items-center p-5 border-2 border-gray-100 rounded-[22px] hover:border-primary transition">
+                                    <div><span class="block font-black text-sm uppercase">VIP Minivan</span><span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">1-6 Kişi</span></div>
+                                    <span id="price-minivan" class="text-xl font-black text-primary italic">--</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="Arac" value="VIP Minibüs" class="hidden" onchange="window.calculateModalPrice()">
+                                <div class="vehicle-card flex justify-between items-center p-5 border-2 border-gray-100 rounded-[22px] hover:border-primary transition">
+                                    <div><span class="block font-black text-sm uppercase">VIP Minibüs</span><span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">7-13 Kişi</span></div>
+                                    <span id="price-minibus" class="text-xl font-black text-primary italic">--</span>
+                                </div>
+                            </label>
                         </div>
-                        <div class="mb-10 bg-slate-50 p-6 rounded-3xl border border-gray-100 font-black uppercase font-black">
-                            <span class="text-[10px] text-gray-400 mb-4 block tracking-[0.2em] font-black uppercase">Ek Hizmetler (+5€)</span>
-                            <div class="grid grid-cols-2 gap-4 text-center font-black uppercase font-black font-black">
-                                <div class="flex flex-col gap-1 uppercase font-black uppercase font-black"><span class="text-[8px] font-bold font-black uppercase">Bebek Koltuğu</span><select name="Ek_Bebek" id="ek-bebek" onchange="window.calculateModalPrice()" class="border-2 p-1.5 rounded-lg text-[10px] font-black uppercase font-black"><option value="0">0</option><option value="1">1</option></select></div>
-                                <div class="flex flex-col gap-1 uppercase font-black uppercase font-black"><span class="text-[8px] font-bold font-black uppercase">Çocuk Koltuğu</span><select name="Ek_Cocuk" id="ek-cocuk" onchange="window.calculateModalPrice()" class="border-2 p-1.5 rounded-lg text-[10px] font-black font-black uppercase font-black"><option value="0">0</option><option value="1">1</option></select></div>
-                                <div class="hidden"><select id="ek-bisiklet"><option value="0">0</option></select><select id="ek-bagaj"><option value="0">0</option></select></div>
+                        <div class="mb-8 bg-slate-50 p-6 rounded-3xl border border-gray-100 uppercase">
+                            <span class="text-[10px] text-gray-400 mb-4 block tracking-[0.2em] font-black">Ek Hizmetler (+5 EUR)</span>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="flex flex-col gap-1"><span class="text-[8px] font-bold uppercase">Bebek Koltuğu</span><select name="Ek_Bebek" id="ek-bebek" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
+                                <div class="flex flex-col gap-1"><span class="text-[8px] font-bold uppercase">Çocuk Koltuğu</span><select name="Ek_Cocuk" id="ek-cocuk" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
+                                <div class="flex flex-col gap-1"><span class="text-[8px] font-bold uppercase">Bisiklet</span><select name="Ek_Bisiklet" id="ek-bisiklet" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
+                                <div class="flex flex-col gap-1"><span class="text-[8px] font-bold uppercase">Ek Bagaj</span><select name="Ek_Bagaj" id="ek-bagaj" onchange="window.calculateModalPrice()" class="border-2 p-2 rounded-lg text-[10px] font-black"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
                             </div>
                         </div>
-                        <div class="p-8 bg-gray-900 rounded-[35px] text-white flex justify-between items-center shadow-xl uppercase font-black uppercase font-black"><span class="font-black uppercase text-[10px] tracking-widest text-gray-500 font-black font-black uppercase">Toplam Tutar</span><span id="final-total-display" class="text-4xl font-black text-accent tracking-tighter italic font-black font-black uppercase">-- €</span></div>
-                        <button type="button" onclick="window.showStep(2)" class="w-full mt-10 py-6 bg-primary text-white rounded-3xl font-black uppercase text-xs tracking-widest shadow-2xl active:scale-95 transition uppercase font-black uppercase">İlerle</button>
-                    </div>
-                    <div id="modal-step2" class="hidden space-y-8 animate-in slide-in-from-bottom-4 uppercase font-black uppercase">
-                        <input type="text" name="Isim" required placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 border-gray-200 p-5 font-black uppercase text-xl outline-none focus:border-primary uppercase font-black uppercase font-black">
-                        <input type="tel" name="Telefon" required placeholder="WHATSAPP" class="border-b-2 border-gray-200 p-5 outline-none focus:border-primary uppercase font-black uppercase font-black uppercase font-black">
-                        <button type="submit" class="w-full py-6 bg-accent text-white rounded-3xl font-black text-xs uppercase shadow-xl hover:bg-yellow-600 transition font-black uppercase uppercase font-black">Onayla</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Generic Service Modal -->
-    <div id="genericRequestModalOverlay" class="fixed inset-0 bg-black/80 z-[130] hidden flex justify-center items-center backdrop-blur-md p-4 text-dark font-black uppercase font-black">
-        <div class="bg-white w-full max-w-xl rounded-[40px] shadow-2xl relative overflow-hidden flex flex-col border-8 border-gray-50 uppercase font-black font-black">
-            <button onclick="window.closeGenericModal()" class="absolute top-8 right-8 text-gray-400 text-3xl z-20 hover:text-primary uppercase font-black font-black">&times;</button>
-            <div class="bg-primary p-10 text-white text-center shadow-lg font-black uppercase"><h2 class="text-2xl tracking-tighter uppercase font-black" id="generic-modal-title">Service Details</h2></div>
-            <div class="p-10 text-sm font-black uppercase font-black">
-                <form id="genericRequestForm" onsubmit="window.submitService(event, document.getElementById('hidden-service-type').value)" class="space-y-6 font-black uppercase font-black">
-                    <input type="hidden" id="hidden-service-type">
-                    <div id="flight-fields" class="hidden space-y-6 uppercase font-black"><input type="text" name="Nereden" placeholder="NEREDEN?" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary uppercase font-black"><input type="text" name="Nereye" placeholder="NEREYE?" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary uppercase font-black text-dark font-black font-black"></div>
-                    <div id="hotel-fields" class="hidden space-y-6 text-dark font-black uppercase font-black"><select name="Bolge" id="hotel-select-list" class="w-full border-2 p-5 rounded-2xl uppercase focus:border-primary outline-none font-black font-black uppercase font-black"></select></div>
-                    <div id="rental-fields" class="hidden space-y-6 text-dark font-black uppercase uppercase font-black">
-                        <input type="hidden" name="Arac_Modeli" id="car-model-hidden"><input type="hidden" name="Gunluk_Fiyat" id="car-price-hidden">
-                        <div class="grid grid-cols-2 gap-4 uppercase font-black uppercase font-black">
-                            <div class="flex flex-col gap-1 uppercase font-black uppercase font-black uppercase"><span>Alış</span><input type="date" name="Alis_Tarihi" id="calc-alis-date" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black uppercase font-black uppercase"><input type="time" name="Alis_Saati" id="calc-alis-time" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl mt-2 font-black uppercase"></div>
-                            <div class="flex flex-col gap-1 uppercase font-black uppercase font-black font-black"><span>İade</span><input type="date" name="Iade_Tarihi" id="calc-iade-date" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black uppercase font-black"><input type="time" name="Iade_Saati" id="calc-iade-time" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl mt-2 font-black uppercase font-black"></div>
+                        <div class="p-7 bg-gray-900 rounded-[28px] text-white flex justify-between items-center shadow-xl uppercase">
+                            <span class="font-black text-[10px] tracking-widest text-gray-400">Toplam Tutar</span>
+                            <span id="final-total-display" class="text-4xl font-black text-accent tracking-tighter italic">-- EUR</span>
                         </div>
-                        <div class="p-6 bg-slate-900 rounded-3xl text-white flex justify-between items-center shadow-xl border border-white/10 uppercase font-black uppercase font-black uppercase tracking-widest uppercase font-black"><span class="text-[10px] tracking-widest text-gray-400 font-black">TOPLAM TUTAR</span><span id="rental-total-display" class="text-3xl font-black text-accent tracking-tighter italic uppercase font-black uppercase font-black">-- €</span></div>
-                        <input type="text" name="Alis_Noktasi" placeholder="TESLİMAT ADRESİ" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase text-dark font-black uppercase font-black uppercase font-black">
+                        <button type="button" onclick="window.showStep(2)" class="w-full mt-8 py-5 bg-primary text-white rounded-3xl font-black uppercase text-xs tracking-widest shadow-2xl active:scale-95 transition">İlerle</button>
                     </div>
-                    <div class="border-t-2 pt-6 space-y-6 uppercase font-black font-black">
-                        <input type="text" name="Isim" required placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 p-4 outline-none focus:border-primary uppercase font-black font-black font-black uppercase font-black">
-                        <input type="tel" name="Telefon" required placeholder="WHATSAPP" class="w-full border-b-2 p-4 outline-none focus:border-primary font-black uppercase text-dark uppercase font-black font-black uppercase font-black">
+                    <div id="modal-step2" class="hidden space-y-8">
+                        <input type="text" name="Isim" required placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 border-gray-200 p-5 font-black uppercase text-xl outline-none focus:border-primary">
+                        <input type="tel" name="Telefon" required placeholder="WHATSAPP" class="w-full border-b-2 border-gray-200 p-5 outline-none focus:border-primary font-black uppercase">
+                        <div class="grid grid-cols-2 gap-4">
+                            <button type="button" onclick="window.showStep(1)" class="py-5 bg-slate-100 text-primary rounded-3xl font-black text-xs uppercase">Geri</button>
+                            <button type="submit" class="py-5 bg-accent text-white rounded-3xl font-black text-xs uppercase shadow-xl hover:bg-accentHover transition">Ön Rezervasyon Al</button>
+                        </div>
                     </div>
-                    <button type="submit" class="w-full py-6 bg-accent text-white rounded-3xl uppercase shadow-2xl tracking-[0.2em] font-black text-xs hover:bg-yellow-600 transition font-black uppercase font-black uppercase uppercase font-black">Onayla <i class="fa-solid fa-file-invoice ml-2 font-black"></i></button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Car Rental Gallery Modal -->
-    <div id="carRentalModalOverlay" class="fixed inset-0 bg-black/90 z-[120] hidden flex justify-center items-center backdrop-blur-xl p-4 overflow-y-auto text-dark font-black font-black uppercase font-black uppercase">
-        <div class="bg-white w-full max-w-5xl rounded-[50px] shadow-2xl relative flex flex-col p-12 my-10 border-[10px] border-gray-100 font-black uppercase font-black font-black uppercase">
-            <button onclick="window.closeCarRentalModal()" class="absolute top-10 right-12 text-gray-400 text-5xl hover:text-primary transition active:scale-90 font-black uppercase font-black uppercase">&times;</button>
-            <h2 class="text-3xl font-black uppercase mb-12 tracking-tighter text-primary font-black uppercase font-black uppercase uppercase font-black">Filomuz</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 font-black uppercase font-black font-black uppercase" id="car-list-container"></div>
+    <div id="genericRequestModalOverlay" class="fixed inset-0 bg-black/80 z-[130] hidden justify-center items-center backdrop-blur-md p-4 text-dark">
+        <div class="bg-white w-full max-w-xl rounded-[32px] shadow-2xl relative overflow-hidden flex flex-col max-h-[92vh]">
+            <button type="button" onclick="window.closeGenericModal()" class="absolute top-6 right-7 text-white/70 text-3xl z-20 hover:text-white transition" aria-label="Kapat">&times;</button>
+            <div class="bg-primary p-8 text-white text-center uppercase tracking-widest font-black shadow-lg"><h2 id="generic-modal-title" class="text-2xl tracking-tighter">Service Details</h2></div>
+            <div class="p-8 md:p-10 text-sm overflow-y-auto modal-scroll">
+                <form id="genericRequestForm" onsubmit="window.submitService(event, document.getElementById('hidden-service-type').value)" class="space-y-6">
+                    <input type="hidden" id="hidden-service-type">
+                    <div id="flight-fields" class="hidden space-y-6">
+                        <input type="text" name="Nereden" placeholder="NEREDEN?" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                        <input type="text" name="Nereye" placeholder="NEREYE?" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                        <input type="date" name="Tarih" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                    </div>
+                    <div id="hotel-fields" class="hidden space-y-6">
+                        <select name="Bolge" id="hotel-select-list" class="w-full border-2 p-5 rounded-2xl uppercase focus:border-primary outline-none font-black"></select>
+                        <input type="date" name="Giris_Tarihi" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                    </div>
+                    <div id="rental-fields" class="hidden space-y-6">
+                        <input type="hidden" name="Arac_Modeli" id="car-model-hidden">
+                        <input type="hidden" name="Gunluk_Fiyat" id="car-price-hidden">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 uppercase font-black text-xs">
+                            <div class="flex flex-col gap-2">
+                                <span>Alış</span>
+                                <input type="date" name="Alis_Tarihi" id="calc-alis-date" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black">
+                                <input type="time" name="Alis_Saati" id="calc-alis-time" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <span>İade</span>
+                                <input type="date" name="Iade_Tarihi" id="calc-iade-date" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black">
+                                <input type="time" name="Iade_Saati" id="calc-iade-time" onchange="window.calculateRentalPrice()" class="border-2 p-4 rounded-xl font-black">
+                            </div>
+                        </div>
+                        <div class="p-6 bg-slate-900 rounded-3xl text-white flex justify-between items-center shadow-xl uppercase">
+                            <span class="text-[10px] tracking-widest text-gray-400 font-black">Toplam Tutar</span>
+                            <span id="rental-total-display" class="text-3xl font-black text-accent tracking-tighter italic">-- EUR</span>
+                        </div>
+                        <input type="text" name="Alis_Noktasi" placeholder="TESLİMAT ADRESİ" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                    </div>
+                    <div class="border-t-2 pt-6 space-y-6">
+                        <input type="text" name="Isim" required placeholder="ADINIZ SOYADINIZ" class="w-full border-b-2 p-4 outline-none focus:border-primary uppercase font-black">
+                        <input type="tel" name="Telefon" required placeholder="WHATSAPP" class="w-full border-b-2 p-4 outline-none focus:border-primary font-black uppercase">
+                    </div>
+                    <button type="submit" class="w-full py-5 bg-accent text-white rounded-3xl uppercase shadow-2xl tracking-[0.2em] font-black text-xs hover:bg-accentHover transition">Belgeyi Oluştur <i class="fa-solid fa-file-invoice ml-2"></i></button>
+                </form>
+            </div>
         </div>
     </div>
 
-    <!-- Admin Panel Modal -->
-    <div id="adminModalOverlay" class="fixed inset-0 bg-black/95 z-[150] hidden flex justify-center items-center backdrop-blur-xl p-4 text-dark font-black font-black uppercase uppercase font-black uppercase">
-        <div class="bg-white w-full max-w-4xl rounded-[40px] shadow-2xl relative p-10 min-h-[70vh] border-8 border-gray-100 text-dark font-black font-black uppercase">
-            <button onclick="window.closeAdminModal()" class="absolute top-8 right-8 text-gray-400 text-3xl z-20 hover:text-red-500 font-black uppercase">&times;</button>
-            <div id="admin-login-sec" class="flex flex-col items-center py-20 text-center uppercase font-black font-black uppercase font-black font-black uppercase">
-                <h2 class="text-3xl font-black mb-10 tracking-tighter text-primary font-black uppercase font-black">Acente Paneli</h2>
-                <div class="w-full max-w-xs space-y-4 font-black uppercase font-black">
-                    <input type="text" id="admin-user" placeholder="User" class="w-full border-b-2 p-4 text-center text-lg outline-none focus:border-primary font-black uppercase uppercase font-black">
-                    <input type="password" id="admin-pass" placeholder="Pass" class="w-full border-b-2 p-4 text-center text-lg outline-none focus:border-primary font-black uppercase uppercase font-black">
-                    <button onclick="window.checkAdminLogin()" class="w-full bg-primary text-white py-5 rounded-2xl text-[10px] shadow-xl mt-6 hover:bg-dark transition tracking-widest font-black uppercase">Giriş</button>
-                </div>
+    <div id="carRentalModalOverlay" class="fixed inset-0 bg-black/80 z-[120] hidden justify-center items-center backdrop-blur-md p-4 text-dark">
+        <div class="bg-white w-full max-w-5xl rounded-[32px] shadow-2xl relative overflow-hidden flex flex-col max-h-[92vh]">
+            <button type="button" onclick="window.closeCarRentalModal()" class="absolute top-6 right-7 text-white/70 text-3xl z-20 hover:text-white transition" aria-label="Kapat">&times;</button>
+            <div class="bg-primary p-8 text-white text-center uppercase tracking-widest font-black shadow-lg">
+                <h2 class="text-2xl tracking-tighter">Araç Kiralama</h2>
             </div>
-            <div id="admin-dashboard" class="hidden font-black uppercase">
-                <div class="flex justify-between items-center mb-10 border-b pb-6 uppercase font-black font-black font-black uppercase"><h2 class="text-3xl tracking-tighter text-primary font-black uppercase">Gelen Talepler</h2><button onclick="window.loadReservations()" class="bg-gray-100 p-4 rounded-full hover:bg-gray-200 transition text-primary font-black uppercase uppercase font-black font-black uppercase"><i class="fa-solid fa-rotate uppercase font-black"></i></button></div>
-                <div id="admin-table-body" class="space-y-4 font-black uppercase text-xs font-black font-black uppercase"></div>
+            <div class="p-6 md:p-10 overflow-y-auto modal-scroll">
+                <div id="car-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
             </div>
         </div>
     </div>
 
-    <!-- Confirm & PDF Modal -->
-    <div id="confirmModalOverlay" class="fixed inset-0 bg-black/98 z-[250] hidden flex justify-center items-center backdrop-blur-xl p-4 overflow-y-auto uppercase font-black font-black font-black uppercase font-black">
-        <div class="bg-white w-full max-w-xl rounded-[60px] shadow-2xl relative flex flex-col p-10 my-10 border-8 border-accent/20 text-dark font-black uppercase tracking-widest font-black font-black uppercase font-black uppercase">
-            <button onclick="window.closeConfirmModal()" class="absolute top-10 right-12 text-gray-300 text-4xl hover:text-primary transition active:scale-90 font-black font-black font-black uppercase uppercase font-black font-black uppercase">&times;</button>
-            <div id="pdf-container" class="bg-white p-4 uppercase font-black font-black font-black font-black uppercase font-black uppercase">
-                <div class="flex flex-col items-center mb-12 border-b pb-12 text-center text-primary uppercase font-black tracking-widest font-black font-black font-black uppercase font-black font-black uppercase">
-                    <h2 class="text-2xl font-serif italic text-dark tracking-tighter uppercase font-black uppercase uppercase font-black font-black uppercase font-black">MOONCHILL<span class="text-accent font-sans not-italic ml-1 uppercase font-black font-black font-black uppercase font-black font-black uppercase font-black">TRAVEL</span></h2>
-                    <p id="pdf-label-title" class="text-[10px] mt-4 tracking-[0.5em] text-gray-400 uppercase font-black uppercase uppercase font-black">Ön Rezervasyon Belgesi</p>
-                    <div id="pdf-label-status" class="mt-6 px-10 py-2 bg-blue-50 rounded-full text-[11px] shadow-sm uppercase font-black font-black font-black uppercase">Talebiniz Alındı</div>
+    <div id="confirmModalOverlay" class="fixed inset-0 bg-black/90 z-[250] hidden justify-center items-center backdrop-blur-xl p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-xl rounded-[36px] shadow-2xl relative flex flex-col p-6 md:p-10 my-10 border-8 border-accent/20 text-dark">
+            <button type="button" onclick="window.closeConfirmModal()" class="absolute top-7 right-9 text-gray-300 text-4xl hover:text-primary transition" aria-label="Kapat">&times;</button>
+            <div id="pdf-container" class="bg-white p-4">
+                <div class="flex flex-col items-center mb-10 border-b pb-10 text-center text-primary uppercase font-black tracking-widest">
+                    <h2 class="text-2xl text-dark tracking-tighter">MOONCHILL<span class="text-accent ml-1">TRAVEL</span></h2>
+                    <p id="pdf-label-title" class="text-[10px] mt-4 tracking-[0.5em] text-gray-400">Ön Rezervasyon Belgesi</p>
+                    <div id="pdf-label-status" class="mt-6 px-8 py-2 bg-blue-50 rounded-full text-[10px] shadow-sm">Talebiniz Alındı</div>
                 </div>
-                <div class="grid grid-cols-2 gap-y-10 gap-x-8 text-[12px] font-black uppercase uppercase font-black font-black font-black">
-                    <div><span id="pdf-label-name" class="block text-[9px] text-gray-400 mb-2 font-black uppercase uppercase font-black">Müşteri / Customer</span><p id="res-name" class="font-black text-dark text-base tracking-tighter leading-none uppercase font-black uppercase uppercase font-black">--</p></div>
-                    <div><span id="pdf-label-contact" class="block text-[9px] text-gray-400 mb-2 font-black uppercase uppercase uppercase font-black">İletişim / Contact</span><p id="res-tel" class="font-black text-dark text-base tracking-tighter leading-none uppercase font-black uppercase uppercase uppercase font-black">--</p></div>
-                    <div class="col-span-2 p-8 bg-gray-50 rounded-[40px] border border-gray-100 flex flex-col gap-2 shadow-sm uppercase font-black uppercase uppercase font-black font-black uppercase"><span id="pdf-label-route" class="text-[10px] text-gray-400 uppercase font-black font-black uppercase font-black uppercase">Rezervasyon Detayı</span><p id="res-route" class="font-black text-dark text-xs leading-relaxed uppercase font-black font-black uppercase uppercase font-black">--</p></div>
-                    <div><span id="pdf-label-veh" class="block text-[9px] text-gray-400 mb-2 font-black uppercase uppercase font-black font-black uppercase">Hizmet / Service</span><p id="res-veh" class="font-black text-primary text-[11px] font-black uppercase uppercase font-black font-black uppercase">--</p></div>
-                    <div><span id="pdf-label-date" class="block text-[9px] text-gray-400 mb-2 font-black uppercase uppercase uppercase font-black uppercase font-black uppercase">Zaman / Date</span><p id="res-date" class="font-black text-dark text-[11px] font-black uppercase font-black uppercase font-black font-black uppercase">--</p></div>
-                    <div class="col-span-2 p-8 bg-primary rounded-[50px] text-white flex justify-between items-center shadow-2xl shadow-primary/20 uppercase font-black font-black uppercase font-black font-black uppercase uppercase font-black font-black uppercase font-black font-black uppercase"><span id="pdf-label-total-side" class="font-black uppercase text-[11px] tracking-widest text-gray-500 font-black uppercase uppercase font-black font-black uppercase font-black font-black uppercase">Toplam:</span><span id="res-price" class="text-4xl font-black text-accent tracking-tighter italic uppercase font-black uppercase font-black uppercase uppercase font-black font-black uppercase font-black font-black uppercase font-black font-black uppercase">--</span></div>
+                <div class="grid grid-cols-2 gap-y-8 gap-x-6 text-[11px] uppercase">
+                    <div><span id="pdf-label-name" class="block text-[8px] text-gray-400 mb-2 font-black">Müşteri / Customer</span><p id="res-name" class="font-black text-dark text-base tracking-tighter leading-none">--</p></div>
+                    <div><span id="pdf-label-contact" class="block text-[8px] text-gray-400 mb-2 font-black">İletişim / Contact</span><p id="res-tel" class="font-black text-dark text-base tracking-tighter leading-none">--</p></div>
+                    <div class="col-span-2 p-6 bg-gray-50 rounded-[28px] border border-gray-100 flex flex-col gap-2 shadow-sm"><span id="pdf-label-route" class="text-[9px] text-gray-400 font-black">Rezervasyon Detayı</span><p id="res-route" class="font-black text-dark text-xs leading-relaxed">--</p></div>
+                    <div><span id="pdf-label-veh" class="block text-[8px] text-gray-400 mb-2 font-black">Hizmet / Service</span><p id="res-veh" class="font-black text-primary text-[10px]">--</p></div>
+                    <div><span id="pdf-label-date" class="block text-[8px] text-gray-400 mb-2 font-black">Zaman / Date</span><p id="res-date" class="font-black text-dark text-[10px]">--</p></div>
+                    <div class="col-span-2 p-6 bg-primary rounded-[28px] text-white flex justify-between items-center shadow-2xl shadow-primary/20"><span id="pdf-label-total-side" class="font-black text-[10px] tracking-widest text-blue-100">Toplam:</span><span id="res-price" class="text-4xl font-black text-accent tracking-tighter italic">--</span></div>
                 </div>
-                <p id="pdf-label-payment" class="text-[9px] text-primary mt-12 font-black text-center italic tracking-widest leading-relaxed uppercase border-t border-dashed pt-10 font-black uppercase uppercase font-black font-black uppercase font-black font-black uppercase">* ÖDEME HİZMET BAŞLANGICINDA NAKİT VEYA KART İLE TAHSİL EDİLECEKTİR.</p>
-                <div id="pdf-label-footer" class="mt-8 text-[10px] text-center text-gray-400 font-black uppercase italic tracking-widest font-black uppercase font-black font-black uppercase font-black font-black uppercase font-black font-black uppercase font-black font-black uppercase">Antalya | +90 532 496 66 24</div>
+                <p id="pdf-label-payment" class="text-[8px] text-primary mt-10 font-black text-center italic tracking-widest leading-relaxed uppercase border-t border-dashed pt-8">* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.</p>
+                <div id="pdf-label-footer" class="mt-8 text-[9px] text-center text-gray-400 font-black uppercase italic tracking-widest">Antalya | +90 532 496 66 24</div>
             </div>
-            <button onclick="window.downloadPDF()" class="w-full py-6 bg-primary text-white rounded-3xl font-black uppercase text-[11px] mt-12 shadow-2xl flex items-center justify-center gap-4 transition hover:scale-105 active:scale-95 tracking-widest shadow-primary/30 uppercase font-black font-black uppercase font-black font-black uppercase uppercase font-black font-black uppercase"><i class="fa-solid fa-file-pdf text-2xl text-accent uppercase font-black font-black uppercase font-black font-black uppercase"></i> <span id="btn-pdf-label" class="uppercase font-black font-black uppercase font-black font-black uppercase font-black font-black uppercase">İndir</span></button>
-            <button id="res-wa-btn" class="w-full py-6 bg-green-500 text-white rounded-3xl font-black uppercase text-[11px] mt-4 flex items-center justify-center gap-4 transition hover:scale-105 active:scale-95 tracking-widest shadow-green-500/30 uppercase font-black font-black uppercase font-black font-black uppercase uppercase font-black font-black uppercase font-black font-black uppercase">WhatsApp'tan Onayla <i class="fa-brands fa-whatsapp text-2xl uppercase font-black font-black uppercase font-black font-black uppercase font-black font-black uppercase font-black font-black uppercase font-black font-black uppercase"></i></button>
+            <button type="button" onclick="window.downloadPDF()" class="w-full py-5 bg-primary text-white rounded-3xl font-black uppercase text-[11px] mt-10 shadow-2xl flex items-center justify-center gap-4 transition hover:scale-105 active:scale-95 tracking-widest shadow-primary/30"><i class="fa-solid fa-file-pdf text-2xl text-accent"></i> <span id="btn-pdf-label">İndir</span></button>
+            <button id="res-wa-btn" type="button" class="w-full py-5 bg-green-500 text-white rounded-3xl font-black uppercase text-[11px] mt-4 flex items-center justify-center gap-4 transition hover:scale-105 active:scale-95 tracking-widest shadow-green-500/30">WhatsApp'tan Onayla <i class="fa-brands fa-whatsapp text-2xl"></i></button>
         </div>
     </div>
 
-    <!-- CORE SCRIPTS (Firebase v11) -->
-    <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
-        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
-        import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
+    <div id="adminModalOverlay" class="fixed inset-0 bg-black/80 z-[240] hidden justify-center items-center backdrop-blur-md p-4 text-dark">
+        <div class="bg-white w-full max-w-4xl rounded-[32px] shadow-2xl relative overflow-hidden flex flex-col max-h-[92vh]">
+            <button type="button" onclick="window.closeAdminModal()" class="absolute top-6 right-7 text-white/70 text-3xl z-20 hover:text-white transition" aria-label="Kapat">&times;</button>
+            <div class="bg-primary p-8 text-white text-center uppercase tracking-widest font-black shadow-lg"><h2 class="text-2xl tracking-tighter">Acente Paneli</h2></div>
+            <div class="p-8 md:p-10 overflow-y-auto modal-scroll">
+                <div id="admin-login-sec" class="max-w-md mx-auto space-y-5">
+                    <input id="admin-user" type="text" placeholder="KULLANICI ADI" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                    <input id="admin-pass" type="password" placeholder="ŞİFRE" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+                    <button type="button" onclick="window.checkAdminLogin()" class="w-full py-5 bg-primary text-white rounded-3xl font-black uppercase text-xs tracking-widest">Giriş Yap</button>
+                </div>
+                <div id="admin-dashboard" class="hidden">
+                    <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between mb-8">
+                        <h3 class="text-2xl font-black text-primary uppercase tracking-tighter">Rezervasyonlar</h3>
+                        <button type="button" onclick="window.clearReservations()" class="px-5 py-3 bg-slate-100 text-primary rounded-2xl text-xs font-black uppercase">Listeyi Temizle</button>
+                    </div>
+                    <div id="admin-table-body" class="space-y-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        const firebaseConfig = JSON.parse(__firebase_config);
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'moonchill-stable-v11';
-
-        let user = null;
+    <script>
+        const appId = 'moonchill-global-stable-final-v11';
         let currentLang = 'TR';
 
         const pricingData = {
-            "ALANYA": [60, 70, 130], "Antalya Şehir merkezi": [30, 40, 65], "Lara": [30, 40, 65], "Kundu": [30, 40, 65], "Belek": [35, 45, 80], "Kemer": [40, 50, 85], "Beldibi": [35, 45, 85], "Göynük": [40, 70, 85], "Çamyuva": [45, 75, 90], "Tekirova": [45, 55, 95], "MARMARİS": [140, 220, 280], "GÖCEK": [120, 190, 240], "ÖLÜDENİZ": [130, 200, 250], "Fethiye": [115, 200, 220], "İZMİR": [270, 340, 430], "İSTANBUL": [400, 600, 850]
+            "ALANYA": [60, 70, 130],
+            "Antalya Şehir Merkezi": [30, 40, 65],
+            "Lara": [30, 40, 65],
+            "Kundu": [30, 40, 65],
+            "Belek": [35, 45, 80],
+            "Kemer": [40, 50, 85],
+            "Beldibi": [35, 45, 85],
+            "Göynük": [40, 70, 85],
+            "Çamyuva": [45, 75, 90],
+            "Tekirova": [45, 55, 95],
+            "MARMARİS": [140, 220, 280],
+            "GÖCEK": [120, 190, 240],
+            "ÖLÜDENİZ": [130, 200, 250],
+            "Fethiye": [115, 200, 220],
+            "İZMİR": [270, 340, 430],
+            "İSTANBUL": [400, 600, 850]
         };
 
         const carFleet = [
             { name: "Fiat Egea", type: "Economic", price: 55 },
             { name: "Renault Clio", type: "Economic", price: 55 },
-            { name: "Toyota Corolla", type: "Comfort", price: 70 },
-            { name: "VW T-Roc", type: "SUV", price: 85 },
-            { name: "Dacia Duster", type: "SUV", price: 70 },
-            { name: "Mercedes C-Class", type: "Luxury", price: 125 }
+            { name: "Toyota Corolla", type: "Comfort", price: 85 },
+            { name: "VW T-Roc", type: "SUV", price: 100 },
+            { name: "Dacia Duster", type: "SUV", price: 85 },
+            { name: "Mercedes C-Class", type: "Luxury", price: 140 }
+        ];
+
+        const recommendedItems = [
+            { title: "AYT > Belek VIP", sub: "Minivan Konforu", price: "45 EUR", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Antalya Havalimanı (AYT)', 'Belek', 'VIP Minivan'), button: "Seç" },
+            { title: "Toyota Corolla", sub: "Günün Fırsatı", price: "85 EUR", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=600", action: () => window.openCarBookingFlow('Toyota Corolla', 85), button: "Kirala" },
+            { title: "DLM > Fethiye", sub: "Ege'ye VIP Geçiş", price: "115 EUR", image: "https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=600", action: () => window.openBookingModal('Dalaman Havalimanı (DLM)', 'Fethiye', 'VIP Sedan'), button: "Ayırt" },
+            { title: "Lara Hotels", sub: "Özel İndirim", price: "Teklif Al", image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600", action: () => window.openGenericModal('hotel'), button: "Bak" }
         ];
 
         const i18n = {
-            'TR': { title: 'Ön Rezervasyon Belgesi', status: 'Talebiniz Alındı', name: 'Müşteri', contact: 'İletişim', route: 'Rezervasyon Detayı', veh: 'Hizmet / Araç', date: 'Tarih Bilgisi', total: 'Toplam:', payment: '* ÖDEME HİZMET BAŞLANGICINDA NAKİT VEYA KART İLE TAHSİL EDİLECEKTİR.', footer: 'Antalya | +90 532 496 66 24', btn: 'Belgeyi PDF İndir' },
-            'EN': { title: 'Provisional Booking Form', status: 'Request Processed', name: 'Customer', contact: 'Contact', route: 'Booking Details', veh: 'Service / Vehicle', date: 'Date & Time', total: 'Total:', payment: '* PAYMENT WILL BE COLLECTED AT THE START OF SERVICE IN CASH OR BY CARD.', footer: 'Antalya | +90 532 496 66 24', btn: 'Download PDF Booking' },
-            'DE': { title: 'Vorläufige Buchung', status: 'Anfrage Erhalten', name: 'Kunde', contact: 'Kontakt', route: 'Buchungsdetails', veh: 'Fahrzeug', date: 'Datum / Zeit', total: 'Gesamt:', payment: '* ZAHLUNG BEI BEGINN DES SERVICE.', footer: 'Antalya | +90 532 496 66 24', btn: 'Herunterladen' },
-            'RU': { title: 'Бронирование', status: 'Запрос принят', name: 'Клиент', contact: 'Контакт', route: 'Детали', veh: 'Транспорт', date: 'Дата / Время', total: 'Итого:', payment: '* ОПЛАТА ПРИ ПОСАДКЕ.', footer: 'Antalya | +90 532 496 66 24', btn: 'Скачать' }
-        };
-
-        const initAuth = async () => {
-            try {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else { await signInAnonymously(auth); }
-            } catch (err) { console.error("Firebase Error:", err); }
-        };
-        initAuth();
-
-        onAuthStateChanged(auth, (u) => { 
-            user = u; 
-            if(u) {
-                window.setupApp();
-                window.updatePDFLabels();
+            TR: {
+                title: "Ön Rezervasyon Belgesi",
+                status: "Talebiniz Alındı",
+                name: "Müşteri / Customer",
+                contact: "İletişim / Contact",
+                route: "Rezervasyon Detayı",
+                veh: "Hizmet / Service",
+                date: "Zaman / Date",
+                total: "Toplam:",
+                payment: "* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.",
+                footer: "Antalya | +90 532 496 66 24",
+                btn: "İndir"
+            },
+            EN: {
+                title: "Pre-Reservation Document",
+                status: "Your Request Has Received",
+                name: "Customer",
+                contact: "Contact",
+                route: "Reservation Detail",
+                veh: "Service",
+                date: "Date / Time",
+                total: "Total:",
+                payment: "* Payment will be collected by cash or card at service start.",
+                footer: "Antalya | +90 532 496 66 24",
+                btn: "Download"
             }
-        });
+        };
+
+        function storageKey() { return `${appId}:reservations`; }
+
+        function getReservations() {
+            try { return JSON.parse(localStorage.getItem(storageKey()) || '[]'); } catch { return []; }
+        }
+
+        function saveReservation(reservation) {
+            const list = getReservations();
+            list.unshift(reservation);
+            localStorage.setItem(storageKey(), JSON.stringify(list));
+        }
+
+        function formatMoney(value) { return `${value} EUR`; }
+
+        function setDisplay(id, value) {
+            const el = document.getElementById(id);
+            if (el) el.innerText = value;
+        }
+
+        function setModalOpen(id, open) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.classList.toggle('hidden', !open);
+            el.classList.toggle('flex', open);
+            document.body.style.overflow = open ? 'hidden' : 'auto';
+        }
 
         window.setupApp = function() {
             const table = document.getElementById('fares-table-body');
             const hSelect = document.getElementById('hero-dropoff');
             const mSelect = document.getElementById('modal-dropoff');
-            const carList = document.getElementById('car-list-container');
             const hotelList = document.getElementById('hotel-select-list');
+            const carList = document.getElementById('car-list-container');
+            const recommendedGrid = document.getElementById('recommended-grid');
 
-            if(hSelect && mSelect) {
-                hSelect.innerHTML = '<option value="">Bölge Seçin</option>';
-                for (let p in pricingData) {
-                    const opt = `<option value="${p}">${p}</option>`;
-                    hSelect.innerHTML += opt; mSelect.innerHTML += opt;
-                    if(hotelList) hotelList.innerHTML += opt;
-                    if(table) table.innerHTML += `<tr class="hover:bg-blue-50 border-b border-gray-100 font-black"><td class="p-8">${p}</td><td class="text-center font-bold">€${pricingData[p][0]}</td><td class="text-center text-primary italic">€${pricingData[p][1]}</td><td class="text-center font-bold">€${pricingData[p][2]}</td><td class="text-center font-black"><button onclick="window.openBookingModal('','${p}')" class="bg-primary text-white text-[10px] px-6 py-2 rounded-xl transition hover:bg-accent font-black">Seç</button></td></tr>`;
-                }
+            const destinationOptions = ['<option value="">Bölge Seçin</option>']
+                .concat(Object.keys(pricingData).map((place) => `<option value="${place}">${place}</option>`))
+                .join('');
+
+            if (hSelect) hSelect.innerHTML = destinationOptions;
+            if (mSelect) mSelect.innerHTML = destinationOptions;
+            if (hotelList) hotelList.innerHTML = destinationOptions;
+
+            if (table) {
+                table.innerHTML = Object.entries(pricingData).map(([place, prices]) => `
+                    <tr class="hover:bg-blue-50 border-b border-gray-100">
+                        <td class="p-6 md:p-8 tracking-tighter">${place}</td>
+                        <td class="p-6 md:p-8 text-center text-gray-500">${formatMoney(prices[0])}</td>
+                        <td class="p-6 md:p-8 text-center text-primary italic font-black">${formatMoney(prices[1])}</td>
+                        <td class="p-6 md:p-8 text-center text-gray-500">${formatMoney(prices[2])}</td>
+                        <td class="p-6 md:p-8 text-center"><button type="button" onclick="window.openBookingModal('', '${place}')" class="bg-primary text-white text-[9px] px-6 py-2 rounded-xl uppercase hover:bg-accent transition font-black">Seç</button></td>
+                    </tr>
+                `).join('');
             }
-            if(carList) {
-                carList.innerHTML = '';
-                carFleet.forEach(car => {
-                    const tp = car.price + 15;
-                    carList.innerHTML += `<div class="p-10 border-2 border-gray-100 rounded-[50px] hover:border-primary transition bg-white flex flex-col justify-between shadow-lg"><div class="flex justify-between items-start mb-8 tracking-tighter uppercase font-black font-black uppercase font-black uppercase"><div><h3 class="text-2xl text-primary font-black uppercase tracking-tighter leading-none">${car.name}</h3><p class="text-[10px] text-gray-400 mt-1 uppercase">${car.type}</p></div><div class="text-primary text-right font-black"><span class="block text-4xl italic tracking-tighter font-black">€${tp}</span><span class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Günlük</span></div></div><button onclick="window.openCarBookingFlow('${car.name}', ${tp})" class="w-full py-6 bg-primary text-white rounded-[24px] font-black text-[11px] tracking-widest hover:bg-accent transition active:scale-95 uppercase font-black uppercase">Seç ve Devam Et</button></div>`;
+
+            if (carList) {
+                carList.innerHTML = carFleet.map((car) => `
+                    <article class="p-8 border-2 border-gray-50 rounded-[28px] hover:border-primary transition bg-white flex flex-col justify-between shadow-lg">
+                        <div class="flex justify-between items-start mb-8 tracking-tighter font-black uppercase gap-4">
+                            <div><h3 class="text-2xl text-primary font-black uppercase tracking-tighter leading-none">${car.name}</h3><p class="text-[9px] text-gray-400 mt-1 uppercase tracking-widest">${car.type}</p></div>
+                            <div class="text-primary text-right font-black"><span class="block text-4xl italic tracking-tighter">${formatMoney(car.price)}</span><span class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Günlük</span></div>
+                        </div>
+                        <button type="button" onclick="window.openCarBookingFlow('${car.name}', ${car.price})" class="w-full py-5 bg-primary text-white rounded-[22px] font-black text-[11px] tracking-widest hover:bg-accent transition active:scale-95 uppercase">Seç ve Devam Et</button>
+                    </article>
+                `).join('');
+            }
+
+            if (recommendedGrid) {
+                recommendedGrid.innerHTML = recommendedItems.map((item, index) => `
+                    <article class="bg-white rounded-[28px] overflow-hidden shadow-xl border border-gray-100 group flex flex-col hover:-translate-y-3 transition-all">
+                        <div class="h-48 relative overflow-hidden"><img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                        <div class="p-7 flex-grow flex flex-col justify-between">
+                            <div><h4 class="text-sm font-black uppercase">${item.title}</h4><p class="text-[9px] text-gray-400 font-bold uppercase mb-4 tracking-widest">${item.sub}</p></div>
+                            <div class="flex justify-between items-center pt-5 border-t border-gray-50 uppercase">
+                                <span class="text-lg font-black text-primary italic">${item.price}</span>
+                                <button type="button" data-rec-index="${index}" class="recommended-action bg-primary text-white text-[9px] font-black px-5 py-2.5 rounded-xl uppercase hover:bg-accent transition shadow-lg">${item.button}</button>
+                            </div>
+                        </div>
+                    </article>
+                `).join('');
+                document.querySelectorAll('.recommended-action').forEach((button) => {
+                    button.addEventListener('click', () => recommendedItems[Number(button.dataset.recIndex)].action());
                 });
             }
-        }
+
+            const today = new Date().toISOString().slice(0, 10);
+            ['hero-date', 'modal-date', 'calc-alis-date', 'calc-iade-date'].forEach((id) => {
+                const el = document.getElementById(id);
+                if (el) el.min = today;
+            });
+
+            window.updatePDFLabels();
+        };
 
         window.calculateRentalPrice = function() {
             const sd = document.getElementById('calc-alis-date')?.value;
             const st = document.getElementById('calc-alis-time')?.value;
             const ed = document.getElementById('calc-iade-date')?.value;
             const et = document.getElementById('calc-iade-time')?.value;
-            const daily = parseFloat(document.getElementById('car-price-hidden')?.value || 0);
-            if(sd && st && ed && et) {
-                const s = new Date(`${sd}T${st}`);
-                const e = new Date(`${ed}T${et}`);
-                const ms = e - s;
-                if(ms > 0) {
-                    const days = Math.ceil(ms / (1000 * 60 * 60 * 24));
+            const daily = Number(document.getElementById('car-price-hidden')?.value || 0);
+            if (sd && st && ed && et && daily) {
+                const start = new Date(`${sd}T${st}`);
+                const end = new Date(`${ed}T${et}`);
+                const ms = end - start;
+                if (ms > 0) {
+                    const days = Math.max(1, Math.ceil(ms / 86400000));
                     const total = days * daily;
-                    const rDisp = document.getElementById('rental-total-display');
-                    if(rDisp) rDisp.innerText = total + ' €';
+                    setDisplay('rental-total-display', formatMoney(total));
                     return total;
                 }
             }
+            setDisplay('rental-total-display', '-- EUR');
             return 0;
-        }
-
-        window.submitService = async function(e, type) {
-            e.preventDefault();
-            if(!auth.currentUser) return;
-            const fd = new FormData(e.target);
-            let resData = { type: type, name: fd.get('Isim'), phone: fd.get('Telefon'), createdAt: new Date().toISOString() };
-            if(type === 'Transfer') {
-                const eb = parseInt(document.getElementById('ek-bebek')?.value || 0);
-                const ec = parseInt(document.getElementById('ek-cocuk')?.value || 0);
-                resData.route = (fd.get('Alis_Noktasi') || 'Airport') + ' > ' + (document.getElementById('modal-dropoff')?.value || 'Area');
-                resData.date = fd.get('Tarih') + ' @ ' + fd.get('Saat');
-                resData.veh = fd.get('Arac') + (eb+ec > 0 ? ` (+Extras)` : '');
-                resData.price = document.getElementById('final-total-display')?.innerText || '€--';
-            } else if(type === 'Kiralama') {
-                resData.route = fd.get('Arac_Modeli') + ' (' + fd.get('Alis_Noktasi') + ')';
-                resData.date = fd.get('Alis_Tarihi') + ' ' + fd.get('Alis_Saati') + ' / ' + fd.get('Iade_Tarihi') + ' ' + fd.get('Iade_Saati');
-                resData.veh = 'Rent-A-Car';
-                resData.price = document.getElementById('rental-total-display')?.innerText || '€--';
-            } else {
-                resData.route = fd.get('Nereden') || fd.get('Bolge') || 'Special Request';
-                resData.date = fd.get('Tarih') || fd.get('Giris_Tarihi') || 'Pending';
-                resData.veh = type;
-                resData.price = 'Pending Quote';
-            }
-            try {
-                await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'reservations'), resData);
-                window.updatePDFLabels();
-                window.showConfirmUI(resData);
-            } catch (err) { console.error("Save Error:", err); }
-        }
-
-        window.updatePDFLabels = function() {
-            const lang = i18n[currentLang] || i18n['TR'];
-            const ids = ['title', 'status', 'name', 'contact', 'route', 'veh', 'date', 'total-side', 'payment', 'footer'];
-            ids.forEach(id => {
-                const el = document.getElementById(`pdf-label-${id}`);
-                if(el) el.innerText = lang[id.replace('-side','')];
-            });
-            const btn = document.getElementById('btn-pdf-label');
-            if(btn) btn.innerText = lang.btn;
-        }
-
-        window.showConfirmUI = function(res) {
-            document.getElementById('res-name').innerText = res.name;
-            document.getElementById('res-tel').innerText = res.phone;
-            document.getElementById('res-route').innerText = res.route;
-            document.getElementById('res-date').innerText = res.date;
-            document.getElementById('res-veh').innerText = res.veh;
-            document.getElementById('res-price').innerText = res.price;
-            const waMsg = `*MOONCHILL - YENİ TALEB*\n👤 ${res.name}\n📍 ${res.route}\n📅 ${res.date}\n💶 ${res.price}`;
-            document.getElementById('res-wa-btn').onclick = () => window.open(`https://wa.me/905324966624?text=${encodeURIComponent(waMsg)}`, '_blank');
-            
-            const bM = document.getElementById('bookingModalOverlay');
-            const gM = document.getElementById('genericRequestModalOverlay');
-            const cM = document.getElementById('carRentalModalOverlay');
-            const cfM = document.getElementById('confirmModalOverlay');
-            if(bM) bM.classList.add('hidden');
-            if(gM) gM.classList.add('hidden');
-            if(cM) cM.classList.add('hidden');
-            if(cfM) cfM.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+        };
 
         window.calculateModalPrice = function() {
             const dest = document.getElementById('modal-dropoff')?.value;
             const veh = document.querySelector('input[name="Arac"]:checked')?.value || "VIP Minivan";
-            const eb = parseInt(document.getElementById('ek-bebek')?.value || 0);
-            const ec = parseInt(document.getElementById('ek-cocuk')?.value || 0);
-            const ex = (eb+ec)*5;
-            if (dest && pricingData[dest]) {
-                const b = pricingData[dest];
-                const ps = document.getElementById('price-sedan');
-                const pm = document.getElementById('price-minivan');
-                const pminib = document.getElementById('price-minibus');
-                if(ps) ps.innerText = b[0] + " €";
-                if(pm) pm.innerText = b[1] + " €";
-                if(pminib) pminib.innerText = b[2] + " €";
-                let t = (veh === "VIP Sedan") ? b[0] : (veh === "VIP Minivan" ? b[1] : b[2]);
-                const dFinal = document.getElementById('final-total-display');
-                if(dFinal) dFinal.innerText = (t + ex) + " €";
-            }
-        }
+            const extraIds = ['ek-bebek', 'ek-cocuk', 'ek-bisiklet', 'ek-bagaj'];
+            const extras = extraIds.reduce((sum, id) => sum + Number(document.getElementById(id)?.value || 0), 0) * 5;
 
-        window.showStep = function(s) {
+            if (dest && pricingData[dest]) {
+                const prices = pricingData[dest];
+                setDisplay('price-sedan', formatMoney(prices[0]));
+                setDisplay('price-minivan', formatMoney(prices[1]));
+                setDisplay('price-minibus', formatMoney(prices[2]));
+                const base = veh === "VIP Sedan" ? prices[0] : veh === "VIP Minivan" ? prices[1] : prices[2];
+                setDisplay('final-total-display', formatMoney(base + extras));
+            } else {
+                setDisplay('price-sedan', '--');
+                setDisplay('price-minivan', '--');
+                setDisplay('price-minibus', '--');
+                setDisplay('final-total-display', '-- EUR');
+            }
+        };
+
+        window.submitService = function(e, type) {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            const resData = {
+                id: window.crypto?.randomUUID ? window.crypto.randomUUID() : String(Date.now()),
+                type,
+                name: fd.get('Isim') || '',
+                phone: fd.get('Telefon') || '',
+                createdAt: new Date().toISOString()
+            };
+
+            if (type === 'Transfer') {
+                const extras = ['Ek_Bebek', 'Ek_Cocuk', 'Ek_Bisiklet', 'Ek_Bagaj']
+                    .map((key) => Number(fd.get(key) || 0))
+                    .reduce((sum, value) => sum + value, 0);
+                resData.route = `${fd.get('Alis_Noktasi') || 'Airport'} > ${fd.get('Varis_Noktasi') || 'Area'}`;
+                resData.date = `${fd.get('Tarih')} @ ${fd.get('Saat')}`;
+                resData.veh = `${fd.get('Arac')}${extras ? ' (+Extras)' : ''}`;
+                resData.price = document.getElementById('final-total-display')?.innerText || '-- EUR';
+            } else if (type === 'Kiralama') {
+                const rentalTotal = window.calculateRentalPrice();
+                resData.route = `${fd.get('Arac_Modeli')} (${fd.get('Alis_Noktasi') || 'Teslimat adresi bekleniyor'})`;
+                resData.date = `${fd.get('Alis_Tarihi') || '-'} ${fd.get('Alis_Saati') || ''} / ${fd.get('Iade_Tarihi') || '-'} ${fd.get('Iade_Saati') || ''}`;
+                resData.veh = 'Rent-A-Car';
+                resData.price = rentalTotal ? formatMoney(rentalTotal) : 'Fiyat Teklifi Bekleniyor';
+            } else {
+                const route = type === 'Uçak'
+                    ? `${fd.get('Nereden') || 'Nereden'} > ${fd.get('Nereye') || 'Nereye'}`
+                    : fd.get('Bolge') || 'Special Request';
+                resData.route = route;
+                resData.date = fd.get('Tarih') || fd.get('Giris_Tarihi') || 'TBD';
+                resData.veh = type;
+                resData.price = 'Fiyat Teklifi Bekleniyor';
+            }
+
+            saveReservation(resData);
+            window.updatePDFLabels();
+            window.showConfirmUI(resData);
+            e.target.reset();
+            window.calculateModalPrice();
+        };
+
+        window.showConfirmUI = function(res) {
+            setDisplay('res-name', res.name);
+            setDisplay('res-tel', res.phone);
+            setDisplay('res-route', res.route);
+            setDisplay('res-date', res.date);
+            setDisplay('res-veh', res.veh);
+            setDisplay('res-price', res.price);
+
+            const waMsg = `*MOONCHILL - YENİ TALEP*\nİsim: ${res.name}\nDetay: ${res.route}\nZaman: ${res.date}\nTutar: ${res.price}`;
+            const waBtn = document.getElementById('res-wa-btn');
+            if (waBtn) waBtn.onclick = () => window.open(`https://wa.me/905324966624?text=${encodeURIComponent(waMsg)}`, '_blank');
+
+            setModalOpen('bookingModalOverlay', false);
+            setModalOpen('genericRequestModalOverlay', false);
+            setModalOpen('carRentalModalOverlay', false);
+            setModalOpen('confirmModalOverlay', true);
+        };
+
+        window.updatePDFLabels = function() {
+            const lang = i18n[currentLang] || i18n.TR;
+            const map = {
+                'pdf-label-title': lang.title,
+                'pdf-label-status': lang.status,
+                'pdf-label-name': lang.name,
+                'pdf-label-contact': lang.contact,
+                'pdf-label-route': lang.route,
+                'pdf-label-veh': lang.veh,
+                'pdf-label-date': lang.date,
+                'pdf-label-total-side': lang.total,
+                'pdf-label-payment': lang.payment,
+                'pdf-label-footer': lang.footer,
+                'btn-pdf-label': lang.btn
+            };
+            Object.entries(map).forEach(([id, text]) => setDisplay(id, text));
+        };
+
+        window.showStep = function(step) {
             const s1 = document.getElementById('modal-step1');
             const s2 = document.getElementById('modal-step2');
             const i1 = document.getElementById('step-ind-1');
             const i2 = document.getElementById('step-ind-2');
-            if(s1 && s2) {
-                s1.classList.toggle('hidden', s !== 1);
-                s2.classList.toggle('hidden', s !== 2);
-                if(i1 && i2) {
-                    i1.classList.toggle('opacity-30', s !== 1);
-                    i2.classList.toggle('opacity-30', s !== 2);
-                }
+            if (step === 2 && !document.getElementById('bookingForm').reportValidity()) return;
+            if (s1 && s2) {
+                s1.classList.toggle('hidden', step !== 1);
+                s2.classList.toggle('hidden', step !== 2);
             }
-        }
+            if (i1 && i2) {
+                i1.classList.toggle('opacity-30', step !== 1);
+                i2.classList.toggle('opacity-30', step !== 2);
+            }
+        };
 
-        window.checkAdminLogin = function() { 
+        window.changeLang = function(lang) {
+            currentLang = lang;
+            setDisplay('current-lang-desktop', lang);
+            window.updatePDFLabels();
+        };
+
+        window.openBookingModal = function(pickup = '', dropoff = '', vehicle = '') {
+            setModalOpen('bookingModalOverlay', true);
+            if (pickup) document.getElementById('modal-pickup').value = pickup;
+            if (dropoff) document.getElementById('modal-dropoff').value = dropoff;
+            if (vehicle) {
+                const vehicleInput = document.querySelector(`input[name="Arac"][value="${vehicle}"]`);
+                if (vehicleInput) vehicleInput.checked = true;
+            }
+            window.showStep(1);
+            window.calculateModalPrice();
+        };
+
+        window.closeBookingModal = function() { setModalOpen('bookingModalOverlay', false); };
+
+        window.openGenericModal = function(type) {
+            setModalOpen('genericRequestModalOverlay', true);
+            document.getElementById('hidden-service-type').value = type === 'flight' ? 'Uçak' : 'Otel';
+            document.getElementById('flight-fields').classList.toggle('hidden', type !== 'flight');
+            document.getElementById('hotel-fields').classList.toggle('hidden', type !== 'hotel');
+            document.getElementById('rental-fields').classList.add('hidden');
+            setDisplay('generic-modal-title', type === 'flight' ? 'Uçak Bileti' : 'Otel Rezervasyon');
+        };
+
+        window.closeGenericModal = function() { setModalOpen('genericRequestModalOverlay', false); };
+        window.openCarRentalModal = function() { setModalOpen('carRentalModalOverlay', true); };
+        window.closeCarRentalModal = function() { setModalOpen('carRentalModalOverlay', false); };
+        window.closeConfirmModal = function() { setModalOpen('confirmModalOverlay', false); };
+
+        window.openCarBookingFlow = function(name, price) {
+            setModalOpen('carRentalModalOverlay', false);
+            setModalOpen('genericRequestModalOverlay', true);
+            document.getElementById('hidden-service-type').value = 'Kiralama';
+            document.getElementById('rental-fields').classList.remove('hidden');
+            document.getElementById('flight-fields').classList.add('hidden');
+            document.getElementById('hotel-fields').classList.add('hidden');
+            setDisplay('generic-modal-title', `${name} Rental`);
+            document.getElementById('car-model-hidden').value = name;
+            document.getElementById('car-price-hidden').value = price;
+            window.calculateRentalPrice();
+        };
+
+        window.startBookingFromHero = function() {
+            const pickup = document.getElementById('hero-pickup')?.value || '';
+            const dropoff = document.getElementById('hero-dropoff')?.value || '';
+            const date = document.getElementById('hero-date')?.value || '';
+            window.openBookingModal(pickup, dropoff);
+            if (date) document.getElementById('modal-date').value = date;
+        };
+
+        window.downloadPDF = function() {
+            const element = document.getElementById('pdf-container');
+            const name = (document.getElementById('res-name').innerText || 'Moonchill').replace(/[^\w-]+/g, '_');
+            if (!window.html2pdf) {
+                window.print();
+                return;
+            }
+            html2pdf().set({
+                margin: 0.5,
+                filename: `Moonchill_Request_${name}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            }).from(element).save();
+        };
+
+        window.openAdminModal = function() {
+            setModalOpen('adminModalOverlay', true);
+            document.getElementById('admin-login-sec').classList.remove('hidden');
+            document.getElementById('admin-dashboard').classList.add('hidden');
+        };
+
+        window.closeAdminModal = function() { setModalOpen('adminModalOverlay', false); };
+
+        window.checkAdminLogin = function() {
             const u = document.getElementById('admin-user')?.value;
             const p = document.getElementById('admin-pass')?.value;
-            if(u === 'DesertEagle' && p === 'Mc.103036') { 
-                document.getElementById('admin-login-sec').classList.add('hidden'); 
-                document.getElementById('admin-dashboard').classList.remove('hidden'); 
-                window.loadReservations(); 
-            } else { alert("Hata!"); } 
-        }
+            if (u === 'DesertEagle' && p === 'Mc.103036') {
+                document.getElementById('admin-login-sec').classList.add('hidden');
+                document.getElementById('admin-dashboard').classList.remove('hidden');
+                window.loadReservations();
+            } else {
+                alert('Kullanıcı adı veya şifre hatalı.');
+            }
+        };
 
-        window.loadReservations = async function() {
-            if(!auth.currentUser) return;
+        window.loadReservations = function() {
             const list = document.getElementById('admin-table-body');
-            if(!list) return;
-            list.innerHTML = '<p class="text-center font-bold">Yükleniyor...</p>';
-            try {
-                const qs = await getDocs(collection(db, 'artifacts', appId, 'public', 'data', 'reservations'));
-                list.innerHTML = '';
-                const docs = [];
-                qs.forEach(doc => docs.push(doc.data()));
-                docs.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
-                docs.forEach(r => {
-                    list.innerHTML += `<div class="p-6 border-2 rounded-[30px] flex justify-between items-center bg-white shadow-sm gap-4 uppercase font-black"><div><span class="bg-primary text-white px-3 py-1 rounded-full text-[9px] uppercase">${r.type}</span><div class="mt-2"><span class="block text-primary">${r.name}</span><span class="text-gray-400 text-[9px] font-black">${r.route}</span></div></div><div class="text-right shrink-0"><span class="text-accent text-xl block italic font-black">€${r.price}</span><span class="text-[9px] text-primary">${r.date}</span></div></div>`;
-                });
-            } catch (err) { list.innerHTML = `<p class="text-red-500">${err.message}</p>`; }
-        }
+            if (!list) return;
+            const reservations = getReservations();
+            if (!reservations.length) {
+                list.innerHTML = '<p class="text-center text-gray-400 font-bold uppercase tracking-widest">Henüz rezervasyon yok.</p>';
+                return;
+            }
+            list.innerHTML = reservations.map((r) => `
+                <article class="p-6 border-2 rounded-[24px] flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white shadow-sm gap-4 uppercase font-black">
+                    <div>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-[9px]">${r.type}</span>
+                        <div class="mt-3"><span class="block text-primary">${r.name}</span><span class="text-gray-400 text-[10px]">${r.route}</span></div>
+                    </div>
+                    <div class="sm:text-right shrink-0"><span class="text-accent text-xl block italic">${r.price}</span><span class="text-[9px] text-primary">${r.date}</span></div>
+                </article>
+            `).join('');
+        };
 
-        window.changeLang = function(c, l) { currentLang = l; document.getElementById('current-lang-desktop').innerText = l; window.updatePDFLabels(); }
-        window.openBookingModal = function(p, d) { const el = document.getElementById('bookingModalOverlay'); if(el) { el.classList.remove('hidden'); if(d) document.getElementById('modal-dropoff').value = d; window.showStep(1); window.calculateModalPrice(); } };
-        window.closeBookingModal = function() { document.getElementById('bookingModalOverlay').classList.add('hidden'); document.body.style.overflow = 'auto'; };
-        window.openGenericModal = function(t) {
-            const el = document.getElementById('genericRequestModalOverlay');
-            if(el) {
-                el.classList.remove('hidden');
-                document.getElementById('hidden-service-type').value = (t === 'flight' ? 'Uçak' : 'Otel');
-                document.getElementById('flight-fields').classList.toggle('hidden', t !== 'flight');
-                document.getElementById('hotel-fields').classList.toggle('hidden', t !== 'hotel');
-                document.getElementById('rental-fields').classList.add('hidden');
-                const title = document.getElementById('generic-modal-title');
-                if(title) title.innerText = (t === 'flight' ? 'Uçak Bileti' : 'Otel Rezervasyon');
+        window.clearReservations = function() {
+            if (confirm('Tüm kayıtlı rezervasyonlar silinsin mi?')) {
+                localStorage.removeItem(storageKey());
+                window.loadReservations();
             }
         };
-        window.closeGenericModal = function() { document.getElementById('genericRequestModalOverlay').classList.add('hidden'); document.body.style.overflow = 'auto'; };
-        window.openCarRentalModal = function() { 
-            const el = document.getElementById('carRentalModalOverlay'); 
-            if(el) {
-                el.classList.remove('hidden'); 
-                document.body.style.overflow = 'hidden'; 
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                ['bookingModalOverlay', 'genericRequestModalOverlay', 'carRentalModalOverlay', 'confirmModalOverlay', 'adminModalOverlay'].forEach((id) => setModalOpen(id, false));
             }
-        };
-        window.closeCarRentalModal = function() { document.getElementById('carRentalModalOverlay').classList.add('hidden'); document.body.style.overflow = 'auto'; };
-        window.openAdminModal = function() { const el = document.getElementById('adminModalOverlay'); if(el) el.classList.remove('hidden'); };
-        window.closeAdminModal = function() { document.getElementById('adminModalOverlay').classList.add('hidden'); };
-        window.closeConfirmModal = function() { document.getElementById('confirmModalOverlay').classList.add('hidden'); document.body.style.overflow = 'auto'; };
-        window.openCarBookingFlow = function(n, p) {
-            const el = document.getElementById('genericRequestModalOverlay');
-            if(el) {
-                el.classList.remove('hidden');
-                document.getElementById('hidden-service-type').value = 'Kiralama';
-                document.getElementById('rental-fields').classList.remove('hidden');
-                document.getElementById('flight-fields').classList.add('hidden');
-                document.getElementById('hotel-fields').classList.add('hidden');
-                const title = document.getElementById('generic-modal-title');
-                if(title) title.innerText = n + ' Rental';
-                document.getElementById('car-model-hidden').value = n;
-                document.getElementById('car-price-hidden').value = p;
-                window.calculateRentalPrice();
-            }
-        };
-        window.startBookingFromHero = function() { window.openBookingModal('', document.getElementById('hero-dropoff').value); };
-        window.downloadPDF = function() { 
-            const element = document.getElementById('pdf-container'); 
-            const n = document.getElementById('res-name').innerText; 
-            const opt = { margin: 0.5, filename: `Moonchill_${n}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } };
-            html2pdf().set(opt).from(element).save();
-        };
+        });
+
+        // Cloudflare Rocket Loader & Senkronizasyon Kilitlerini Çözen Güvenli Tetikleyici
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', window.setupApp);
+        } else {
+            window.setupApp();
+        }
     </script>
 </body>
 </html>
