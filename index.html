@@ -18,11 +18,7 @@
         <div class="max-w-7xl mx-auto px-4 h-full flex justify-between items-center">
             <a href="#home" class="text-xl font-black uppercase">MOONCHILL<span class="text-accent">TRAVEL</span></a>
             <nav class="hidden lg:flex space-x-6 text-[11px] font-black uppercase tracking-widest">
-                <a href="#home">Ana Sayfa</a>
-                <a href="#travel-services">Hizmetlerimiz</a>
-                <a href="#recommended">Önerilenler</a>
-                <a href="#fleet">Filomuz</a>
-                <a href="#fares">Fiyatlar</a>
+                <a href="#home">Ana Sayfa</a><a href="#travel-services">Hizmetlerimiz</a><a href="#recommended">Önerilenler</a><a href="#fleet">Filomuz</a><a href="#fares">Fiyatlar</a>
             </nav>
             <button onclick="window.openBookingModal()" class="bg-accent px-6 py-2 rounded-lg font-black text-xs uppercase">Rezervasyon</button>
         </div>
@@ -32,7 +28,6 @@
         <section id="home" class="hero-bg min-h-screen flex items-center">
             <div class="max-w-7xl mx-auto px-4 text-white">
                 <h1 class="text-5xl md:text-8xl font-black mb-6 uppercase tracking-tighter">TATİLİN <span class="text-accent italic">EN VIP</span> HALİ</h1>
-                <p class="text-xl mb-12">Transferden kiralık araca kadar tüm seyahat planınız tek bir çatıda.</p>
                 <div class="bg-white/95 backdrop-blur rounded-[28px] shadow-2xl p-8 max-w-5xl text-dark">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
                         <div><label class="text-[10px] text-gray-500 font-bold block mb-2">ALIŞ YERİ</label><select id="hero-pickup" class="w-full border-2 p-4 rounded-2xl font-black text-sm"><option>Antalya Havalimanı (AYT)</option></select></div>
@@ -64,6 +59,8 @@
         <section id="fares" class="py-24 bg-slate-50 border-t"><div class="max-w-5xl mx-auto px-4"><h2 class="text-3xl font-black text-center mb-12 uppercase">Detaylı Fiyat Listesi</h2><div class="bg-white rounded-3xl shadow-lg overflow-x-auto"><table class="w-full text-left font-black text-xs uppercase"><thead class="bg-primary text-white"><tr><th class="p-6">Bölge</th><th class="p-6">Sedan</th><th class="p-6">Minivan</th><th class="p-6">Minibüs</th><th class="p-6">Seç</th></tr></thead><tbody id="pricing-table-body"></tbody></table></div></div></section>
     </main>
 
+    <div id="bookingModalOverlay" class="fixed inset-0 bg-black/80 z-[100] hidden justify-center items-center backdrop-blur-md p-4"><div class="bg-white w-full max-w-2xl rounded-[32px] p-8 max-h-[90vh] overflow-y-auto"><button onclick="window.closeBookingModal()" class="float-right text-2xl">×</button><h2 class="text-2xl font-black mb-8 uppercase">Rezervasyon</h2><form id="bookingForm" onsubmit="window.submitService(event, 'Transfer')"><div class="grid grid-cols-2 gap-4 mb-4"><select name="Alis_Noktasi" class="border p-4 rounded-xl"><option>Antalya Havalimanı (AYT)</option></select><select id="modal-dropoff" name="Varis_Noktasi" onchange="window.calculateModalPrice()" class="border p-4 rounded-xl"></select></div><input type="date" name="Tarih" class="border w-full p-4 rounded-xl mb-4"><button type="submit" class="w-full py-4 bg-primary text-white rounded-xl font-black uppercase">İleri</button></form></div></div>
+
     <script>
         const pricingData = { "ALANYA": [60, 70, 130], "Belek": [35, 45, 80], "Kemer": [40, 50, 85], "Fethiye": [115, 200, 220], "Side": [45, 55, 95] };
         
@@ -71,12 +68,14 @@
             const table = document.getElementById('pricing-table-body');
             const dOptions = Object.keys(pricingData).map(p => `<option value="${p}">${p}</option>`).join('');
             document.getElementById('hero-dropoff').innerHTML = dOptions;
-            
+            document.getElementById('modal-dropoff').innerHTML = dOptions;
             table.innerHTML = Object.entries(pricingData).map(([p, pr]) => `<tr><td class="p-6 border-b">${p}</td><td class="p-6 border-b">${pr[0]} EUR</td><td class="p-6 border-b">${pr[1]} EUR</td><td class="p-6 border-b">${pr[2]} EUR</td><td class="p-6 border-b"><button onclick="window.openBookingModal('','${p}')" class="bg-primary text-white px-4 py-2 rounded-lg text-[10px]">SEÇ</button></td></tr>`).join('');
         });
-        window.openBookingModal = (p, d, v) => alert("Rezervasyon...");
-        window.openGenericModal = (t) => alert(t + " Formu");
+        window.openBookingModal = (p, d, v) => { document.getElementById('bookingModalOverlay').classList.remove('hidden'); document.getElementById('bookingModalOverlay').classList.add('flex'); if(d) document.getElementById('modal-dropoff').value = d; };
+        window.closeBookingModal = () => { document.getElementById('bookingModalOverlay').classList.add('hidden'); };
+        window.openGenericModal = (t) => alert("Form...");
         window.openCarRentalModal = () => alert("Modeller...");
+        window.startBookingFromHero = () => window.openBookingModal('', document.getElementById('hero-dropoff').value);
     </script>
 </body>
 </html>
