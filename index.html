@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="libs/html2pdf.bundle.min.js?v=2"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -21,7 +21,7 @@
   <style>
     body { background: #fff; }
     .hero-bg {
-      background-image: linear-gradient(rgba(17, 24, 39, 0.4), rgba(30, 58, 138, 0.7)), url('/antalya-landscape-main.svg');
+      background-image: linear-gradient(rgba(17, 24, 39, 0.4), rgba(30, 58, 138, 0.7)), url('images/antalya-landscape-main.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -133,7 +133,7 @@
         <h2 data-i18n="section_fleet" class="text-3xl font-black uppercase mb-16 text-primary tracking-tighter">Transfer Filomuz</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left uppercase font-black">
           <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-            <img src="/antalya-view-2.svg" alt="VIP Minivan Mercedes Vito" class="h-56 w-full object-cover">
+            <img src="images/antalya-view-2.jpg" alt="VIP Minivan Mercedes Vito" class="h-56 w-full object-cover">
             <div class="p-8">
               <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minivan</h3>
               <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes V-Class / Vito (1-6 PAX)</p>
@@ -141,7 +141,7 @@
             </div>
           </article>
           <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-            <img src="/antalya-view-1.svg" alt="VIP Minibüs Mercedes Sprinter" class="h-56 w-full object-cover">
+            <img src="images/antalya-view-1.jpg" alt="VIP Minibüs Mercedes Sprinter" class="h-56 w-full object-cover">
             <div class="p-8">
               <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Minibüs</h3>
               <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes Sprinter VIP (7-13 PAX)</p>
@@ -149,7 +149,7 @@
             </div>
           </article>
           <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:-translate-y-2 transition-all flex flex-col justify-between">
-            <img src="/sedan.svg" alt="VIP Sedan Mercedes" class="h-56 w-full object-cover">
+            <img src="images/sedan.jpg" alt="VIP Sedan Mercedes" class="h-56 w-full object-cover">
             <div class="p-8">
               <h3 class="text-xl mb-1 text-primary font-black tracking-tighter">VIP Sedan</h3>
               <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-4">Mercedes E-Class / S-Class (1-4 PAX)</p>
@@ -339,7 +339,7 @@
     </div>
   </div>
 
-  <div style="position: absolute; left: -9999px; top: -9999px;">
+  <div id="pdf-render-host" style="position: fixed; left: 0; top: 0; width: 680px; opacity: 0; pointer-events: none; z-index: -1; background: #ffffff;">
     <div id="pdf-container" style="width: 680px; background-color: #ffffff; padding: 30px; font-family: Arial, sans-serif; color: #111111; text-transform: uppercase; box-sizing: border-box;">
       <div style="border-bottom: 2px dashed #1E3A8A; padding-bottom: 20px; text-align: center; margin-bottom: 25px;">
         <h2 style="font-weight: 900; font-size: 26px; margin: 0; color: #1E3A8A; letter-spacing: -1px;">MOONCHILL<span style="color: #F59E0B; margin-left: 4px;">TRAVEL</span></h2>
@@ -436,10 +436,10 @@
     ];
 
     const recommendedItems = [
-      { title_tr: "AYT > Belek VIP", title_en: "AYT > Belek VIP", title_de: "AYT > Belek VIP", title_ru: "AYT > Белек VIP", sub_tr: "Minivan Konforu", sub_en: "Minivan Comfort", sub_de: "Minivan-Komfort", sub_ru: "Комфорт минивэна", price: "40 EUR", image: "/antalya-view-2.svg", action: () => window.openBookingModal('Antalya Havalimanı (AYT)', 'Belek', 'VIP Minivan'), button_tr: "Seç", button_en: "Select", button_de: "Auswählen", button_ru: "Выбрать" },
-      { title_tr: "Toyota Corolla", title_en: "Toyota Corolla", title_de: "Toyota Corolla", title_ru: "Toyota Corolla", sub_tr: "Günün Fırsatı", sub_en: "Deal of the Day", sub_de: "Angebot des Tages", sub_ru: "Предложение дня", price: "55 EUR", image: "/antalya-view-1.svg", action: () => window.openCarBookingFlow('Toyota Corolla Automatic', 55), button_tr: "Kirala", button_en: "Rent", button_de: "Mieten", button_ru: "Арендовать" },
-      { title_tr: "DLM > Fethiye", title_en: "DLM > Fethiye", title_de: "DLM > Fethiye", title_ru: "DLM > Фетхие", sub_tr: "Ege'ye VIP Geçiş", sub_en: "VIP Aegean Pass", sub_de: "VIP Ägäis-Pass", sub_ru: "VIP Эгейский пасс", price: "115 EUR", image: "/antalya-landscape-main.svg", action: () => window.openBookingModal('Dalaman Havalimanı (DLM)', 'Fethiye', 'VIP Sedan'), button_tr: "Ayırt", button_en: "Book", button_de: "Buchen", button_ru: "Забронировать" },
-      { title_tr: "Kaş VIP Transfer", title_en: "Kas VIP Transfer", title_de: "Kas VIP Transfer", title_ru: "Каш VIP Трансфер", sub_tr: "Özel İndirim", sub_en: "Special Discount", sub_de: "Sonderrabatt", sub_ru: "Специальная скидка", price: "Teklif Al", price_en: "Get Quote", price_de: "Angebot", price_ru: "Запрос цены", image: "/sedan.svg", action: () => window.openBookingModal('', 'Kaş', 'VIP Minivan'), button_tr: "Bak", button_en: "View", button_de: "Ansehen", button_ru: "Смотреть" }
+      { title_tr: "AYT > Belek VIP", title_en: "AYT > Belek VIP", title_de: "AYT > Belek VIP", title_ru: "AYT > Белек VIP", sub_tr: "Minivan Konforu", sub_en: "Minivan Comfort", sub_de: "Minivan-Komfort", sub_ru: "Комфорт минивэна", price: "40 EUR", image: "images/antalya-view-2.jpg", action: () => window.openBookingModal('Antalya Havalimanı (AYT)', 'Belek', 'VIP Minivan'), button_tr: "Seç", button_en: "Select", button_de: "Auswählen", button_ru: "Выбрать" },
+      { title_tr: "Toyota Corolla", title_en: "Toyota Corolla", title_de: "Toyota Corolla", title_ru: "Toyota Corolla", sub_tr: "Günün Fırsatı", sub_en: "Deal of the Day", sub_de: "Angebot des Tages", sub_ru: "Предложение дня", price: "55 EUR", image: "images/antalya-view-1.jpg", action: () => window.openCarBookingFlow('Toyota Corolla Automatic', 55), button_tr: "Kirala", button_en: "Rent", button_de: "Mieten", button_ru: "Арендовать" },
+      { title_tr: "DLM > Fethiye", title_en: "DLM > Fethiye", title_de: "DLM > Fethiye", title_ru: "DLM > Фетхие", sub_tr: "Ege'ye VIP Geçiş", sub_en: "VIP Aegean Pass", sub_de: "VIP Ägäis-Pass", sub_ru: "VIP Эгейский пасс", price: "115 EUR", image: "images/antalya-landscape-main.jpg", action: () => window.openBookingModal('Dalaman Havalimanı (DLM)', 'Fethiye', 'VIP Sedan'), button_tr: "Ayırt", button_en: "Book", button_de: "Buchen", button_ru: "Забронировать" },
+      { title_tr: "Kaş VIP Transfer", title_en: "Kas VIP Transfer", title_de: "Kas VIP Transfer", title_ru: "Каш VIP Трансфер", sub_tr: "Özel İndirim", sub_en: "Special Discount", sub_de: "Sonderrabatt", sub_ru: "Специальная скидка", price: "Teklif Al", price_en: "Get Quote", price_de: "Angebot", price_ru: "Запрос цены", image: "images/sedan.jpg", action: () => window.openBookingModal('', 'Kaş', 'VIP Minivan'), button_tr: "Bak", button_en: "View", button_de: "Ansehen", button_ru: "Смотреть" }
     ];
 
     const pageTranslations = {
@@ -730,15 +730,41 @@
       const element = document.getElementById('pdf-container');
       const name = (document.querySelector('.dynamic-name')?.innerText || 'Moonchill').replace(/[^\w-]+/g, '_');
       const btnLabel = document.getElementById('btn-pdf-label');
-      const originalLabel = btnLabel.innerText;
-      btnLabel.innerText = currentLang === 'TR' ? 'OLUŞTURULUYOR...' : 'GENERATING...';
+      const originalLabel = btnLabel?.innerText || '';
+      if (btnLabel) btnLabel.innerText = currentLang === 'TR' ? 'OLUŞTURULUYOR...' : 'GENERATING...';
       if (!window.html2pdf) {
-        window.print();
-        btnLabel.innerText = originalLabel;
+        const printWindow = window.open('', '_blank', 'width=820,height=900');
+        if (printWindow) {
+          printWindow.document.write(`<!doctype html><html><head><title>Moonchill Reservation</title></head><body style="margin:0;background:#f3f4f6;padding:24px;">${element.outerHTML}<script>window.onload=function(){window.print();};<\/script></body></html>`);
+          printWindow.document.close();
+        } else {
+          window.print();
+        }
+        if (btnLabel) btnLabel.innerText = originalLabel;
         return;
       }
-      html2pdf().set({ margin: 0.5, filename: `Moonchill_Reservation_${name}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } }).from(element).save().then(function() {
-        btnLabel.innerText = originalLabel;
+      const printable = element.cloneNode(true);
+      printable.id = 'pdf-container-printable';
+      printable.style.position = 'fixed';
+      printable.style.left = '0';
+      printable.style.top = '0';
+      printable.style.opacity = '1';
+      printable.style.zIndex = '-1';
+      printable.style.transform = 'none';
+      printable.style.backgroundColor = '#ffffff';
+      document.body.appendChild(printable);
+      html2pdf().set({
+        margin: 0.5,
+        filename: `Moonchill_Reservation_${name}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff', scrollX: 0, scrollY: 0 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }).from(printable).save().then(function() {
+        printable.remove();
+        if (btnLabel) btnLabel.innerText = originalLabel;
+      }).catch(function() {
+        printable.remove();
+        if (btnLabel) btnLabel.innerText = originalLabel;
       });
     };
 
@@ -823,8 +849,12 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') ['bookingModalOverlay', 'genericRequestModalOverlay', 'carRentalModalOverlay', 'confirmModalOverlay', 'adminModalOverlay'].forEach((id) => setModalOpen(id, false));
     });
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', window.updatePageLanguage);
-    else window.updatePageLanguage();
+    function bootMoonchill() {
+      document.documentElement.dataset.html2pdf = window.html2pdf ? 'ready' : 'missing';
+      window.updatePageLanguage();
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bootMoonchill);
+    else bootMoonchill();
   </script>
 </body>
 </html>
