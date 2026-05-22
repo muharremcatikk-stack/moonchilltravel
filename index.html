@@ -86,7 +86,7 @@
   </header>
 
   <main>
-    <section id="home" class="hero-bg min-h-screen flex items-center pt-16 md:pt-20 py-10 md:py-0">
+    <section id="home" class="hero-bg relative min-h-screen flex items-center pt-16 md:pt-20 py-10 pb-28 md:py-0">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center md:text-left text-white">
         <h1 data-i18n="hero_title" class="text-[34px] min-[375px]:text-4xl md:text-7xl xl:text-8xl font-black mb-4 md:mb-6 leading-tight uppercase tracking-tight break-words">TATİLİN <span class="text-accent italic">EN VIP</span> HALİ</h1>
         <p data-i18n="hero_subtitle" class="text-base min-[375px]:text-lg md:text-2xl mb-8 md:mb-12 font-light max-w-2xl mx-auto md:mx-0 leading-relaxed">Transferden kiralık araca kadar tüm seyahat planınız tek bir çatıda.</p>
@@ -111,26 +111,40 @@
           </div>
         </div>
       </div>
+      <div class="md:hidden absolute left-3 right-20 bottom-4 z-20 grid grid-cols-3 gap-2">
+        <button type="button" onclick="window.openBookingModal()" class="min-h-14 rounded-2xl bg-primary/95 text-white shadow-xl backdrop-blur flex flex-col items-center justify-center gap-1 text-[9px] font-black uppercase tracking-wide active:scale-95 transition">
+          <i class="fa-solid fa-car-side text-base text-accent"></i>
+          <span data-i18n="quick_transfer">Transfer</span>
+        </button>
+        <button type="button" onclick="window.openGenericModal('hotel')" class="min-h-14 rounded-2xl bg-accent/95 text-white shadow-xl backdrop-blur flex flex-col items-center justify-center gap-1 text-[9px] font-black uppercase tracking-wide active:scale-95 transition">
+          <i class="fa-solid fa-hotel text-base"></i>
+          <span data-i18n="service_hotel">Otel</span>
+        </button>
+        <button type="button" onclick="window.openCarRentalModal()" class="min-h-14 rounded-2xl bg-white/95 text-primary shadow-xl backdrop-blur flex flex-col items-center justify-center gap-1 text-[9px] font-black uppercase tracking-wide active:scale-95 transition">
+          <i class="fa-solid fa-key text-base text-accent"></i>
+          <span data-i18n="quick_car">Araç</span>
+        </button>
+      </div>
     </section>
 
     <section id="travel-services" class="py-12 md:py-24 bg-white text-center">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 data-i18n="section_services" class="text-2xl min-[375px]:text-3xl md:text-5xl font-black text-primary mb-8 md:mb-20 uppercase tracking-tighter">Hizmetlerimiz</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-          <article class="min-h-[224px] sm:min-h-[260px] md:min-h-0 p-6 sm:p-10 md:p-12 bg-white rounded-2xl md:rounded-[28px] border border-gray-100 shadow-xl hover:shadow-2xl transition flex flex-col items-center justify-center text-dark">
-            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-primary/5 rounded-full flex items-center justify-center mb-6 sm:mb-8"><i class="fa-solid fa-plane-up text-2xl sm:text-3xl text-primary"></i></div>
-            <h3 data-i18n="service_flight" class="text-lg sm:text-xl mb-4 font-black uppercase leading-tight text-center break-words">Uçak Bileti</h3>
-            <button type="button" onclick="window.openGenericModal('flight')" data-i18n="btn_pre_booking" class="inline-flex min-h-12 w-full sm:w-auto items-center justify-center rounded-xl bg-primary/5 px-5 py-3 text-primary text-[11px] font-black uppercase tracking-wider border border-primary/10 transition hover:bg-primary hover:text-white">Ön Rezervasyon</button>
+          <article class="min-h-[240px] sm:min-h-[270px] md:min-h-0 p-6 sm:p-10 md:p-12 bg-white rounded-2xl md:rounded-[28px] border border-gray-100 shadow-xl hover:shadow-2xl transition flex flex-col items-center text-dark">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-primary/5 rounded-full flex items-center justify-center mb-5 sm:mb-8 shrink-0"><i class="fa-solid fa-plane-up text-2xl sm:text-3xl text-primary"></i></div>
+            <h3 data-i18n="service_flight" class="text-lg sm:text-xl mb-5 font-black uppercase leading-tight text-center break-words">Uçak Bileti</h3>
+            <button type="button" onclick="window.openGenericModal('flight')" data-i18n="btn_pre_booking" class="mt-auto inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-5 py-3 text-white text-[11px] font-black uppercase tracking-wider shadow-lg shadow-primary/20 border border-primary transition hover:bg-accent">Ön Rezervasyon</button>
           </article>
-          <article class="min-h-[224px] sm:min-h-[260px] md:min-h-0 p-6 sm:p-10 md:p-12 bg-dark text-white rounded-2xl md:rounded-[28px] shadow-2xl md:-translate-y-6 flex flex-col items-center justify-center">
-            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-accent rounded-full flex items-center justify-center mb-6 sm:mb-8 shadow-xl"><i class="fa-solid fa-hotel text-2xl sm:text-3xl text-white"></i></div>
-            <h3 data-i18n="service_hotel" class="text-lg sm:text-xl mb-4 font-black uppercase leading-tight text-center break-words">Otel</h3>
-            <button type="button" onclick="window.openGenericModal('hotel')" data-i18n="btn_book_now" class="inline-flex min-h-12 w-full sm:w-auto items-center justify-center rounded-xl bg-accent px-5 py-3 text-white text-[11px] font-black uppercase tracking-wider border border-accent transition hover:bg-accentHover">Rezervasyon Yap</button>
+          <article class="min-h-[240px] sm:min-h-[270px] md:min-h-0 p-6 sm:p-10 md:p-12 bg-dark text-white rounded-2xl md:rounded-[28px] shadow-2xl md:-translate-y-6 flex flex-col items-center">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-accent rounded-full flex items-center justify-center mb-5 sm:mb-8 shadow-xl shrink-0"><i class="fa-solid fa-hotel text-2xl sm:text-3xl text-white"></i></div>
+            <h3 data-i18n="service_hotel" class="text-lg sm:text-xl mb-5 font-black uppercase leading-tight text-center break-words">Otel</h3>
+            <button type="button" onclick="window.openGenericModal('hotel')" data-i18n="btn_book_now" class="mt-auto inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-accent px-5 py-3 text-white text-[11px] font-black uppercase tracking-wider shadow-lg shadow-accent/25 border border-accent transition hover:bg-accentHover">Rezervasyon Yap</button>
           </article>
-          <article class="min-h-[224px] sm:min-h-[260px] md:min-h-0 p-6 sm:p-10 md:p-12 bg-white rounded-2xl md:rounded-[28px] border border-gray-100 shadow-xl hover:shadow-2xl transition flex flex-col items-center justify-center text-dark">
-            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-primary/5 rounded-full flex items-center justify-center mb-6 sm:mb-8"><i class="fa-solid fa-key text-2xl sm:text-3xl text-primary"></i></div>
-            <h3 data-i18n="service_car" class="text-lg sm:text-xl mb-4 font-black uppercase leading-tight text-center break-words">Araç Kiralama</h3>
-            <button type="button" onclick="window.openCarRentalModal()" data-i18n="btn_view_models" class="inline-flex min-h-12 w-full sm:w-auto items-center justify-center rounded-xl bg-primary/5 px-5 py-3 text-primary text-[11px] font-black uppercase tracking-wider border border-primary/10 transition hover:bg-primary hover:text-white">Modelleri Gör</button>
+          <article class="min-h-[240px] sm:min-h-[270px] md:min-h-0 p-6 sm:p-10 md:p-12 bg-white rounded-2xl md:rounded-[28px] border border-gray-100 shadow-xl hover:shadow-2xl transition flex flex-col items-center text-dark">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-primary/5 rounded-full flex items-center justify-center mb-5 sm:mb-8 shrink-0"><i class="fa-solid fa-key text-2xl sm:text-3xl text-primary"></i></div>
+            <h3 data-i18n="service_car" class="text-lg sm:text-xl mb-5 font-black uppercase leading-tight text-center break-words">Araç Kiralama</h3>
+            <button type="button" onclick="window.openCarRentalModal()" data-i18n="btn_view_models" class="mt-auto inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-5 py-3 text-white text-[11px] font-black uppercase tracking-wider shadow-lg shadow-primary/20 border border-primary transition hover:bg-accent">Modelleri Gör</button>
           </article>
         </div>
       </div>
@@ -460,7 +474,7 @@
 
     const pageTranslations = {
       TR: {
-        nav_home: "Ana Sayfa", nav_services: "Hizmetlerimiz", nav_recommended: "Önerilenler", nav_fares: "Fiyatlar", btn_booking: "Rezervasyon",
+        nav_home: "Ana Sayfa", nav_services: "Hizmetlerimiz", nav_recommended: "Önerilenler", nav_fares: "Fiyatlar", btn_booking: "Rezervasyon", quick_transfer: "Transfer", quick_car: "Araç",
         hero_title: 'TATİLİN <span class="text-accent italic">EN VIP</span> HALİ', hero_subtitle: "Transferden kiralık araca kadar tüm seyahat planınız tek bir çatıda.",
         label_pickup: "Alış Yeri", label_dropoff: "Varış Bölgesi", label_date: "Tarih", btn_view_price: "Fiyatı Gör", opt_ayt: "Antalya (AYT)", opt_dlm: "Dalaman (DLM)",
         section_services: "Hizmetlerimiz", service_flight: "Uçak Bileti", service_hotel: "Otel", service_car: "Araç Kiralama", btn_pre_booking: "Ön Rezervasyon", btn_book_now: "Rezervasyon Yap", btn_view_models: "Modelleri Gör",
@@ -473,7 +487,7 @@
         admin_panel_title: "Acente Paneli", admin_placeholder_user: "KULLANICI ADI", admin_placeholder_pass: "ŞİFRE", admin_btn_login: "Giriş Yap", admin_sec_title: "Rezervasyonlar", admin_btn_clear: "Listeyi Temizle"
       },
       EN: {
-        nav_home: "Home", nav_services: "Our Services", nav_recommended: "Recommended", nav_fares: "Fares", btn_booking: "Book Now",
+        nav_home: "Home", nav_services: "Our Services", nav_recommended: "Recommended", nav_fares: "Fares", btn_booking: "Book Now", quick_transfer: "Transfer", quick_car: "Car",
         hero_title: 'THE MOST <span class="text-accent italic">VIP WAY</span> OF VACATION', hero_subtitle: "Your entire travel plan from transfer to car rental under one roof.",
         label_pickup: "Pickup Location", label_dropoff: "Drop-off Region", label_date: "Date", btn_view_price: "View Price", opt_ayt: "Antalya Airport (AYT)", opt_dlm: "Dalaman Airport (DLM)",
         section_services: "Our Services", service_flight: "Flight Ticket", service_hotel: "Hotel", service_car: "Car Rental", btn_pre_booking: "Pre-Booking", btn_book_now: "Book Room", btn_view_models: "View Models",
@@ -486,7 +500,7 @@
         admin_panel_title: "Agency Panel", admin_placeholder_user: "USERNAME", admin_placeholder_pass: "PASSWORD", admin_btn_login: "Login", admin_sec_title: "Reservations", admin_btn_clear: "Clear List"
       },
       DE: {
-        nav_home: "Startseite", nav_services: "Unsere Dienste", nav_recommended: "Empfohlen", nav_fares: "Preise", btn_booking: "Buchen",
+        nav_home: "Startseite", nav_services: "Unsere Dienste", nav_recommended: "Empfohlen", nav_fares: "Preise", btn_booking: "Buchen", quick_transfer: "Transfer", quick_car: "Auto",
         hero_title: 'DIE <span class="text-accent italic">VIP-ART</span> IHRES URLAUBS', hero_subtitle: "Ihre gesamte Reiseplanung vom Transfer bis zur Autovermietung unter einem Dach.",
         label_pickup: "Abholort", label_dropoff: "Zielregion", label_date: "Datum", btn_view_price: "Preis Anzeigen", opt_ayt: "Flughafen Antalya (AYT)", opt_dlm: "Flughafen Dalaman (DLM)",
         section_services: "Unsere Dienste", service_flight: "Flugticket", service_hotel: "Hotel", service_car: "Autovermietung", btn_pre_booking: "Vorreservierung", btn_book_now: "Zimmer Buchen", btn_view_models: "Modelle Anzeigen",
