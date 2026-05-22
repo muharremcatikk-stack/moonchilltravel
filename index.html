@@ -37,10 +37,12 @@
     }
     .modal-scroll::-webkit-scrollbar { width: 5px; }
     .modal-scroll::-webkit-scrollbar-thumb { background: #1E3A8A; border-radius: 10px; }
+    body.modal-active .mobile-sticky-actions,
+    body.modal-active .floating-whatsapp { display: none !important; }
   </style>
 </head>
 <body class="antialiased font-sans min-h-screen overflow-x-hidden text-dark">
-  <a href="https://wa.me/905324966624" target="_blank" rel="noopener" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[200] flex items-center gap-3 group">
+  <a href="https://wa.me/905324966624" target="_blank" rel="noopener" class="floating-whatsapp fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[200] flex items-center gap-3 group">
     <div class="hidden md:block bg-white text-primary py-2 px-5 rounded-full shadow-xl border border-gray-100 font-bold text-xs uppercase opacity-0 group-hover:opacity-100 transition-opacity">Canlı Destek</div>
     <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl animate-wa hover:scale-110 transition-transform">
       <i class="fa-brands fa-whatsapp text-2xl md:text-3xl"></i>
@@ -111,7 +113,7 @@
           </div>
         </div>
       </div>
-      <div class="md:hidden fixed left-3 right-20 bottom-4 z-[190] grid grid-cols-3 gap-2">
+      <div class="mobile-sticky-actions md:hidden fixed left-3 right-20 bottom-4 z-[90] grid grid-cols-3 gap-2">
         <button type="button" onclick="window.openBookingModal()" class="min-h-14 rounded-2xl bg-primary/95 text-white shadow-xl backdrop-blur flex flex-col items-center justify-center gap-1 text-[9px] font-black uppercase tracking-wide active:scale-95 transition">
           <i class="fa-solid fa-car-side text-base text-accent"></i>
           <span data-i18n="quick_transfer">Transfer</span>
@@ -547,7 +549,13 @@
       if (!el) return;
       el.classList.toggle('hidden', !open);
       el.classList.toggle('flex', open);
-      document.body.style.overflow = open ? 'hidden' : 'auto';
+      const modalIds = ['bookingModalOverlay', 'genericRequestModalOverlay', 'carRentalModalOverlay', 'confirmModalOverlay', 'adminModalOverlay'];
+      const hasOpenModal = modalIds.some((modalId) => {
+        const modal = document.getElementById(modalId);
+        return modal && !modal.classList.contains('hidden');
+      });
+      document.body.classList.toggle('modal-active', hasOpenModal);
+      document.body.style.overflow = hasOpenModal ? 'hidden' : 'auto';
     }
 
     window.updatePageLanguage = function() {
