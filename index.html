@@ -346,6 +346,7 @@
       <div class="mt-6 space-y-3 font-black text-xs uppercase tracking-wider">
         <button id="res-wa-btn" type="button" class="w-full py-5 bg-green-500 hover:bg-green-600 text-white rounded-2xl flex items-center justify-center gap-4 transition active:scale-95 shadow-xl shadow-green-500/20"><span data-i18n="modal_btn_whatsapp_confirm">Talebi WhatsApp'tan Acenteye Gönder</span> <i class="fa-brands fa-whatsapp text-2xl"></i></button>
         <button type="button" onclick="window.downloadPDF()" class="w-full py-5 bg-primary hover:bg-primaryHover text-white rounded-2xl flex items-center justify-center gap-4 transition active:scale-95 shadow-xl shadow-primary/20"><i class="fa-solid fa-file-pdf text-2xl text-accent"></i> <span id="btn-pdf-label" data-i18n="btn_pdf_label">Rezervasyon Belgesini İndir (PDF)</span></button>
+        <button type="button" onclick="window.closeConfirmModal(); window.openAdminModal();" class="w-full py-5 bg-slate-100 hover:bg-slate-200 text-primary rounded-2xl flex items-center justify-center gap-4 transition active:scale-95 shadow-lg"><i class="fa-solid fa-user-shield text-xl text-accent"></i> <span data-i18n="admin_panel_title">Acente Paneli</span></button>
       </div>
     </div>
   </div>
@@ -356,8 +357,8 @@
       <div class="bg-primary p-8 text-white text-center uppercase tracking-widest font-black shadow-lg"><h2 class="text-2xl tracking-tighter" data-i18n="admin_panel_title">Acente Paneli</h2></div>
       <div class="p-8 md:p-10 overflow-y-auto modal-scroll">
         <div id="admin-login-sec" class="max-w-md mx-auto space-y-5">
-          <input id="admin-user" type="text" data-i18n="admin_placeholder_user" placeholder="KULLANICI ADI" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
-          <input id="admin-pass" type="password" data-i18n="admin_placeholder_pass" placeholder="İFRE" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black uppercase">
+          <input id="admin-user" type="text" data-i18n="admin_placeholder_user" placeholder="KULLANICI ADI" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black">
+          <input id="admin-pass" type="password" data-i18n="admin_placeholder_pass" placeholder="ŞİFRE" class="w-full border-2 p-5 rounded-2xl outline-none focus:border-primary font-black">
           <input type="button" onclick="window.checkAdminLogin()" data-i18n="admin_btn_login" class="w-full py-5 bg-primary text-white rounded-3xl font-black uppercase text-xs tracking-widest cursor-pointer" value="Giriş Yap">
         </div>
         <div id="admin-dashboard" class="hidden">
@@ -387,7 +388,7 @@
         <div style="padding: 20px; background-color: #1E3A8A; color: #ffffff; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px;"><span id="pdf-label-total-side" style="font-weight: bold; font-size: 11px; color: #bfdbfe; letter-spacing: 2px;">Toplam:</span><span class="dynamic-price" style="font-size: 32px; font-weight: 900; color: #F59E0B; font-style: italic; margin: 0;">--</span></div>
       </div>
       <p id="pdf-label-payment" style="font-size: 9px; color: #1E3A8A; text-align: center; margin-top: 40px; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 25px; font-weight: bold;">* Ödeme hizmet başlangıcında nakit veya kart ile tahsil edilecektir.</p>
-      <div id="pdf-label-footer" style="margin-top: 15px; font-size: 9px; text-align: center; color: #888888; font-weight: bold; letter-spacing: 0.5px; line-height: 1.4;">MOONCHILL TRAVEL - KIZILARIK MAH. 2769. SOK. NO:28 MURATPAA/ANTALYA | +90 532 496 66 24</div>
+      <div id="pdf-label-footer" style="margin-top: 15px; font-size: 9px; text-align: center; color: #888888; font-weight: bold; letter-spacing: 0.5px; line-height: 1.4;">MOONCHILL TRAVEL - KIZILARIK MAH. 2769. SOK. NO:28 MURATPAŞA/ANTALYA | +90 532 496 66 24</div>
     </div>
   </div>
 
@@ -543,6 +544,9 @@
     function saveReservation(res) { const list = getReservations(); list.unshift(res); localStorage.setItem(storageKey(), JSON.stringify(list)); }
     function formatMoney(value) { return isNaN(value) ? value : `${value} EUR`; }
     function setDisplay(id, value) { const el = document.getElementById(id); if (el) el.innerHTML = value; }
+    function escapeHTML(value) {
+      return String(value || '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+    }
 
     function setModalOpen(id, open) {
       const el = document.getElementById(id);
@@ -713,7 +717,7 @@
         alert(currentLang === 'TR' ? 'LÜTFEN ADINIZI VE WHATSAPP NUMARANIZI DOLDURUN!' : 'PLEASE ENTER YOUR NAME AND WHATSAPP NUMBER!');
         return;
       }
-      const resData = { id: String(Date.now()).slice(-6), type, name: fd.get('Isim') || nameVal || '', phone: fd.get('Telefon') || telVal || '', createdAt: new Date().toISOString() };
+      const resData = { id: String(Date.now()).slice(-6), status: 'Yeni Talep', type, name: fd.get('Isim') || nameVal || '', phone: fd.get('Telefon') || telVal || '', createdAt: new Date().toISOString() };
       if (type === 'Transfer') {
         const extras = ['Ek_Bebek', 'Ek_Cocuk', 'Ek_Bisiklet', 'Ek_Bagaj'].map(key => Number(fd.get(key) || 0)).reduce((sum, value) => sum + value, 0);
         const rawDropoff = fd.get('Varis_Noktasi') || 'Antalya';
@@ -855,9 +859,9 @@
     };
     window.closeAdminModal = function() { setModalOpen('adminModalOverlay', false); };
     window.checkAdminLogin = function() {
-      const u = document.getElementById('admin-user')?.value;
-      const p = document.getElementById('admin-pass')?.value;
-      if (u === 'DesertEagle' && p === 'Mc.103036') {
+      const u = (document.getElementById('admin-user')?.value || '').trim().toLowerCase();
+      const p = (document.getElementById('admin-pass')?.value || '').trim().toLowerCase();
+      if (u === 'deserteagle' && p === 'mc.103036') {
         document.getElementById('admin-login-sec').classList.add('hidden');
         document.getElementById('admin-dashboard').classList.remove('hidden');
         window.loadReservations();
@@ -873,10 +877,36 @@
         list.innerHTML = `<p class="text-center text-gray-400 font-bold uppercase tracking-widest">${currentLang === 'TR' ? 'Henüz rezervasyon yok.' : 'No reservations yet.'}</p>`;
         return;
       }
-      list.innerHTML = reservations.map((r) => `<article class="p-6 border-2 rounded-[24px] flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white shadow-sm gap-4 uppercase font-black">
-        <div><span class="bg-primary text-white px-3 py-1 rounded-full text-[9px]">${r.type}</span><div class="mt-3"><span class="block text-primary">${r.name}</span><span class="text-gray-400 text-[10px]">${r.route}</span></div></div>
-        <div class="sm:text-right shrink-0"><span class="text-accent text-xl block italic">${r.price}</span><span class="text-[9px] text-primary">${r.date}</span></div>
+      list.innerHTML = reservations.map((r) => `<article class="p-5 sm:p-6 border-2 rounded-[24px] bg-white shadow-sm uppercase font-black">
+        <div class="flex flex-col sm:flex-row sm:justify-between gap-4">
+          <div class="min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-3">
+              <span class="bg-primary text-white px-3 py-1 rounded-full text-[9px]">${escapeHTML(r.type)}</span>
+              <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-[9px]">#MC-${escapeHTML(r.id)}</span>
+              <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-[9px]">${escapeHTML(r.status || 'Yeni Talep')}</span>
+            </div>
+            <span class="block text-primary text-lg leading-tight">${escapeHTML(r.name || 'İsimsiz Müşteri')}</span>
+            <span class="block text-gray-500 text-[10px] mt-1">${escapeHTML(r.phone || 'Telefon yok')}</span>
+            <span class="block text-gray-400 text-[10px] mt-3 leading-relaxed">${escapeHTML(r.route)}</span>
+            <span class="block text-primary text-[10px] mt-2">${escapeHTML(r.date)}</span>
+          </div>
+          <div class="sm:text-right shrink-0">
+            <span class="text-accent text-2xl block italic">${escapeHTML(r.price)}</span>
+            <span class="text-[9px] text-gray-400">${escapeHTML(new Date(r.createdAt || Date.now()).toLocaleString('tr-TR'))}</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
+          <button type="button" onclick="window.openReservationDocument('${escapeHTML(r.id)}')" class="py-4 bg-primary text-white rounded-2xl text-[10px] tracking-widest hover:bg-primaryHover transition">Belgeyi / PDF Ekranını Aç</button>
+          <a href="https://wa.me/905324966624?text=${encodeURIComponent(`Rezervasyon takip: #MC-${r.id} - ${r.name || ''} - ${r.phone || ''}`)}" target="_blank" rel="noopener" class="py-4 bg-green-500 text-white rounded-2xl text-[10px] tracking-widest text-center hover:bg-green-600 transition">WhatsApp'ta Takip Et</a>
+        </div>
       </article>`).join('');
+    };
+    window.openReservationDocument = function(id) {
+      const reservation = getReservations().find((item) => item.id === id);
+      if (!reservation) return;
+      setModalOpen('adminModalOverlay', false);
+      window.updatePDFLabels();
+      window.showConfirmUI(reservation);
     };
     window.clearReservations = function() {
       if (confirm(currentLang === 'TR' ? 'Tüm kayıtlı rezervasyonlar silinsin mi?' : 'Delete all saved reservations?')) {
